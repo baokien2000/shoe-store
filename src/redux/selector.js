@@ -12,6 +12,7 @@ export const shoesList = (state) => state.shoes;
 export const CurrentTabs = (state) => state.page.NavBarTabs;
 export const CurrentPages = (state) => state.page.ProductPages;
 
+export const shippingDetails = (state) => state.shipping;
 // Filter
 
 export const filterShoes = createSelector(

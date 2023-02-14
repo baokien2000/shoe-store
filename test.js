@@ -1,2 +1,0 @@
-// Main Line
-// ItemDetails Line 

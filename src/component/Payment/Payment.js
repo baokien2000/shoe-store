@@ -5,54 +5,116 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Finish from './Finish';
 import PersonInfo from './PersonInfo';
 import AddressInfo from './AddressInfo';
 import OrderCheck from './OrderCheck';
+import isEmail from 'validator/lib/isEmail';
+import { useDispatch, useSelector } from 'react-redux';
+import { shippingDetails } from '../../redux/selector';
+import shippingSlice from '../../redux/Slice/shippingSlice';
+import shoesSlice from '../../redux/Slice/shoesSlice';
 const steps = ['Personal Information', 'Address  Information', 'Place your order'];
 
 const Payment = () => {
     const [activeStep, setActiveStep] = React.useState(0);
-    const [skipped, setSkipped] = React.useState(new Set());
 
-    const isStepOptional = (step) => {
-        return step === 1;
-    };
+    const dispatch = useDispatch()
 
-    const isStepSkipped = (step) => {
-        return skipped.has(step);
-    };
+    const details = useSelector(shippingDetails);
+    const handleNext_Step1 = () => {
+        let nextStep = true;
 
+        if (details.firstName === '') {
+            dispatch(shippingSlice.actions.setFirstNameError("First Name is required"))
+            nextStep = false
+        } else {
+            if (details.firstName.length < 2) {
+                dispatch(shippingSlice.actions.setFirstNameError("First Name must have at least 2 characters"))
+                nextStep = false
+            }
+        }
+        if (details.lastName === '') {
+            dispatch(shippingSlice.actions.setLastNameError("Last Name is required"))
+            nextStep = false
+        } else {
+            if (details.lastName.length < 2) {
+                dispatch(shippingSlice.actions.setLastNameError("Last Name must have at least 2 characters"))
+                nextStep = false
+            }
+        }
+        if (details.phone === '') {
+            dispatch(shippingSlice.actions.setPhoneError("Phone is required"))
+            nextStep = false
+        } else {
+            if (details.phone.length !== 10) {
+                dispatch(shippingSlice.actions.setPhoneError("Your phone is not valid"))
+                nextStep = false
+            }
+        }
+        if (details.email === '') {
+            dispatch(shippingSlice.actions.setEmailError("Email is required"))
+            nextStep = false
+        } else {
+            if (!isEmail(details.email)) {
+                dispatch(shippingSlice.actions.setEmailError("Your email is not Valid"))
+                nextStep = false
+            }
+        }
+        if (nextStep === true) {
+            setActiveStep((prevActiveStep) => prevActiveStep + 1)
+        }
+    }
+    const handleNext_Step2 = () => {
+        let nextStep = true;
+        if (details.country === '') {
+            dispatch(shippingSlice.actions.setCountryError("Country is required"))
+            nextStep = false
+        }
+        if (details.city === '') {
+            dispatch(shippingSlice.actions.setCityError("City is required"))
+            nextStep = false
+        }
+        if (details.address === '') {
+            dispatch(shippingSlice.actions.setAddressError("Address is required"))
+            nextStep = false
+        }
+        if (nextStep === true) {
+            setActiveStep((prevActiveStep) => prevActiveStep + 1)
+        }
+    }
+    const handleNext_Step3 = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1)
+        dispatch(shippingSlice.actions.clearInfo());
+        dispatch(shoesSlice.actions.clearCart())
+    }
     const handleNext = () => {
-        let newSkipped = skipped;
-        if (isStepSkipped(activeStep)) {
-            newSkipped = new Set(newSkipped.values());
-            newSkipped.delete(activeStep);
+        switch (activeStep) {
+            case 0:
+                handleNext_Step1();
+                break;
+            case 1:
+                handleNext_Step2();
+                break;
+            case 2:
+                handleNext_Step3();
+                break;
+            default:
+                break;
         }
 
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        setSkipped(newSkipped);
+
+        // const dispatch = useDispatch();
+        // const handelFirstNameChange = () => {
+        //     dispatch(shippingSlice.actions.setFirstNameError())
+        // }
     };
 
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
-    const handleSkip = () => {
-        if (!isStepOptional(activeStep)) {
-            // You probably want to guard against something like this,
-            // it should never occur unless someone's actively trying to break something.
-            throw new Error("You can't skip a step that isn't optional.");
-        }
 
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        setSkipped((prevSkipped) => {
-            const newSkipped = new Set(prevSkipped.values());
-            newSkipped.add(activeStep);
-            return newSkipped;
-        });
-    };
 
     const StepForm = () => {
         switch (activeStep) {
@@ -63,12 +125,10 @@ const Payment = () => {
             case 2:
                 return <OrderCheck />
             default:
-                return <PersonInfo />
+                return;
         }
     }
-    const handleReset = () => {
-        setActiveStep(0);
-    };
+
     return (
         <div className='Payment'>
             <Container>

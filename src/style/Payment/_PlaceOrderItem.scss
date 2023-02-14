@@ -7,12 +7,19 @@
     align-items: center;
     margin-top: 10px;
     img{
-        align-self: flex-start;
+        // align-self: flex-start;
         height: 80px;
         width: fit-content;
         margin: 0 25px;
     }
     .price{
         margin-right: 25px;
+    }
+    .number{
+        margin-right: 100px;
+    }
+    div:first-child{
+        display: flex;
+        align-items: center;
     }
 }

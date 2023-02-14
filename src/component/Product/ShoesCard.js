@@ -17,6 +17,7 @@ const ShoesCard = ({ item }) => {
         dispatch(shoesSlice.actions.AddItem(item))
     }
     const ToggleButton = () => {
+        AddSuccess();
         window.scrollTo({
             top: 0,
             left: 0,

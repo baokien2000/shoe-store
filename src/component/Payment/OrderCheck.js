@@ -1,38 +1,29 @@
 import React from 'react';
-import Item from '../Cart/Item';
+import { useSelector } from 'react-redux';
 import PlaceOrderItem from './PlaceOrderItem';
+import { shippingDetails, shoesList, subtotal } from '../../redux/selector';
 
 const OrderCheck = () => {
-    const ItemTest = {
-        id: 2,
-        brand: 'Vans',
-        name: 'Vans Authentic DIY HC Lemon Chrome',
-        imageUrl: 'https://bizweb.dktcdn.net/thumb/1024x1024/100/347/923/products/vn0a4uuc1ae-4.jpg',
-        price: 6.31,
-        sale: 17,
-        rate: 5,
-        color: 'Yellow',
-        size: [36, 37, 38, 40, 41],
-        cart: 2
 
-    }
-
+    const cartLish = useSelector(shoesList).filter(item => item.cart !== 0)
+    const subtotalCost = useSelector(subtotal)
+    const details = useSelector(shippingDetails)
     return (
         <div className='PaymentForm'>
             <p>Place Order</p>
-            <PlaceOrderItem item={ItemTest} />
-            <PlaceOrderItem item={ItemTest} />
-            <PlaceOrderItem item={ItemTest} />
+
+            {cartLish.map((item) => <PlaceOrderItem item={item} />)}
+
             <div className='ShippingDetails'>
                 <p>Shipping Details</p>
-                <div><b>Name:</b> <span>Kin</span></div>
-                <div><b>Phone:</b> <span>0336783456</span></div>
-                <div><b>Email:</b> <span>Kin@gmail.com</span></div>
-                <div><b>Address:</b> <span>246/34, Nguyễn Trãi, Phường 9, Quận 5, Hồ Chí Minh city, Viet Nam.</span> </div>
+                <div><b>Name:</b> <span>{details.lastName + ' ' + details.firstName}</span></div>
+                <div><b>Phone:</b> <span>{details.phone.slice(0, 3) + ' ' + details.phone.slice(3, 6) + " " + details.phone.slice(6, 10)}</span></div>
+                <div><b>Email:</b> <span>{details.email}</span></div>
+                <div><b>Address:</b> <span>{details.address + ", " + details.city + ", " + details.country}</span> </div>
             </div>
             <div className='TotalPrice'>
                 <span>Total Price:</span>
-                <span>$248.68</span>
+                <span>${(subtotalCost + 1.69).toFixed(2)}</span>
             </div>
         </div>
     );
