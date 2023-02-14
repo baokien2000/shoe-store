@@ -1,0 +1,30 @@
+@import '../variable';
+
+.About{
+    // background-color: gray;
+    // background-color: $Maincolor;
+
+    // height: 100vh;
+    .container{
+        display: flex;
+        padding: 50px 0;
+        img{
+            width: 50%;
+            height: fit-content;
+            margin-right: 50px;
+        }
+        .About_Info{
+            color: rgb(0, 0, 0);
+            h1{
+                text-decoration: underline;
+                text-underline-offset: 12px;
+                margin-bottom: 25px;
+            }
+            p{  
+                font-size: 17px;
+            }
+        }
+    }
+
+    // height: 100%;
+}

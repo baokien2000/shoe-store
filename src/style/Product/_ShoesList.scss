@@ -1,0 +1,42 @@
+.ShoesList{
+    overflow: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    .container{
+        height: max-content;
+        @import "./Card";
+        .Card{
+            float: left;
+            width: 24%;
+            height: fit-content;
+            margin-right: 1.334%;
+            margin-top: 20px;
+            img{
+                width: 100%;
+            }
+        }
+        .Card:nth-child(4n){
+            margin-right: 0;
+
+        }
+    }// container
+    .MuiPagination-root{
+        padding: 20px 0;
+        li{
+            button{
+                color: #111;
+                border: none;
+                background-color: #fff;
+            }
+            .Mui-selected{
+                background-color: #111;
+                color: #fff;
+            }
+        }
+        // color: white;
+        // background-color: red;
+    }
+}

@@ -1,0 +1,117 @@
+.Card {
+    width: 250px;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 10px;
+
+    // border: 2px solid black;
+    a{
+        text-decoration: none;
+    }
+    img {
+        width: 250px;
+        padding: 20px;
+    }
+
+    .Card_Info {
+        padding: 0 20px 20px 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        .Card_Name {
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            height: 50px;
+        }
+
+        .Card_Rate {
+            color: yellow;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            svg{
+                min-width: 20px;
+                min-height: 20px;
+            }
+            span{
+                color: #ff6651;
+                height: 20px;
+                margin-left: 15px;
+                // display: inline-block;
+            }
+        }
+
+        .Card_Sale {
+            span:first-child {
+                text-decoration: line-through;
+            }
+
+            span:nth-child(2) {
+                background-color: #248edf;
+                font-weight: bold;
+                color: white;
+                padding: 3px 7px;
+                border-radius: 20px;
+                margin-left: 15px;
+            }
+        }
+
+        .Card_Price {
+            color: #ff6651;
+            font-weight: bold;
+            font-size: larger;
+            margin-bottom: 5px;
+        }
+
+        .Card_Button {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            color: white;
+
+            button {
+                min-width: fit-content;
+                background-color: #248edf;
+                border: none;
+                color: white;
+                border-radius: 30px;
+                padding: 0px 20px;
+            }
+
+            div{
+                position: relative;
+                svg {
+                    height: 40px;
+                    width: 40px;
+                    background-color: #248edf;
+                    border-radius: 50%;
+                    padding: 7px;
+                    cursor: pointer;
+                    color: white;
+                }
+                span{
+                    position: absolute;
+                    background-color: red;
+                    color: #fff;
+                    border-radius: 50%;
+                    // padding: 3px;
+                    font-size: 8px;
+                    top: 0px;
+                    right: -2px;   
+                    height: 13px;
+                    width: 13px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    // text-align: center;
+                }
+            }
+
+        }
+    }
+
+    // Card_Info
+
+} // Card

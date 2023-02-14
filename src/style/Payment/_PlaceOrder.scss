@@ -1,0 +1,18 @@
+.PlaceOrderItem{
+    height: 100px;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    img{
+        align-self: flex-start;
+        height: 80px;
+        width: fit-content;
+        margin: 0 25px;
+    }
+    .price{
+        margin-right: 25px;
+    }
+}

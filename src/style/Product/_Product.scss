@@ -1,0 +1,25 @@
+@import '../variable';
+
+.Product{
+    height: fit-content;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    background-color: $Maincolor;
+
+    @import './Filter';
+    @import './ShoesList';
+
+    .NotFound{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+        p{
+            font-size: 30px;
+            color: white;
+        }
+       
+    }
+    
+}

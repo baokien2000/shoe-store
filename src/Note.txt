@@ -1,0 +1,10 @@
+------------------------- TASK -------------------------
+1 Lưu đã mua vào localStore                         
+2 Click vào chi tiết sản phẩm                       
+3 Page PayMent                                      Doing
+4 Reponsive                                         
+------------------------- BUG  -------------------------
+task 1:
+task 2:
+task 3:
+task 4:

@@ -1,0 +1,63 @@
+@import '../variable';
+
+.HomePage{
+    // background-color: #58b6ec;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: none;
+    color: white;
+    // background-image: linear-gradient(0.2deg, rgba(40, 173, 222, 0.37) 4.8%, rgb(27, 76, 224) 85.5%);
+    background-color: $Maincolor;
+    .HeaderVideo{
+        position: relative;
+        width: 100vw;
+        height: fit-content;
+        // background-color: white;
+        padding: 0;
+        margin: 0;
+        video{
+            background-color: black;
+
+            width: inherit;
+        }
+
+        .VideoBtn{
+            position: absolute;
+            bottom: 5vh;
+            left: 9vw;
+            svg{
+                color: white;
+                min-height: 35px;
+                min-width: 35px;
+                margin-right: 10px;
+            }
+        }
+        .VideoTitle{
+            position: absolute;
+            top: 25vh;
+            left: 9vw;
+            .BuyNowBtn{
+                border: 1px solid white;
+                width: fit-content;
+                button{
+                    border: none;
+                    background-color: white;
+                    padding: 10px 20px;
+                    transform: translateX(-2px) translateY(-2px);
+                    a{
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+                button:hover{
+                    background-color: rgba($color: rgb(230, 228, 228), $alpha: 1);
+                }
+            }
+
+        }
+        
+    } // HeaderVideo
+    
+    @import './ShoesCarousel';
+    @import './ShoesBanner';
+}

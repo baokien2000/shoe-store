@@ -1,0 +1,75 @@
+.ShoesBanner {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    color: black;
+
+    .container {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+
+        >img {
+            height: 250px;
+            width: fit-content;
+            margin-right: 50px;
+        }
+
+        .Banner_Info {
+            height: fit-content;
+            display: flex;
+            flex-direction: column  ;
+            // justify-content: flex-start;
+            align-items: flex-start;
+
+            p {
+                font-size: 25px;
+                margin-bottom: 0px;
+                color: #5889e1;
+            }
+
+            h1,
+            p {
+                font-weight: bold;
+            }
+
+            .BuyNowBtn {
+                border: 1px solid #447cdf;
+                width: fit-content;
+                margin-top: 20px;
+
+                button {
+                    border: none;
+                    background-color: #447cdf;
+                    color: white;
+                    padding: 10px 20px;
+                    transform: translateX(-2px) translateY(-2px);
+                    a{
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+
+                button:hover {
+                    background-color: rgba($color: #3465e0, $alpha: 1);
+                }
+            }
+        }
+
+    } // container
+    .ImageLeft{
+        flex-direction: row;
+        
+        >img {
+            margin: 0 50px 0 0;
+        }
+    }
+    .ImageRight{
+        flex-direction: row-reverse;
+        >img {
+            margin: 0 0 0 50px;
+        }
+    }
+}
