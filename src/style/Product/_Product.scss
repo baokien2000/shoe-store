@@ -3,9 +3,11 @@
 .Product{
     height: fit-content;
     min-height: 100vh;
+    padding-top: 76px;
     padding-bottom: 50px;
-    background-color: $Maincolor;
-
+    // background-color: $Maincolor;
+    background: rgb(135,184,238);
+    background: linear-gradient(180deg, rgba(135,184,238,1) 0%, rgba(149,198,239,1) 100%);
     @import './Filter';
     @import './ShoesList';
 
@@ -22,4 +24,16 @@
        
     }
     
+}
+@media screen and (max-width: 766px) {
+    .Product{
+        .NotFound{
+            img{
+                width: 100%;
+                height: fit-content;
+            }
+           
+        }
+        
+    }
 }

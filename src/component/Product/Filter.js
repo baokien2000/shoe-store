@@ -91,7 +91,7 @@ const Filter = () => {
                         <span> Brand: <b>{seletedBrand}</b> </span>
                         <span> Color: <b>{seletedColor}</b> </span>
                         <span> Size:  <b>{seletedSize} </b> </span>
-                        <button onClick={ClearToggle}>Clear filter</button>
+                        <span onClick={ClearToggle}>Clear filter</span>
                     </div>
                     <div className="Sort">
                         <p>Sort by:</p>

@@ -1,5 +1,6 @@
 .Payment{
-    min-height: calc(100vh - 40px);
+    min-height: 100vh;
+    padding-top: 76px;
     height: fit-content;
     padding-bottom: 100px;
     .container{
@@ -41,12 +42,45 @@
             margin: 20px 0 0 0;
         }
     };//PaymentForm
+
+    // Remove input Number type button
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
     margin: 0; 
     }
+
     @import "./PlaceOrderItem";
     @import "./ShippingDetails";
     @import "./Finish";
+}
+
+@media screen and (max-width: 567px) {
+    .Payment{
+        .PaymentForm{
+            .MuiFormControl-root{
+                width: 100%;
+                input{
+                    width: 100%;
+                }
+            }
+  
+        };//PaymentForm
+    
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .Payment{
+        .PaymentForm{
+        
+            .MuiFormControl-root{
+                width: 100%;
+                input{
+                    width: 100%;
+                }
+            }
+        };//PaymentForm
+    }
 }

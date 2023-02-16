@@ -12,7 +12,7 @@ const OrderCheck = () => {
         <div className='PaymentForm'>
             <p>Place Order</p>
 
-            {cartLish.map((item) => <PlaceOrderItem item={item} />)}
+            {cartLish.map((item) => <PlaceOrderItem item={item} key={item.id} />)}
 
             <div className='ShippingDetails'>
                 <p>Shipping Details</p>

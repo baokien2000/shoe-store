@@ -5,11 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CurrentPages } from '../../redux/selector';
 import pageSlice from '../../redux/Slice/pageSlice';
 
-export default function PaginationRounded({ PageNum }) {
+export default function PaginationRounded({ PageNum, forwardRef }) {
     const dispatch = useDispatch()
     const HandlePaginationChange = (event, value) => {
-        // setCurrentPage(value)
         dispatch(pageSlice.actions.PagesChange(value))
+        // window.scrollTo({
+        //     top: 0,
+        //     left: 0,
+        //     behavior: 'instant',
+        // });
+        forwardRef.current.scrollIntoView();
+
     }
     const page = useSelector(CurrentPages)
 

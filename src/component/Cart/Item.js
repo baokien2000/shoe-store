@@ -23,9 +23,11 @@ const Item = ({ item }) => {
 
     const TogglePlus = () => {
         dispatch(shoesSlice.actions.AddItem(item))
+        dispatch(shoesSlice.actions.AddToLocalStorage())
     }
     const ToggleMinus = () => {
         dispatch(shoesSlice.actions.ReduceItem(item))
+        dispatch(shoesSlice.actions.AddToLocalStorage())
     }
     return (
         <tr>
@@ -33,7 +35,7 @@ const Item = ({ item }) => {
                 <img src={item.imageUrl} />
                 <span>{item.name}</span>
             </td>
-            <td>${item.price}</td>
+            <td>${(item.price * (1 - item.sale / 100)).toFixed(2)}</td>
             <td>
                 <div>
                     <FiMinusSquare style={ButtonStyle("Minus")} onClick={ToggleMinus} />
@@ -41,8 +43,8 @@ const Item = ({ item }) => {
                     <FiPlusSquare style={ButtonStyle("Plus ")} onClick={TogglePlus} />
                 </div>
             </td>
-            <td>${(item.price * item.cart).toFixed(2)}</td>
-            <td><RiDeleteBinLine onClick={RemoveToggle} /></td>
+            <td>${((item.price * (1 - item.sale / 100)) * item.cart).toFixed(2)}</td>
+            {/* <td><RiDeleteBinLine onClick={RemoveToggle} /></td> */}
         </tr>
     );
 };

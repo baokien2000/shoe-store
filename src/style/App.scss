@@ -6,14 +6,34 @@
 @import './Cart/Cart';
 @import './Payment/Payment';
 @import './AppFooter/AppFooter';
-
+@import './ShoeDetails/ShoeDetails';
+a{
+    text-decoration: none !important ;
+}
 
 .App{
-    // background-color: $Maincolor;
     margin: 0;
     padding: 0;
     min-height: 100vh ;
     font-family: "Noto Sans","AdihausDIN","Helvetica",Arial,sans-serif;
+    //Disable double-click
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    //
+    // --toastify-color-success: red;
+    .Toastify{
+        svg{
+     
+            path{
+                fill: $Maincolor;
+            }
+        }
+        .Toastify__progress-bar{
+            background-color: $Maincolor;
+        }
+    }
     >button{
         position: fixed;
         bottom: 40px;
@@ -23,35 +43,7 @@
         border: none;
         padding: 8px;
         border-radius: 5px;
+        z-index: 50;
+    }
 
-    }
-    .SuccessAlert{
-        background-color: white;
-        position: fixed;
-        top: 5vh ;
-        right: 5vw;
-        height: 55px;
-        width: 250px;
-        border-radius: 5px;
-        overflow: hidden;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-        div{
-            height: 50px;
-            display: flex;
-            align-items: center;
-            svg{
-                color: #07bc0c;
-                margin: 0 10px;
-            }
-        }
-        div:last-child{
-            background-color: #07bc0c;
-            height: 5px;
-            width: 250px;
-            transition: width 2s;
-        }
-        div:last-child:hover{
-            width: 0px;
-        }
-    }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
@@ -18,7 +18,7 @@ const steps = ['Personal Information', 'Address  Information', 'Place your order
 
 const Payment = () => {
     const [activeStep, setActiveStep] = React.useState(0);
-
+    const [windowWidth, setWindowWidth] = useState(0);
     const dispatch = useDispatch()
 
     const details = useSelector(shippingDetails);
@@ -83,10 +83,18 @@ const Payment = () => {
             setActiveStep((prevActiveStep) => prevActiveStep + 1)
         }
     }
+    const Totop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant',
+        });
+    }
     const handleNext_Step3 = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
         dispatch(shippingSlice.actions.clearInfo());
         dispatch(shoesSlice.actions.clearCart())
+        dispatch(shoesSlice.actions.AddToLocalStorage())
     }
     const handleNext = () => {
         switch (activeStep) {
@@ -102,12 +110,7 @@ const Payment = () => {
             default:
                 break;
         }
-
-
-        // const dispatch = useDispatch();
-        // const handelFirstNameChange = () => {
-        //     dispatch(shippingSlice.actions.setFirstNameError())
-        // }
+        Totop();
     };
 
     const handleBack = () => {
@@ -128,11 +131,25 @@ const Payment = () => {
                 return;
         }
     }
+    const StepperView = () => {
+        return windowWidth > 767 ? false : true
+    }
+    StepperView()
 
+
+    const resizeWindow = () => {
+        setWindowWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        resizeWindow();
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
     return (
         <div className='Payment'>
             <Container>
-                <Stepper activeStep={activeStep} alternativeLabel={false}>
+                <Stepper activeStep={activeStep} alternativeLabel={StepperView()}>
                     {steps.map((label) => {
                         return (
                             <Step key={label}>

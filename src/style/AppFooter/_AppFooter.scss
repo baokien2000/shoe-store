@@ -1,54 +1,50 @@
-$FooterBackground : #111;
-$FooterColor:#7e7e7e;
-$FooterColorHover:#fff;
+$FooterBackground: #111;
+$FooterColor: #7e7e7e;
+$FooterColorHover: #fff;
 
-$ButtonBackground:#7e7e7e;
-$ButtonColor:#111;
+$ButtonBackground: #7e7e7e;
+$ButtonColor: #111;
 $ButtonBackgroundHover: #fff;
 
-    // $FooterBackground : #fff;
-    // $FooterColor:#7e7e7e;
-    // $FooterColorHover:#111;
-
-    // $ButtonBackground:#7e7e7e;
-    // $ButtonColor:#fff;;
-
-    // $ButtonBackgroundHover:#111;
-
-
-.AppFooter{
+.AppFooter {
     background-color: $FooterBackground;
     color: $FooterColor;
     height: fit-content;
-    padding: 40px 40px 0 40px ;
-    p{
+    padding: 40px 40px 0 40px;
+    .Footer_Top_Mobile {
+        display: none;
+    }
+
+    p {
         cursor: pointer;
         font-size: 13px;
         margin-bottom: 13px;
     }
-    p:hover{
+    p:hover {
         color: $FooterColorHover;
     }
-    .Footer_Top{
+    .Footer_Top {
         display: flex;
         flex-direction: row;
         padding-bottom: 30px;
-        .Action,.GetHelp,.AboutKStore{
-            width: 20%;
-            p:first-child{
+        .Action,
+        .GetHelp,
+        .AboutKStore {
+            width: 22%;
+            p:first-child {
                 color: $FooterColorHover;
             }
         }
-        .Action{
+        .Action {
             color: $FooterColorHover;
         }
-        .Contact{
-            width: 40%;
+        .Contact {
+            width: 34%;
             display: flex;
             flex-direction: row;
-            align-items:flex-start;
+            align-items: flex-start;
             justify-content: flex-end;
-            button{
+            button {
                 border-radius: 50%;
                 width: 40px;
                 height: 40px;
@@ -57,46 +53,148 @@ $ButtonBackgroundHover: #fff;
                 margin-left: 10px;
                 background-color: $ButtonBackground;
                 color: $ButtonColor;
-                svg{
+                svg {
                     min-height: 25px;
                     min-width: 25px;
                 }
             }
-            button:hover{
+            button:hover {
                 background-color: $ButtonBackgroundHover;
             }
         }
     }
-    .Footer_Bottom{
+    .Footer_Bottom {
         display: flex;
         justify-content: space-between;
         padding-bottom: 10px;
-        span{
+        span {
             font-size: 12px;
             cursor: pointer;
         }
-        span:hover{
+        span:hover {
             color: $FooterColorHover;
         }
-        .Location{
-            span:first-child{
+        .Location {
+            span:first-child {
                 margin-right: 30px;
                 color: $FooterColorHover;
-                svg{
+                svg {
                     margin-bottom: 4px;
                 }
             }
-            span:nth-child(2):hover{
+            span:nth-child(2):hover {
                 color: $FooterColor;
                 cursor: default;
             }
         }
-        .TermAndPolicy{
-            span{
+        .TermAndPolicy {
+            span {
                 margin-right: 20px;
             }
         }
     }
-
 }
+@media screen and (max-width: 1025px) {
+    .AppFooter {
+        .Footer_Top {
+            .Action,
+            .GetHelp,
+            .AboutKStore {
+                width: 25%;
+                p:first-child {
+                }
+            }
 
+            .Contact {
+                width: 25%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .AppFooter {
+        padding: 0px 0px 10px 0px;
+
+        .Footer_Top_Mobile {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 10px;
+            .Contact {
+                // width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 20px 0;
+                button {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                    border: 0px;
+                    margin: 0 10px;
+                    background-color: $ButtonBackground;
+                    color: $ButtonColor;
+                    svg {
+                        min-height: 25px;
+                        min-width: 25px;
+                    }
+                }
+                button:hover {
+                    background-color: $ButtonBackgroundHover;
+                }
+            } //Contact
+            .Action {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                p {
+                    font-size: 0.6rem;
+                    width: 20%;
+                    display: inline-block;
+                    color: $FooterColorHover;
+                    margin-bottom: 0;
+                }
+            } //Action
+            div:last-child {
+                display: flex;
+
+                .GetHelp,
+                .AboutKStore {
+                    width: 50%;
+                    p:first-child {
+                        color: $FooterColorHover;
+                    }
+                }
+                .GetHelp,
+                .AboutKStore {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .Footer_Top {
+            display: none;
+        }
+        .Footer_Bottom {
+            flex-direction: column;
+
+            .Location {
+                span:first-child {
+                    margin-right: 10px;
+                }
+                span:nth-child(2) {
+                    svg {
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+            .TermAndPolicy {
+                span {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

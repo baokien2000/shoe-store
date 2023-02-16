@@ -16,6 +16,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const ClearToggle = () => {
         dispatch(shoesSlice.actions.clearCart())
+        dispatch(shoesSlice.actions.AddToLocalStorage())
     }
     useEffect(() => {
         dispatch(pageSlice.actions.TabsChange(3));
@@ -34,7 +35,7 @@ const Cart = () => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <th style={{ width: "35%" }}>Item</th>
+                                    <th>Item</th>
                                     <th >Price</th>
                                     <th >Quantity</th>
                                     <th >Subtotal</th>
@@ -46,11 +47,9 @@ const Cart = () => {
                             </tbody>
                         </table>
                         <div className='CartButton'>
-                            <button>
-                                <Link to={'/Product'}>
-                                    Continue shopping
-                                </Link>
-                            </button>
+                            <Link to='/product'>
+                                <button>Continue shopping </button>
+                            </Link>
                             <button onClick={ClearToggle}>Clear cart</button>
                         </div>
                         <div className='Pay'>
@@ -69,7 +68,7 @@ const Cart = () => {
                                     <span>${(subtotalCost + 1.69).toFixed(2)}</span>
                                 </div>
                             </div>
-                            <Link to={'/Payment'}>
+                            <Link to='/payment'>
                                 <button>PAY NOW</button>
                             </Link>
                         </div>

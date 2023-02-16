@@ -13,11 +13,11 @@ const Product = () => {
     }, [dispatch])
 
     const filterProduct = useSelector(filterShoes)
-
+    // console.log()
     return (
         <div className='Product'>
             <Filter />
-            {filterProduct.lenght !== 0
+            {filterProduct.length !== 0
                 ? <ShoesList />
                 : <NotFound Title={'No Product Found'} />
             }

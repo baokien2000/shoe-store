@@ -35,3 +35,12 @@
         font-size: 30px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .ShippingDetails{
+        width: 100%;
+    }
+    .TotalPrice{
+        width: 100%;
+    }
+}

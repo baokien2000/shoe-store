@@ -12,7 +12,9 @@ import { RxDoubleArrowUp } from "react-icons/rx";
 import AppFooter from "./component/Footer/AppFooter";
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
-import ShoesDetails from "./component/ShoesDetails/ShoesDetails";
+import ShoesDetails from "./component/Product/ShoesDetails";
+import { useDispatch } from "react-redux";
+import shoesSlice from "./redux/Slice/shoesSlice";
 
 function App() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -32,23 +34,26 @@ function App() {
 				setIsVisible(false);
 			}
 		};
-
 		window.addEventListener("scroll", toggleVisibility);
-
 		return () => window.removeEventListener("scroll", toggleVisibility);
 	}, []);
+	const dispatch = useDispatch()
+	useEffect(() => {
+		// dispatch(shoesSlice.actions.AddToLocalStorage())
 
+		dispatch(shoesSlice.actions.GetFromLocalStorage())
+	}, [])
 	return (
 		<div className="App">
 			<Router>
 				<AppNavBar />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/Product" element={<Product />} />
-					<Route path="/Product/:ProductId" element={<ShoesDetails />} />
-					<Route path="/About" element={<About />} />
-					<Route path="/Cart" element={<Cart />} />
-					<Route path="/Payment" element={<Payment />} />
+					<Route path="/product" element={<Product />} />
+					<Route path="/product/:productId" element={<ShoesDetails />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/cart" element={<Cart />} />
+					<Route path="/payment" element={<Payment />} />
 				</Routes>
 				<AppFooter />
 				{isVisible && (

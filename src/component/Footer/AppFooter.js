@@ -8,7 +8,6 @@ const AppFooter = () => {
     return (
         <div className='AppFooter'>
             <Container>
-
                 <div className='Footer_Top'>
                     <div className='Action'>
                         <p>FIND A STORE</p>
@@ -36,6 +35,38 @@ const AppFooter = () => {
                         <button><AiOutlineYoutube /></button>
                         <button><AiOutlineInstagram /></button>
                         <button><FiFacebook /></button>
+                    </div>
+                </div>
+                <div className='Footer_Top_Mobile'>
+                    <div className='Contact'>
+                        <button><AiOutlineTwitter /></button>
+                        <button><AiOutlineYoutube /></button>
+                        <button><AiOutlineInstagram /></button>
+                        <button><FiFacebook /></button>
+                    </div>
+                    <div className='Action'>
+                        <p>FIND A STORE</p>
+                        <p>BECOME A MEMBER</p>
+                        <p>SIGN UP FOR EMAIL</p>
+                        <p>SEND US FEEDBACK</p>
+                    </div>
+                    <hr />
+                    <div>
+
+                        <div className='GetHelp'>
+                            <p>GET HELP</p>
+                            <p>Order Status</p>
+                            <p>Delivery</p>
+                            <p>Payment Options</p>
+                            <p>Contact Us</p>
+                        </div>
+                        <div className='AboutKStore'>
+                            <p>ABOUT KSTORE</p>
+                            <p>News</p>
+                            <p>Careers</p>
+                            <p>Investors</p>
+                            <p>Sustainability</p>
+                        </div>
                     </div>
                 </div>
                 <div className='Footer_Bottom'>

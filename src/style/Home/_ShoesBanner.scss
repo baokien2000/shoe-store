@@ -10,7 +10,6 @@
         align-items: center;
         justify-content: center;
         height: inherit;
-
         >img {
             height: 250px;
             width: fit-content;
@@ -21,7 +20,6 @@
             height: fit-content;
             display: flex;
             flex-direction: column  ;
-            // justify-content: flex-start;
             align-items: flex-start;
 
             p {
@@ -29,7 +27,9 @@
                 margin-bottom: 0px;
                 color: #5889e1;
             }
-
+            h1{
+                filter: drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px);
+            }
             h1,
             p {
                 font-weight: bold;
@@ -71,5 +71,36 @@
         >img {
             margin: 0 0 0 50px;
         }
+    }
+}
+@media screen and (max-width: 991px) {
+    .ShoesBanner {
+        .container {
+            >img {
+                height: 150px;
+            }
+        } // container
+    }
+}
+// @media screen and (max-width: 767px) {
+// }
+@media screen and (max-width: 767px) {
+    .ShoesBanner {
+        height: fit-content;
+        padding: 50px 0;
+        .container {
+            flex-direction: column;
+            text-align: center;
+    
+            >img {
+                height: 150px;
+                margin: 0 0 20px 0;
+            }
+    
+            .Banner_Info {
+                align-items: center;
+            }
+    
+        } // container
     }
 }

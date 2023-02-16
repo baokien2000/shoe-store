@@ -25,10 +25,10 @@ export const filterShoes = createSelector(
         fill = sort === "rate"
             ? fill.sort((a, b) => a.rate > b.rate ? 1 : -1)
             : sort === "price"
-                ? fill.sort((a, b) => a.price > b.price ? 1 : -1)
+                ? fill.sort((a, b) => a.price * (1 - a.sale / 100) > b.price * (1 - b.sale / 100) ? 1 : -1)
                 : fill.sort((a, b) => a.sale > b.sale ? 1 : -1)
         fill = asc === true ? fill : fill.reverse()
-
+        // (item.price * (1 - item.sale / 100))
         return fill;
     }
 )
@@ -47,7 +47,7 @@ export const subtotal = createSelector(shoesList, (cart) => {
     let price = 0
     cart.forEach(item => {
         if (item.cart !== 0) {
-            price += (item.price * item.cart)
+            price += (((item.price * (1 - item.sale / 100))) * item.cart)
         }
     })
     return price

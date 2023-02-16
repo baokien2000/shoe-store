@@ -6,7 +6,7 @@ const EmptyCart = () => {
         <div className='EmptyCart'>
             <img src='./images/NotFound.png' alt='NotFound.png' />
             <p>Your Cart Is Empty</p>
-            <Link to={'/Product'}>
+            <Link to='/product'>
                 <button>Shopping Now</button>
             </Link>
         </div>

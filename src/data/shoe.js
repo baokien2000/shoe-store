@@ -1,16 +1,16 @@
 const SHOE_DATA = [
-    {
-        id: 30,
-        brand: 'Puma',
-        name: "Cali Women's Sneakers",
-        imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/04/sv01/fnd/PNA/fmt/png',
-        price: 105.25,
-        sale: 10,
-        rate: 4.9,
-        color: 'White',
-        size: [36, 37, 39, 40, 42],
-        cart: 0
-    },
+    // {
+    //     id: 30,
+    //     brand: 'Puma',
+    //     name: "Cali Women's Sneakers",
+    //     imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/04/sv01/fnd/PNA/fmt/png',
+    //     price: 105.25,
+    //     sale: 10,
+    //     rate: 4.9,
+    //     color: 'White',
+    //     size: [36, 37, 39, 40, 42],
+    //     cart: 0
+    // },
     {
         id: 2,
         brand: 'Vans',
@@ -209,19 +209,19 @@ const SHOE_DATA = [
         cart: 0
 
     },
-    {
-        id: 20,
-        brand: "Sneakers",
-        name: "Cali Women's Sneakers Hazy Rose",
-        imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/04/sv01/fnd/PNA/fmt/png',
-        price: 74.15,
-        sale: null,
-        rate: 4.9,
-        color: 'White',
-        size: [39, 40, 41],
-        cart: 0
+    // {
+    //     id: 20,
+    //     brand: "Sneakers",
+    //     name: "Cali Women's Sneakers Hazy Rose",
+    //     imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/04/sv01/fnd/PNA/fmt/png',
+    //     price: 74.15,
+    //     sale: null,
+    //     rate: 4.9,
+    //     color: 'White',
+    //     size: [39, 40, 41],
+    //     cart: 0
 
-    },
+    // },
     {
         id: 29,
         brand: 'Converse',
@@ -264,32 +264,32 @@ const SHOE_DATA = [
     },
 
 
-    {
-        id: 16,
-        brand: 'Puma',
-        name: "Cali Women's Sneakers Wonder Mauve",
-        imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/13/sv01/fnd/PNA/fmt/png',
-        price: 62.15,
-        sale: null,
-        rate: 4.2,
-        color: 'White',
-        size: [37, 38, 39, 40, 41],
-        cart: 0
+    // {
+    //     id: 16,
+    //     brand: 'Puma',
+    //     name: "Cali Women's Sneakers Wonder Mauve",
+    //     imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/369155/13/sv01/fnd/PNA/fmt/png',
+    //     price: 62.15,
+    //     sale: null,
+    //     rate: 4.2,
+    //     color: 'White',
+    //     size: [37, 38, 39, 40, 41],
+    //     cart: 0
 
-    },
-    {
-        id: 27,
-        brand: 'Puma',
-        name: "Slipstream Lo Retro Men's Sneakers",
-        imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/384692/02/sv01/fnd/PNA/fmt/png',
-        price: 76.77,
-        sale: 19,
-        rate: 4.6,
-        color: 'White',
-        size: [37, 38, 39, 40, 41],
-        cart: 0
+    // },
+    // {
+    //     id: 27,
+    //     brand: 'Puma',
+    //     name: "Slipstream Lo Retro Men's Sneakers",
+    //     imageUrl: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/384692/02/sv01/fnd/PNA/fmt/png',
+    //     price: 76.77,
+    //     sale: 19,
+    //     rate: 4.6,
+    //     color: 'White',
+    //     size: [37, 38, 39, 40, 41],
+    //     cart: 0
 
-    },
+    // },
     {
         id: 7,
         brand: 'MLB',

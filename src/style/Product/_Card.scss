@@ -1,28 +1,42 @@
 .Card {
-    width: 250px;
+    width: inherit;
     height: fit-content;
     background-color: #fff;
     border-radius: 10px;
 
     // border: 2px solid black;
-    a{
+    > a {
         text-decoration: none;
-    }
-    img {
-        width: 250px;
-        padding: 20px;
+        width: 100%;
+
+        img {
+            width: inherit;
+            padding: 20px;
+        }
     }
 
     .Card_Info {
         padding: 0 20px 20px 20px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        text-decoration: none;
 
         .Card_Name {
             font-weight: bold;
             padding: 0;
             margin: 0;
-            height: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.25em;
+
+            span {
+                margin-bottom: 5px;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
         .Card_Rate {
@@ -31,15 +45,16 @@
             display: flex;
             align-items: center;
             text-align: center;
-            svg{
+
+            svg {
                 min-width: 20px;
                 min-height: 20px;
             }
-            span{
+
+            span {
                 color: #ff6651;
                 height: 20px;
                 margin-left: 15px;
-                // display: inline-block;
             }
         }
 
@@ -80,8 +95,9 @@
                 padding: 0px 20px;
             }
 
-            div{
+            div {
                 position: relative;
+
                 svg {
                     height: 40px;
                     width: 40px;
@@ -91,27 +107,95 @@
                     cursor: pointer;
                     color: white;
                 }
-                span{
+
+                span {
                     position: absolute;
                     background-color: red;
                     color: #fff;
                     border-radius: 50%;
-                    // padding: 3px;
                     font-size: 8px;
                     top: 0px;
-                    right: -2px;   
+                    right: -2px;
                     height: 13px;
                     width: 13px;
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
-                    // text-align: center;
                 }
             }
-
         }
     }
 
     // Card_Info
+}
 
-} // Card
+// Card
+
+@media screen and (max-width: 415px) {
+    .Card {
+        .Card_Info {
+            a {
+                .Card_Name {
+                    height: fit-content;
+
+                    display: flex;
+                    align-items: flex-end;
+
+                    span {
+                        margin-bottom: 10px;
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            .Card_Rate {
+                margin-bottom: 20px;
+
+                svg {
+                    min-width: 25px;
+                    min-height: 25px;
+                }
+
+                span {
+                    font-size: 20px;
+                }
+            }
+
+            .Card_Sale {
+                font-size: 25px;
+
+                span:nth-child(2) {
+                    padding: 5px 12px;
+
+                    b {
+                        vertical-align: text-bottom;
+                    }
+                }
+            }
+
+            .Card_Price {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+
+            .Card_Button {
+                button {
+                    font-size: 25px;
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                }
+
+                div {
+                    svg {
+                        height: 57.5px;
+                        width: 57.5px;
+
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+}

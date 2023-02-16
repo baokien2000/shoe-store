@@ -25,7 +25,7 @@ const ShoesBanner = ({ Banner_Info }) => {
                     <h1>{Banner_Info.Title}</h1>
                     <span> {Banner_Info.Text}</span>
                     <div className='BuyNowBtn'>
-                        <Link to="/Product">
+                        <Link to="/product">
                             <button onClick={ToggleButton}>
                                 Buy Now
                             </button>

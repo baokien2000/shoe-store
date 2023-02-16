@@ -43,16 +43,18 @@ const HeaderVideo = ({ setActivePage }) => {
             <video muted={VideoMute} autoPlay loop id="Home_video">
                 <source src="./video/adidasVietnam.mp4" />
             </video>
-            <div className="VideoTitle">
-                <h1>TRENDING SHOES</h1>
-                <p>Take your chance - miss nothing</p>
-                <div className="BuyNowBtn">
-                    <Link to="/Product">
-                        <button onClick={ToggleButton}>Buy Now</button>
-                    </Link>
+            <Container>
+                <div className="VideoTitle">
+                    <h1>TRENDING SHOES</h1>
+                    <p>Take your chance - miss nothing</p>
+                    <div className="BuyNowBtn">
+                        <Link to="/product">
+                            <button onClick={ToggleButton}>Buy Now</button>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="VideoBtn">
+
+                <div className="VideoBtn">
                 {VideoPlay ? (
                     <AiOutlinePauseCircle onClick={() => VideoControl("play")} />
                 ) : (
@@ -64,6 +66,9 @@ const HeaderVideo = ({ setActivePage }) => {
                     <FiVolume2 onClick={() => VideoControl("unMuted")} />
                 )}
             </div>
+            </Container>
+
+
         </div>
     );
 };

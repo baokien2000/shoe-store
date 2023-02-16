@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Container from "react-bootstrap/Container";
@@ -6,9 +6,21 @@ import ShoesCard from "../Product/ShoesCard";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import pageSlice from "../../redux/Slice/pageSlice";
+import { style } from "@mui/system/Stack/createStack";
+
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 const ShoesCarousel = ({ ShoeData, Title }) => {
+    // const [sliceView, setSliceView] = useState(1);
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -39,32 +51,50 @@ const ShoesCarousel = ({ ShoeData, Title }) => {
         });
         dispatch(pageSlice.actions.TabsChange(1))
     }
+    // console.log(window.innerWidth)
+    // useEffect(() => {
+    //     console.log(SliceNum);
+    // })
+    // const SliceNum = ;
+    const sliceView = (window.innerWidth < 425 ? 1 : 4);
     return (
         <Container>
 
             <div className="ShoesCarousel">
                 <div className="Title">
                     <h2>{Title}</h2>
-                    <Link to={'/Product'}>
+                    <Link to='/product'>
                         <button className="SeeMore_button" onClick={ToggleButton}>
                             See More
                         </button>
                     </Link>
                 </div>
-                {ShoeData.length != 0 && (
-                    <Carousel
-                        swipeable={true}
-                        draggable={true}
-                        showDots={true}
-                        responsive={responsive}
-                        customTransition={'transform 800ms ease-in-out 0s'}
-                        infinite={true}
-                        autoPlay={true}
-                        autoPlaySpeed={3000}
-                    >
-                        {ShoeData.map((item) => <ShoesCard item={item} key={item.id} />)}
-                    </Carousel>
-                )}
+                {ShoeData.length != 0 && (<Swiper
+                    // install Swiper modules
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={sliceView}
+                    navigation={{ clickable: true }}
+                    loop={true}
+                    speed={500}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+
+                    }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },// when window width is >= 640px
+                        450: { slidesPerView: 2 },// when window width is >= 768px
+                        1023: { slidesPerView: 3 },// when window width is >= 768px
+                        1223: { slidesPerView: 4 },// when window width is >= 768px
+                        1623: { slidesPerView: 5 },// when window width is >= 768px
+                    }}
+                >
+                    {ShoeData.map((item) => <SwiperSlide key={item.id}><ShoesCard item={item} /></SwiperSlide>)}
+                </Swiper>
+                )
+                }
             </div>
         </Container>
 

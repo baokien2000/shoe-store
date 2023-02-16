@@ -22,6 +22,7 @@ const ShoesList = () => {
             ? Filltershoes.slice(12 * CurrentPage - 12, 12 * CurrentPage)
             : Filltershoes.slice(0, 12)
         )
+
     }, [CurrentPage, Filltershoes])
 
     useEffect(() => {
@@ -36,7 +37,7 @@ const ShoesList = () => {
                     return <ShoesCard key={shoe.id} item={shoe} />
                 })}
             </Container>
-            <PaginationRounded PageNum={pageNum} />
+            <PaginationRounded PageNum={pageNum} forwardRef={myref} />
         </div>
     );
 };

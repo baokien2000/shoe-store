@@ -17,7 +17,7 @@ const Finish = ({ setActiveStep }) => {
             </div>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
                 <Box sx={{ flex: '1 1 auto' }} />
-                <Link to="/Product" >
+                <Link to="/product" >
                     <Button >Continue Shopping</Button>
                 </Link>
             </Box>
