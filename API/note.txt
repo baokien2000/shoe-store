@@ -1,0 +1,2 @@
+Các Bước để Bắt đầu 1 dự án BackEnd
+1. npm init -y          | -y sẽ tự động trả lời các câu hỏi khi cài đặt 1 package mới 

@@ -1,0 +1,67 @@
+.ShippingDetails{
+    width: 80%;
+    border-top: 2px solid #d8d8d8;
+    border-bottom: 2px solid #d8d8d8;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    p{
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+    }
+    div{
+        margin: 5px;
+        font-size: 17px;
+        display: flex;
+        align-items: flex-start;
+        b{
+            display:inline-block;
+            min-width: 100px;
+            height: 100%;
+        }  
+        
+    }
+
+}
+.TotalPrice{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between ;
+    width: 80%;
+    padding-bottom: 20px;
+    span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ShippingDetails{
+        width: 100%;
+    }
+    .TotalPrice{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 415px) {
+    .ShippingDetails{
+        padding: 10px 0;
+        width: 100%;
+    div{
+        font-size: 15px;
+        b{
+            min-width: 80px;
+        }  
+        
+    }
+    }
+    .TotalPrice{
+        width: 100%;
+        span{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+------------------------- TASK -------------------------
+                                   
+------------------------- BUG  -------------------------
+-   Mobile
+1-DONE   Các chử trong Card Hơi to 
+2-DONE  ShoesDetail/ button add hơi dài 
+3-DONE  ProductPage/ z-index của ô select sort hơi cao 
+4-DONE   OrderCHeck/ item bị lệch ra khỏi màn hình
+-   tablet
+
+-   window
+1-DONE PageHome/ cursor HeaderVideo Button ko có pointer
+2-don't know how to change   PageHome/ Color Btn 'Buy Now' OnHover  => đổi sang màu xanh của web ? || Giảm độ sáng , tăng lên khi hover
+3-don't know how to change   PageHome/ Cần làm nổi bật Title của carousel lên              => thêm border-right: 3px solid white? 
+4-DONE PageHome/ Thêm Hiệu ứng onhover btn 'See more'                =>  bg:fff color:blue? 
+5-DONE PageHome/ Thêm Hiệu ứng onhover btn next,prev của carousel    =>  bg:111 opacity:0.2 h:50 w:20? 
+6-DONE PageHome/ Card Name Chữ hơi to
+7-DONE NavBar  / logo có lúc bị lỗi => src logo nên đổi sang import thay thì src"./" ?
+
+8-DONE ProductPage / Categories Title cần thêm margin-right
+9-DONE ProductPage / Đổi sort default thành price 
+9-DONE ProductPage / Nên Highlight các option filter đã chọn 
+
+10-DONE ShoesDetail / Nên Đổi màu price và rate thành màu cam giống với trang product, màu xanh hơi chói
+11-DONE AboutPage/ Lúc mới qua có khi ảnh ko load kịp dẫn bị bể cấu trúc => dùng skeleton
+12-DONE CheckOrder/ Giá hiển thị vẫn chưa được giảm. 

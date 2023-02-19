@@ -1,0 +1,388 @@
+.Card {
+    width: inherit;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 5px;
+
+    // border: 2px solid black;
+    > a {
+        text-decoration: none;
+        width: 100%;
+
+        img {
+            width: inherit;
+            padding: 20px;
+        }
+    }
+
+    .Card_Info {
+        padding: 0 20px 20px 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        text-decoration: none;
+
+        .Card_Name {
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.25em;
+
+            span {
+                margin-bottom: 5px;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .Card_Rate {
+            color: yellow;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            svg {
+                min-width: 20px;
+                min-height: 20px;
+            }
+
+            span {
+                color: #ff6651;
+                height: 20px;
+                margin-left: 15px;
+            }
+        }
+
+        .Card_Sale {
+            span:first-child {
+                text-decoration: line-through;
+            }
+
+            span:nth-child(2) {
+                background-color: #248edf;
+                font-weight: bold;
+                color: white;
+                padding: 3px 7px;
+                border-radius: 20px;
+                margin-left: 15px;
+            }
+        }
+
+        .Card_Price {
+            color: #ff6651;
+            font-weight: bold;
+            font-size: larger;
+            margin-bottom: 5px;
+        }
+
+        .Card_Button {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            color: white;
+
+            button {
+                min-width: fit-content;
+                background-color: #248edf;
+                border: none;
+                color: white;
+                border-radius: 4px;
+                padding: 0px 20px;
+            }
+
+            div {
+                position: relative;
+
+                svg {
+                    height: 40px;
+                    width: 40px;
+                    background-color: #248edf;
+                    border-radius: 50%;
+                    padding: 7px;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                span {
+                    position: absolute;
+                    background-color: red;
+                    color: #fff;
+                    border-radius: 50%;
+                    font-size: 8px;
+                    top: 0px;
+                    right: -2px;
+                    height: 13px;
+                    width: 13px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    // Card_Info
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .Card {
+        border-radius: 5px;
+
+        .Card_Info {
+            padding: 0 10px 20px 10px;
+            > a {
+                text-decoration: none;
+                width: 100%;
+        
+                img {
+                    width: inherit;
+                    padding: 10px;
+                    padding-bottom: 0;
+                }
+            }
+            a {
+                .Card_Name {
+                    height: fit-content;
+                    display: flex;
+                    align-items: flex-end;
+
+                    span {
+                        margin-bottom: 3px;
+                        // font-size: 30px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .Card_Rate {
+                margin-bottom: 10px;
+
+                svg {
+                    min-width: 15px;
+                    min-height: 15px;
+                }
+
+                span {
+                    font-size: 10px;
+                    margin-left: 5px;
+                    height: 16px;
+                    line-height: 18px;
+                }
+            }
+
+            .Card_Sale {
+                font-size: 12px;
+
+                span:nth-child(2) {
+                    padding: 3px 8px;
+                }
+            }
+
+            .Card_Price {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .Card_Button {
+                button {
+                    font-size: 15px;
+                    border-radius: 5px;
+                    padding: 0px 10px;
+                }
+
+                div {
+                    svg {
+                        height: 25.5px;
+                        width: 25.5px;
+
+                        padding: 5px;
+                    }
+                    span {
+                        top: -5px;
+                        right: -4px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+}
+// Card
+@media screen and (min-width: 416px) and (max-width: 767px) {
+    .Card {
+        border-radius: 5px;
+
+        .Card_Info {
+            padding: 0 10px 20px 10px;
+            > a {
+                text-decoration: none;
+                width: 100%;
+        
+                img {
+                    width: inherit;
+                    padding: 10px;
+                    padding-bottom: 0;
+                }
+            }
+            a {
+                .Card_Name {
+                    height: fit-content;
+                    display: flex;
+                    align-items: flex-end;
+
+                    span {
+                        margin-bottom: 3px;
+                        // font-size: 30px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .Card_Rate {
+                margin-bottom: 10px;
+
+                svg {
+                    min-width: 15px;
+                    min-height: 15px;
+                }
+
+                span {
+                    font-size: 10px;
+                    margin-left: 5px;
+                    height: 16px;
+                    line-height: 18px;
+                }
+            }
+
+            .Card_Sale {
+                font-size: 12px;
+
+                span:nth-child(2) {
+                    padding: 3px 8px;
+                }
+            }
+
+            .Card_Price {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .Card_Button {
+                button {
+                    font-size: 15px;
+                    border-radius: 5px;
+                    padding: 0px 10px;
+                }
+
+                div {
+                    svg {
+                        height: 25.5px;
+                        width: 25.5px;
+
+                        padding: 5px;
+                    }
+                    span {
+                        top: -5px;
+                        right: -4px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+}
+
+@media screen and (max-width: 415px) {
+    .Card {
+        border-radius: 5px;
+
+        .Card_Info {
+            padding: 0 10px 20px 10px;
+            > a {
+                text-decoration: none;
+                width: 100%;
+        
+                img {
+                    width: inherit;
+                    padding: 10px;
+                    padding-bottom: 0;
+                }
+            }
+            a {
+                .Card_Name {
+                    height: fit-content;
+                    display: flex;
+                    align-items: flex-end;
+
+                    span {
+                        margin-bottom: 3px;
+                        // font-size: 30px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .Card_Rate {
+                margin-bottom: 10px;
+
+                svg {
+                    min-width: 15px;
+                    min-height: 15px;
+                }
+
+                span {
+                    font-size: 10px;
+                    margin-left: 5px;
+                    height: 16px;
+                    line-height: 18px;
+                }
+            }
+
+            .Card_Sale {
+                font-size: 12px;
+
+                span:nth-child(2) {
+                    padding: 3px 8px;
+
+                    b {
+                        // vertical-align: text-bottom;
+                    }
+                }
+            }
+
+            .Card_Price {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .Card_Button {
+                button {
+                    font-size: 15px;
+                    border-radius: 5px;
+                    padding: 0px 10px;
+                }
+
+                div {
+                    svg {
+                        height: 25.5px;
+                        width: 25.5px;
+
+                        padding: 5px;
+                    }
+                    span {
+                        top: -5px;
+                        right: -4px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+}

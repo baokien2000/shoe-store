@@ -1,0 +1,103 @@
+.ShoesCarousel {
+    color: black;
+    height: fit-content;
+    padding: 0 0 50px 0;
+    margin: 0;
+
+    .Title {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        color: white;
+        justify-content: space-between  ;
+        h2 {
+            display: inline-block;
+            text-align: left;
+            font-weight: bold;
+          
+        }
+
+        button {
+            min-width: fit-content;
+            background-color: transparent;
+            border-radius: 4px;
+            padding: 5px 10px;
+            border: 2px solid #fff;
+            color: white;
+            text-decoration: none;
+            transition: color 1s, background-color 1s, border 1s;
+        }
+        button:hover{
+            border: 2px solid transparent;
+            color: $Maincolor;
+            background-color: white;
+            transition: color 1s, background-color 1s, border 1s;
+        }
+    }
+    .swiper-button-next,.swiper-button-prev{
+        height: 100px;
+        width: 40px;
+        top: 40%;    
+    }
+    .swiper-button-next:hover,.swiper-button-prev:hover{
+        background-color: rgba($color: #111, $alpha: 0.1)
+    }
+
+    @import '../Product/Card';
+}
+
+@media screen and (max-width: 415px) {
+    .ShoesCarousel {
+        // color: black;
+        // height: fit-content;
+        // padding: 0 0 50px 0;
+        // margin: 0;
+    
+        .Title {
+            // padding: 20px 0;
+            // display: flex;
+            // align-items: center;
+            // color: white;
+            // justify-content: space-between  ;
+            h2 {
+                // display: inline-block;
+                // text-align: left;
+                // font-weight: bold;
+              
+            }
+    
+            button {
+                // min-width: fit-content;
+                // background-color: transparent;
+                // border-radius: 4px;
+                // padding: 5px 10px;
+                // border: 2px solid #fff;
+                // color: white;
+                // text-decoration: none;
+                // transition: color 1s, background-color 1s, border 1s;
+            }
+            button:hover{
+                // border: 2px solid transparent;
+                // color: $Maincolor;
+                // background-color: white;
+                // transition: color 1s, background-color 1s, border 1s;
+            }
+        }
+        .swiper-button-next,.swiper-button-prev{
+            height: 50px;
+            width: 40px;
+            top: 50%;    
+        }
+        .swiper-button-next::after,.swiper-button-prev::after{
+            font-size: 30px;
+        }
+        .swiper-button-next:hover,.swiper-button-prev:hover{
+            // background-color: rgba($color: #111, $alpha: 0.1)
+        }
+        .swiper-button-next:hover,.swiper-button-prev:hover{
+            background-color: rgba($color: #111, $alpha: 0.1)
+        }
+    
+    }
+    
+}
