@@ -16,8 +16,7 @@ function AppNavBar() {
         return Active === index ? { color: "#111", fontWeight: "bold" } : {};
     };
 
-    let cartItem = useSelector(shoesHome)
-    cartItem = cartItem.filter(item => item.cart !== 0)
+    const cartItem = useSelector(shoesHome).filter(item => item.cart !== 0)
 
     const dispatch = useDispatch();
     const SetActivePage = (index) => dispatch(pageSlice.actions.TabsChange(index))

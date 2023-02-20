@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 const Cart = () => {
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -40,7 +40,6 @@ const Cart = () => {
     }, [dispatch])
 
     const cartLish = useSelector(shoesList).filter(item => item.cart !== 0)
-
     const subtotalCost = useSelector(subtotal)
     return (
 
@@ -58,7 +57,7 @@ const Cart = () => {
                                     <th >Subtotal</th>
                                 </tr>
                                 {cartLish.map(item => {
-                                    return <Item key={item.id} item={item} />
+                                    return <Item key={item._id} item={item} />
                                 })}
 
                             </tbody>

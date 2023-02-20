@@ -7,7 +7,7 @@ export const filterSize = (state) => state.filter.size;
 export const filterSort = (state) => state.filter.sort;
 export const filterASC = (state) => state.filter.ASC;
 
-export const shoesList = (state) => state.shoes;
+export const shoesList = (state) => state.shoes.shoes;
 
 export const CurrentTabs = (state) => state.page.NavBarTabs;
 export const CurrentPages = (state) => state.page.ProductPages;

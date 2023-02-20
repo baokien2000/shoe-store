@@ -14,7 +14,7 @@ import { BsCheckCircleFill } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import ShoesDetails from "./component/Product/ShoesDetails";
 import { useDispatch } from "react-redux";
-import shoesSlice, { getLocalStorageData } from "./redux/Slice/shoesSlice";
+import shoesSlice, { getDataFromMongo, getLocalStorageData } from "./redux/Slice/shoesSlice";
 
 function App() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +37,10 @@ function App() {
 		window.addEventListener("scroll", toggleVisibility);
 		return () => window.removeEventListener("scroll", toggleVisibility);
 	}, []);
-
+	const dispatch = useDispatch()
+	useEffect(() => {
+		dispatch(getDataFromMongo())
+	}, [])
 	return (
 		<div className="App">
 			<Router>

@@ -93,7 +93,7 @@ const ShoesCarousel = ({ ShoeData, Title }) => {
                         1623: { slidesPerView: 5 },// when window width is >= 768px
                     }}
                 >
-                    {ShoeData.map((item) => <SwiperSlide key={item.id}><ShoesCard item={item} /></SwiperSlide>)}
+                    {ShoeData.map((item) => <SwiperSlide key={item._id}><ShoesCard item={item} /></SwiperSlide>)}
                 </Swiper>
                 )
                 }

@@ -12,11 +12,9 @@ const Product = () => {
     useEffect(() => {
         dispatch(pageSlice.actions.TabsChange(1));
         dispatch(filterSlice.actions.clearFilter())
-        console.log("render")
     }, [dispatch])
 
     const filterProduct = useSelector(filterShoes)
-    // console.log()
     return (
         <div className='Product'>
             <Filter />

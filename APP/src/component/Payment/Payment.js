@@ -151,7 +151,7 @@ const Payment = () => {
         if (ShoeList !== [] && cartList.length === 0) {
             navigate("/");
         }
-    }, [ShoeList])
+    }, [])
 
     useEffect(() => {
         resizeWindow();

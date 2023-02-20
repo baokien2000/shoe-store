@@ -10,6 +10,7 @@ import cartSlice from '../../redux/Slice/pageSlice';
 import shoesSlice from '../../redux/Slice/shoesSlice';
 
 const ShoesCard = ({ item }) => {
+
     const dispatch = useDispatch();
     const AddSuccess = () => {
         toast.success("Item added to cart!")
@@ -34,13 +35,13 @@ const ShoesCard = ({ item }) => {
     }
     // <Link to={`/products/${product.id}`}
     return (
-        <div className="Card" key={item.id} >
-            <Link to={`/product/${item.id}`}>
+        <div className="Card" key={item._id} >
+            <Link to={`/product/${item._id}`}>
                 <img src={item.imageUrl} onClick={CartToggle} />
             </Link>
 
             <div className="Card_Info">
-                <Link to={`/product/${item.id}`}>
+                <Link to={`/product/${item._id}`}>
                     <p className="Card_Name" onClick={CartToggle}><span>{item.name}</span></p>
                 </Link>
                 <StartRate Rate={item.rate} />

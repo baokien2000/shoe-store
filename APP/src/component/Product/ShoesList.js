@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
-import Shoe from "../../data/shoe";
+// import Shoe from "../../data/shoe";
 import PaginationRounded from './PaginationRounded';
 import ShoesCard from './ShoesCard';
 
@@ -12,8 +12,7 @@ import { CurrentPages, filterShoes } from '../../redux/selector';
 
 
 const ShoesList = () => {
-    // const [currentPage, setCurrentPage] = useState(1);
-    const [currentData, setCurrentData] = useState(Shoe);
+    const [currentData, setCurrentData] = useState([]);
     const [pageNum, setPageNum] = useState(1)
 
     const myref = useRef(null)
@@ -31,13 +30,12 @@ const ShoesList = () => {
     useEffect(() => {
         setPageNum(Math.ceil(Filltershoes.length / 12));
     }, [Filltershoes])
-
     return (
 
         <div className='ShoesList' >
             <Container ref={myref}>
-                {currentData.map((shoe, index) => {
-                    return <ShoesCard key={shoe.id} item={shoe} />
+                {currentData.map((shoe) => {
+                    return <ShoesCard key={shoe._id} item={shoe} />
                 })}
             </Container>
             <PaginationRounded PageNum={pageNum} forwardRef={myref} />

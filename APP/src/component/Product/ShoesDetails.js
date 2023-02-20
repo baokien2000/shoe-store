@@ -12,7 +12,7 @@ const ShoesDetails = () => {
 
 
     const productId = useParams().productId;
-    const product = useSelector(shoesList).find(item => item.id == productId)
+    const product = useSelector(shoesList).find(item => item._id === productId)
     const [shoeCount, setShoeCount] = useState(1)
     const ButtonStyle = (btn) => {
         if (btn === "Minus") {

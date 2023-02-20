@@ -1,2 +1,28 @@
+---------- Cài đặt Nodejs
+
 Các Bước để Bắt đầu 1 dự án BackEnd
-1. npm init -y          | -y sẽ tự động trả lời các câu hỏi khi cài đặt 1 package mới 
+1. npm init -y 
+    y sẽ tự động trả lời các câu hỏi khi cài đặt 1 package mới 
+2. npm i express mongoose body-parse cors nodemon
+    express: là 1 frameWork của Nodejs giúp tạo các routing cho ứng dụng
+    mongoose: Giúp tạo các model cho phần database 
+    Nodemon: Giúp không pjải khởi động lại server khi có sự thay đổi trong File JS
+    body-parse : cho phép truy cập req.body từ bên trong các route và sử dụng dữ liệu đó.
+    cors : Giúp Share sữ liệu giữa các domain khác nhau
+3 package.json => + "Type" : "Module" , Đổi  "scripts": {"Test": "...."} =>  "scripts": {"start": "nodemon index.js"},
+4 import express form 'express'
+5 Tạo 2 biến Const App = express() và Const Port = process.env.port || 5000
+6 Tạo App.listen(Port,() => {Console.log(`Server is running on ${Port}`)}) 
+7 npm start => Console.log hiện lên 'Server is running on 5000' là run thành công
+
+---------- Cài đặt Express MidleWare
+8   import bodyParser from "body-parse" 
+    import cors from "cors"
+
+9   app.use(bodyParser.json({ limit: '30mb' }))
+    app.use(bodyParser.urlencoded({ extended: true, limit: '30mb' }))
+    app.use(cors())
+
+10 app.get('/', (req, res) => {
+    res.send("Success");
+}) => vào localhost:5000/ => hiện ra Success là thành công

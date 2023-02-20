@@ -20,14 +20,12 @@ const Home = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        Filltershoes = [...Filltershoes]
-
-        const TrendingShoes = Filltershoes.sort((a, b) => (a.rate > b.rate ? -1 : 1));
-        const SuperDiscountShoes = Filltershoes.sort((a, b) => (a.sale > b.sale ? -1 : 1));
+        const TrendingShoes = [...Filltershoes].sort((a, b) => b.rate - a.rate);
+        const SuperDiscountShoes = [...Filltershoes].sort((a, b) => (a.sale > b.sale ? -1 : 1));
 
         setTrendingShoeData(TrendingShoes.slice(0, 10));
         setSuperDiscountData(SuperDiscountShoes.slice(0, 10))
-        setNewProdutsData(Filltershoes.slice(0, 10))
+        setNewProdutsData([...Filltershoes].slice(Filltershoes.length - 10, Filltershoes.length))
 
         dispatch(pageSlice.actions.TabsChange(0))
     }, [Filltershoes]);
@@ -57,7 +55,7 @@ const Home = () => {
             <HeaderVideo />
             <ShoesCarousel Title={"New Products"} ShoeData={NewProdutsData} />
             <ShoesBanner Banner_Info={Banner_Info.Bannner1} />
-            <ShoesCarousel Title={"Flash Sale"} ShoeData={TrendingShoeData} />
+            <ShoesCarousel Title={"Best Seller"} ShoeData={TrendingShoeData} />
             <ShoesBanner Banner_Info={Banner_Info.Bannner2} />
             <ShoesCarousel Title={"Super Discount"} ShoeData={SuperDiscountData} />
         </div>
