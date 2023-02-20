@@ -77,7 +77,7 @@ export function getLocalStorageData() {
 }
 
 export const getDataFromMongo = createAsyncThunk('Shoes/getShoes', async () => {
-    const res = await fetch("http://localhost:5000/shoes")
+    const res = await fetch("https://kstore-api.onrender.com/shoes")
     const data = res.json()
     return data
     // console.log(data)
