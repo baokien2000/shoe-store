@@ -33,12 +33,17 @@ const Cart = () => {
         dispatch(shoesSlice.actions.clearCart())
         dispatch(shoesSlice.actions.AddToLocalStorage())
         handleClose();
+        Totop();
+    }
+    const Totop = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
     useEffect(() => {
         dispatch(pageSlice.actions.TabsChange(3));
     }, [dispatch])
-
+    useEffect(() => {
+        dispatch(pageSlice.actions.setHideNavBar(false))
+    }, [])
     const cartLish = useSelector(shoesList).filter(item => item.cart !== 0)
     const subtotalCost = useSelector(subtotal)
     return (
@@ -64,7 +69,7 @@ const Cart = () => {
                         </table>
                         <div className='CartButton'>
                             <Link to='/product'>
-                                <button>Continue shopping </button>
+                                <button onClick={Totop}>Continue shopping </button>
                             </Link>
                             <button onClick={handleClickOpen}>Clear cart</button>
                         </div>
@@ -85,7 +90,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <Link to='/payment'>
-                                <button>PAY NOW</button>
+                                <button onClick={Totop}>PAY NOW</button>
                             </Link>
                         </div>
                     </Container>

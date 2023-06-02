@@ -15,6 +15,7 @@ import { shippingDetails, shoesList } from '../../redux/selector';
 import shippingSlice from '../../redux/Slice/shippingSlice';
 import shoesSlice from '../../redux/Slice/shoesSlice';
 import { useNavigate } from "react-router-dom";
+import pageSlice from '../../redux/Slice/pageSlice';
 
 const steps = ['Personal Information', 'Address  Information', 'Place your order'];
 
@@ -151,6 +152,8 @@ const Payment = () => {
         if (ShoeList !== [] && cartList.length === 0) {
             navigate("/");
         }
+        dispatch(pageSlice.actions.setHideNavBar(false)) 
+
     }, [])
 
     useEffect(() => {

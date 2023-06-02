@@ -1,0 +1,63 @@
+.OrderDetail{
+    padding: 30px 50px;   
+}
+.OrderDetail p{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+.OrderDetail hr{
+    border-top: 10px;
+    border-top: 3px solid #8c8b8b;
+    margin: 0;
+
+}
+
+.OrderDetail .CustomerDetails{
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 15px 0 30px 0;
+    border: 1px solid #e0e0e0;
+    border-bottom: 0;
+
+}
+.OrderDetail .CustomerDetails span{
+    display: inline-block;
+    height: 50px;
+    width: 30%;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 50px;
+    text-indent: 15px;
+    float: left;
+}
+.OrderDetail .CustomerDetails span:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-weight: bold;
+    width: 20%;
+
+}
+
+.OrderDetail .MuiPaper-root{
+    margin: 15px 0;
+    
+}
+.OrderDetail .MuiPaper-root .css-1wvnaxz-MuiTableCell-root.MuiTableCell-head{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.OrderDetail .Total{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid #e3e2e2;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+.OrderDetail .Total p{
+    font-size: 25px;
+}
+.OrderDetail .Total button{
+    background-color: rgba(0, 0, 0, 0.8);
+}

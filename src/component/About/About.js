@@ -11,6 +11,9 @@ const About = () => {
     useEffect(() => {
         dispatch(pageSlice.actions.TabsChange(2));
     }, [dispatch])
+    useEffect(() => {
+        dispatch(pageSlice.actions.setHideNavBar(false))
+    }, [])
     return (
         <div className='About'>
 

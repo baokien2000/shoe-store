@@ -8,13 +8,17 @@ export const filterSort = (state) => state.filter.sort;
 export const filterASC = (state) => state.filter.ASC;
 
 export const shoesList = (state) => state.shoes.shoes;
+export const shoesStatus = (state) => state.shoes.status;
 
 export const CurrentTabs = (state) => state.page.NavBarTabs;
 export const CurrentPages = (state) => state.page.ProductPages;
+export const hideNavBar = (state) => state.page.hideNavBar;
 
 export const shippingDetails = (state) => state.shipping;
-// Filter
 
+export const userDetails = (state) => state.user.user;
+
+// Filter
 export const filterShoes = createSelector(
     shoesList, filterSearch, filterBrand, filterColor, filterSize, filterSort, filterASC,
     (shoes, search, brand, color, size, sort, asc) => {

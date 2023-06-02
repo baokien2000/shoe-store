@@ -8,7 +8,7 @@ import AdidasBannerShoes from '../../images/Shoes/Adidas.png';
 import NikeBannerShoes from '../../images/Shoes/Nike.png';
 import { useDispatch, useSelector } from "react-redux";
 import shoesSlice from "../../redux/Slice/shoesSlice";
-import { filterShoes, shoesHome, shoesList } from "../../redux/selector";
+import { filterShoes, shoesHome, shoesList, shoesStatus } from "../../redux/selector";
 import pageSlice from "../../redux/Slice/pageSlice";
 
 const Home = () => {
@@ -30,7 +30,9 @@ const Home = () => {
         dispatch(pageSlice.actions.TabsChange(0))
     }, [Filltershoes]);
 
-
+    useEffect(() => {
+        dispatch(pageSlice.actions.setHideNavBar(false))
+    }, [])
     const Banner_Info = {
         Bannner1: {
             Header: "HIGHLIGHTS",
@@ -47,7 +49,6 @@ const Home = () => {
             ImageSrc: NikeBannerShoes,
         },
     }
-
 
     return (
 

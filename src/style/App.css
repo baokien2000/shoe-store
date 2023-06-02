@@ -1,38 +1,38 @@
-.App > .navbar {
+.App .navbar {
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   position: absolute;
   width: 100%;
   z-index: 100;
 }
-.App > .navbar .navbar-brand {
+.App .navbar .navbar-brand {
   color: rgba(33, 172, 223, 0.8);
   height: 100%;
   margin-right: 50px;
 }
-.App > .navbar .navbar-brand img {
+.App .navbar .navbar-brand img {
   height: 50px;
   width: -moz-fit-content;
   width: fit-content;
 }
-.App > .navbar a {
+.App .navbar a {
   margin: 0 10px;
   width: 70px;
   text-align: center;
 }
-.App > .navbar a svg {
+.App .navbar a svg {
   min-height: 30px;
   min-width: 30px;
 }
-.App > .navbar .RigthNav a {
+.App .navbar .RigthNav a {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0;
 }
-.App > .navbar .RigthNav a div {
+.App .navbar .RigthNav a div {
   position: relative;
 }
-.App > .navbar .RigthNav a div span {
+.App .navbar .RigthNav a div span {
   position: absolute;
   background-color: red;
   color: #fff;
@@ -48,14 +48,13 @@
 }
 
 @media screen and (max-width: 992px) {
-  .App > .navbar {
-    background-color: white;
+  .App .navbar {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   }
-  .App > .navbar .navbar-brand {
+  .App .navbar .navbar-brand {
     color: rgba(33, 172, 223, 0.8);
   }
-  .App > .navbar a {
+  .App .navbar a {
     margin: 0;
     width: 70px;
     text-align: left;
@@ -277,7 +276,7 @@
     border-radius: 5px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info {
-    padding: 0 10px 20px 10px;
+    padding: 0 20px 20px 20px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info > a {
     text-decoration: none;
@@ -296,33 +295,33 @@
   }
   .HomePage .ShoesCarousel .Card .Card_Info a .Card_Name span {
     margin-bottom: 3px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate {
     margin-bottom: 10px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate svg {
-    min-width: 15px;
-    min-height: 15px;
+    min-width: 16px;
+    min-height: 16px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate span {
-    font-size: 10px;
+    font-size: 13px;
     margin-left: 5px;
     height: 16px;
     line-height: 18px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Sale {
-    font-size: 12px;
+    font-size: 15px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Sale span:nth-child(2) {
     padding: 3px 8px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Price {
-    font-size: 15px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Button button {
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 5px;
     padding: 0px 10px;
   }
@@ -462,6 +461,40 @@
   .HomePage .ShoesCarousel .Card .Card_Info .Card_Button div span {
     top: -5px;
     right: -4px;
+  }
+}
+.HomePage .ShoesCarousel .SkeletonCard > a {
+  width: calc(100% - 20px);
+}
+.HomePage .ShoesCarousel .SkeletonCard > a > span {
+  margin: 10px 10px;
+}
+.HomePage .ShoesCarousel .SkeletonCard > a span {
+  width: inherit;
+  height: 200px;
+}
+@media screen and (min-width: 991px) {
+  .HomePage .ShoesCarousel .SkeletonCard > a {
+    width: calc(100% - 40px);
+  }
+  .HomePage .ShoesCarousel .SkeletonCard > a > span {
+    margin: 20px;
+  }
+  .HomePage .ShoesCarousel .SkeletonCard > a span {
+    width: inherit;
+    height: 250px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .HomePage .ShoesCarousel .SkeletonCard > a {
+    width: calc(100% - 40px);
+  }
+  .HomePage .ShoesCarousel .SkeletonCard > a > span {
+    margin: 30px 20px;
+  }
+  .HomePage .ShoesCarousel .SkeletonCard > a span {
+    width: inherit;
+    height: 250px;
   }
 }
 @media screen and (max-width: 415px) {
@@ -971,7 +1004,7 @@
     border-radius: 5px;
   }
   .Product .ShoesList .container .Card .Card_Info {
-    padding: 0 10px 20px 10px;
+    padding: 0 20px 20px 20px;
   }
   .Product .ShoesList .container .Card .Card_Info > a {
     text-decoration: none;
@@ -990,33 +1023,33 @@
   }
   .Product .ShoesList .container .Card .Card_Info a .Card_Name span {
     margin-bottom: 3px;
-    font-size: 12px;
+    font-size: 16px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Rate {
     margin-bottom: 10px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Rate svg {
-    min-width: 15px;
-    min-height: 15px;
+    min-width: 16px;
+    min-height: 16px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Rate span {
-    font-size: 10px;
+    font-size: 13px;
     margin-left: 5px;
     height: 16px;
     line-height: 18px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Sale {
-    font-size: 12px;
+    font-size: 15px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Sale span:nth-child(2) {
     padding: 3px 8px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Price {
-    font-size: 15px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   .Product .ShoesList .container .Card .Card_Info .Card_Button button {
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 5px;
     padding: 0px 10px;
   }
@@ -1158,6 +1191,40 @@
     right: -4px;
   }
 }
+.Product .ShoesList .container .SkeletonCard > a {
+  width: calc(100% - 20px);
+}
+.Product .ShoesList .container .SkeletonCard > a > span {
+  margin: 10px 10px;
+}
+.Product .ShoesList .container .SkeletonCard > a span {
+  width: inherit;
+  height: 200px;
+}
+@media screen and (min-width: 991px) {
+  .Product .ShoesList .container .SkeletonCard > a {
+    width: calc(100% - 40px);
+  }
+  .Product .ShoesList .container .SkeletonCard > a > span {
+    margin: 20px;
+  }
+  .Product .ShoesList .container .SkeletonCard > a span {
+    width: inherit;
+    height: 250px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Product .ShoesList .container .SkeletonCard > a {
+    width: calc(100% - 40px);
+  }
+  .Product .ShoesList .container .SkeletonCard > a > span {
+    margin: 30px 20px;
+  }
+  .Product .ShoesList .container .SkeletonCard > a span {
+    width: inherit;
+    height: 250px;
+  }
+}
 .Product .ShoesList .container .Card {
   float: left;
   height: -moz-fit-content;
@@ -1274,8 +1341,8 @@
   }
 }
 .About {
-  padding-top: 76px;
   height: 100vh;
+  padding-top: 76px;
 }
 .About .container {
   display: flex;
@@ -2036,6 +2103,402 @@
     width: 150px;
   }
 }
+.Admin {
+  min-height: 100vh;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #fff;
+  display: flex;
+}
+.Admin > .MuiList-root {
+  min-height: 100vh;
+  height: 100vh;
+  border-top: 3px solid #eeedee;
+  border-right: 3px solid #eeedee;
+  padding: 0 20px;
+  transition: width 2s, min-width 2s;
+}
+.Admin > .MuiList-root .ScrollDiv {
+  height: calc(100vh - 70px);
+  overflow: auto;
+}
+.Admin > .MuiList-root .ScrollDiv::-webkit-scrollbar {
+  display: none;
+}
+.Admin > .MuiList-root .MuiListSubheader-root svg {
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background-color: white;
+  position: absolute;
+  right: -33px;
+  top: 33%;
+  margin: 0;
+  transform: rotate(0deg);
+  transition: transform 2s;
+  cursor: pointer;
+}
+.Admin > .MuiList-root .MuiListSubheader-root {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.Admin > .MuiList-root .MuiListSubheader-root img {
+  padding: 10px 0;
+  height: 70px;
+  transition: height 2s;
+}
+.Admin > .MuiList-root .MuiButtonBase-root {
+  border-radius: 5px;
+}
+.Admin > .MuiList-root .MuiListItemIcon-root {
+  min-width: 40px;
+  color: #7b8185;
+}
+.Admin > .MuiList-root .MuiTypography-root {
+  font-weight: bold;
+  visibility: visible;
+  opacity: 1;
+}
+.Admin > .MuiList-root hr {
+  border-top: 3px solid #8c8b8b;
+  width: 80%;
+  margin: 5px 10%;
+}
+.Admin .Content {
+  flex: 0 1 100vw;
+}
+.Admin .Content .Header {
+  height: 76px;
+  border-top: 3px solid #eeedee;
+  border-bottom: 3px solid #eeedee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+.Admin .Content .Header b {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.Admin .Content .Header > div {
+  display: flex;
+  align-items: center;
+}
+.Admin .Content .Header > div hr {
+  border: none;
+  border-left: 2px solid hsl(200, 10%, 50%);
+  height: 30px;
+  width: 3px;
+  margin: 20px;
+}
+.Admin .Content .Header > div img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.Admin .Content .Header > div .AvatarInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  height: 40px;
+  padding-bottom: 5px;
+}
+.Admin .Content .Header > div .AvatarInfo b {
+  font-size: 15px;
+  line-height: 20px;
+}
+.Admin .Content .Header > div .AvatarInfo span {
+  font-size: 12px;
+  color: #adadad;
+}
+.Admin .Content .Header > div svg {
+  cursor: pointer;
+}
+.Admin .Content .Header > div svg:last-child {
+  margin-left: 20px;
+}
+.Admin .Content .Header > div .bell {
+  position: relative;
+  margin: 0 0 0 12px;
+}
+.Admin .Content .Header > div .bell span {
+  position: absolute;
+  display: inline-block;
+  top: 2px;
+  right: 2px;
+  background-color: red;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+.Admin .Content .Dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+}
+.Admin .Content .Dashboard .statistics {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.Admin .Content .Dashboard .statistics .Revenue, .Admin .Content .Dashboard .statistics .Order, .Admin .Content .Dashboard .statistics .User, .Admin .Content .Dashboard .statistics .Visitor {
+  background-color: #f5f5f5;
+  width: 20%;
+  border-radius: 4px;
+  padding: 10px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Title, .Admin .Content .Dashboard .statistics .Order .Title, .Admin .Content .Dashboard .statistics .User .Title, .Admin .Content .Dashboard .statistics .Visitor .Title {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Title b, .Admin .Content .Dashboard .statistics .Order .Title b, .Admin .Content .Dashboard .statistics .User .Title b, .Admin .Content .Dashboard .statistics .Visitor .Title b {
+  font-size: 14px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Title svg, .Admin .Content .Dashboard .statistics .Order .Title svg, .Admin .Content .Dashboard .statistics .User .Title svg, .Admin .Content .Dashboard .statistics .Visitor .Title svg {
+  margin-right: 5px;
+  height: 22px;
+  width: 22px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number, .Admin .Content .Dashboard .statistics .Order .Number, .Admin .Content .Dashboard .statistics .User .Number, .Admin .Content .Dashboard .statistics .Visitor .Number {
+  display: flex;
+  align-items: center;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number > span, .Admin .Content .Dashboard .statistics .Order .Number > span, .Admin .Content .Dashboard .statistics .User .Number > span, .Admin .Content .Dashboard .statistics .Visitor .Number > span {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Up, .Admin .Content .Dashboard .statistics .Order .Number .Up, .Admin .Content .Dashboard .statistics .User .Number .Up, .Admin .Content .Dashboard .statistics .Visitor .Number .Up {
+  background-color: #cfddd3;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Up svg, .Admin .Content .Dashboard .statistics .Order .Number .Up svg, .Admin .Content .Dashboard .statistics .User .Number .Up svg, .Admin .Content .Dashboard .statistics .Visitor .Number .Up svg {
+  color: #56ac56;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Down, .Admin .Content .Dashboard .statistics .Order .Number .Down, .Admin .Content .Dashboard .statistics .User .Number .Down, .Admin .Content .Dashboard .statistics .Visitor .Number .Down {
+  background-color: #f4e4e5;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Down svg, .Admin .Content .Dashboard .statistics .Order .Number .Down svg, .Admin .Content .Dashboard .statistics .User .Number .Down svg, .Admin .Content .Dashboard .statistics .Visitor .Number .Down svg {
+  color: #d73d42;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Percent, .Admin .Content .Dashboard .statistics .Order .Number .Percent, .Admin .Content .Dashboard .statistics .User .Number .Percent, .Admin .Content .Dashboard .statistics .Visitor .Number .Percent {
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Percent span, .Admin .Content .Dashboard .statistics .Order .Number .Percent span, .Admin .Content .Dashboard .statistics .User .Number .Percent span, .Admin .Content .Dashboard .statistics .Visitor .Number .Percent span {
+  font-weight: bold;
+  font-size: 12px;
+  padding-right: 5px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Number .Percent svg, .Admin .Content .Dashboard .statistics .Order .Number .Percent svg, .Admin .Content .Dashboard .statistics .User .Number .Percent svg, .Admin .Content .Dashboard .statistics .Visitor .Number .Percent svg {
+  height: 14px;
+  width: 14px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Compare .Up, .Admin .Content .Dashboard .statistics .Order .Compare .Up, .Admin .Content .Dashboard .statistics .User .Compare .Up, .Admin .Content .Dashboard .statistics .Visitor .Compare .Up {
+  color: #56ac56;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Compare .Down, .Admin .Content .Dashboard .statistics .Order .Compare .Down, .Admin .Content .Dashboard .statistics .User .Compare .Down, .Admin .Content .Dashboard .statistics .Visitor .Compare .Down {
+  color: #d73d42;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Compare b, .Admin .Content .Dashboard .statistics .Order .Compare b, .Admin .Content .Dashboard .statistics .User .Compare b, .Admin .Content .Dashboard .statistics .Visitor .Compare b {
+  font-size: 13px;
+}
+.Admin .Content .Dashboard .statistics .Revenue .Compare span, .Admin .Content .Dashboard .statistics .Order .Compare span, .Admin .Content .Dashboard .statistics .User .Compare span, .Admin .Content .Dashboard .statistics .Visitor .Compare span {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.Admin .Content .Dashboard .statistics .Order {
+  background-color: #f5f5f5;
+}
+.Admin .Content .Dashboard .statistics .User {
+  background-color: #f5f5f5;
+}
+.Admin .Content .Dashboard .statistics .Visitor {
+  background-color: #f5f5f5;
+}
+.Admin .Content .Dashboard .Chart {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  position: relative;
+}
+.Admin .Content .Dashboard .Chart .MuiFormControl-root {
+  position: absolute;
+  right: 0;
+  width: 120px;
+}
+.Admin .Content .Dashboard .Chart h2 {
+  text-align: center;
+}
+.Admin .Content .Dashboard .Chart .highcharts-credits {
+  display: none;
+}
+.Admin .Content .OrderReport .MuiTablePagination-selectLabel,
+.Admin .Content .OrderReport .MuiTablePagination-displayedRows {
+  margin: 0;
+}
+.Admin .Content .OrderReport svg {
+  cursor: pointer;
+}
+.Admin .Content .PrintButton {
+  margin: 0 0 30px 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Admin .Content .OrderAdd {
+  margin: 30px 50px;
+}
+.Admin .Content .OrderAdd .AddItemContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.Admin .Content .OrderAdd button {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Admin .Content .OrderAdd h5 {
+  margin: 0;
+}
+.Admin .Content .OrderAdd hr {
+  margin-top: 8px;
+}
+.Admin .Content .OrderAdd .footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.Admin .Content .OrderAdd .footer span {
+  color: #dc3545;
+  font-weight: bold;
+}
+.Admin .Content .OrderAdd .footer button {
+  color: white;
+  padding: 8px 20px;
+  font-weight: bold;
+}
+.Admin .Content .AddProduct {
+  padding: 40px 50px;
+}
+.Admin .Content .AddProduct .product {
+  display: flex;
+  flex-direction: row;
+}
+.Admin .Content .AddProduct .product img {
+  height: 183px;
+  width: 183px;
+  min-width: 183px;
+  margin-right: 50px;
+}
+.Admin .Content .AddProduct .product .MuiFormControl-root .MuiInputBase-root {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.Admin .Content .AddProduct .product .MuiFormControl-root svg {
+  margin-left: 10px;
+}
+.Admin .Content .AddProduct .buttonAndError {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.Admin .Content .AddProduct .buttonAndError span {
+  font-weight: bold;
+  color: #dc3545;
+}
+.Admin .Content .AddProduct .buttonAndError button {
+  background-color: #111;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 183px;
+  border-radius: 4px;
+}
+.Admin .LogoutDialog {
+  background-color: red;
+}
+
+.NotFoundPage {
+  height: 100vh;
+  padding-top: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.NotFoundPage h1 {
+  color: red;
+  font-size: 80px;
+}
+.NotFoundPage h3 {
+  font-size: 36px;
+}
+.NotFoundPage span {
+  font-size: 20px;
+}
+
+.LoginPage {
+  width: 100%;
+  height: 100vh;
+  padding-top: 176px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.LoginPage .Title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.LoginPage .Title b {
+  font-size: 25px;
+  color: #1976d2;
+}
+.LoginPage .Form {
+  display: flex;
+  flex-direction: column;
+}
+.LoginPage .footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.LoginPage .footer div {
+  cursor: pointer;
+  display: inline-flex;
+}
+.LoginPage .footer label {
+  margin-left: 5px;
+}
+.LoginPage .footer span {
+  color: #1976d2;
+  cursor: pointer;
+}
+.LoginPage .errorText {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #dc3545;
+  min-height: 18px;
+  margin-bottom: 10px;
+}
+.LoginPage .TesttingAccount {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-wrap: wrap;
+}
+.LoginPage .TesttingAccount div {
+  margin: 10px 20px;
+}
+
 a {
   text-decoration: none !important;
 }

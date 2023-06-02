@@ -1,7 +1,7 @@
 
 @import '../variable';
 
-.App > .navbar{
+.App .navbar{
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     position: absolute;
@@ -54,8 +54,7 @@
     }
 }
 @media screen and (max-width: 992px) {
-    .App > .navbar{
-        background-color: white;
+    .App .navbar{
         box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
         .navbar-brand{
             color: $Maincolor;

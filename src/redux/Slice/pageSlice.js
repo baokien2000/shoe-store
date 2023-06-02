@@ -6,6 +6,7 @@ export default createSlice({
         NavBarTabs: 0,
         ProductPages: 1,
         ProductPagesNum: 1,
+        hideNavBar: false,
     },
     reducers: {
         TabsChange: (state, action) => {
@@ -14,6 +15,9 @@ export default createSlice({
         PagesChange: (state, action) => {
             state.ProductPages = action.payload
         },
+        setHideNavBar: (state, action) => {
+            state.hideNavBar = action.payload
+        }
         // PageNumChange: (state, action) => {
         //     state.ProductPages = action.payload
         // },

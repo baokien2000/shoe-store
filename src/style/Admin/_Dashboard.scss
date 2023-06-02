@@ -1,0 +1,120 @@
+.Dashboard{
+    display: flex;
+    flex-direction: column;
+    // background-color: blue;
+    padding: 30px 50px;
+    .statistics{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .Revenue,.Order,.User,.Visitor{
+            background-color: #f5f5f5;
+            width: 20%;
+            border-radius: 4px;
+            padding: 10px;
+            .Title{
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+
+                b{
+                    font-size: 14px;
+                    // background-color: rebeccapurple;
+                }
+                svg{
+                    // background-color: #56ac56;
+                    margin-right: 5px;
+                    height: 22px;
+                    width: 22px;
+                }
+            }
+            .Number{
+                display: flex;
+                align-items: center;
+                >span{
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+                .Up{
+                    background-color: #cfddd3;
+                    svg{
+                        color: #56ac56;
+                    }
+
+                }
+                .Down{
+                    background-color: #f4e4e5;
+                    svg{
+                        color: #d73d42;
+                    }
+                }
+                .Percent{
+                    border-radius: 20px;
+                    width: fit-content;
+                    height: 20px;
+                    padding: 0 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        font-weight: bold;
+                        font-size: 12px;
+                        padding-right: 5px;
+                    }
+                    svg{
+                        height: 14px;
+                        width: 14px;
+                    }
+                }
+            }
+            .Compare{
+                .Up{
+                        color:#56ac56;
+                }
+                .Down{
+                        color: #d73d42;
+                }
+                b{
+                    font-size: 13px;
+                    // color: red;
+                }
+                span{
+                    font-size: 13px;
+                    color: rgba($color: #000000, $alpha: .5);
+                }
+            }
+        }
+        .Order{
+            background-color: #f5f5f5;
+        }
+        .User{
+            background-color: #f5f5f5;
+        }
+        .Visitor{
+            background-color: #f5f5f5;
+        }
+    }
+    .Chart{
+        display: flex;
+        flex-direction: column;
+        // align-items: flex-start;
+        margin-top: 20px;
+        position: relative;
+        .MuiFormControl-root{
+            position: absolute;
+            right: 0;
+            width: 120px;
+            // z-index: 100px;
+        }
+        h2{
+            text-align: center;
+        }
+        .highcharts-credits{
+            display: none;
+        }
+        // justify-content: flex-start;
+    }
+
+    
+}

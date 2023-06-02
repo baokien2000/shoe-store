@@ -133,7 +133,7 @@
         border-radius: 5px;
 
         .Card_Info {
-            padding: 0 10px 20px 10px;
+            padding: 0 20px 20px 20px;
             > a {
                 text-decoration: none;
                 width: 100%;
@@ -153,7 +153,7 @@
                     span {
                         margin-bottom: 3px;
                         // font-size: 30px;
-                        font-size: 12px;
+                        font-size: 16px;
                     }
                 }
             }
@@ -162,12 +162,12 @@
                 margin-bottom: 10px;
 
                 svg {
-                    min-width: 15px;
-                    min-height: 15px;
+                    min-width: 16px;
+                    min-height: 16px;
                 }
 
                 span {
-                    font-size: 10px;
+                    font-size: 13px;
                     margin-left: 5px;
                     height: 16px;
                     line-height: 18px;
@@ -175,7 +175,7 @@
             }
 
             .Card_Sale {
-                font-size: 12px;
+                font-size: 15px;
 
                 span:nth-child(2) {
                     padding: 3px 8px;
@@ -183,13 +183,13 @@
             }
 
             .Card_Price {
-                font-size: 15px;
+                font-size: 18px;
                 margin-bottom: 10px;
             }
 
             .Card_Button {
                 button {
-                    font-size: 15px;
+                    font-size: 18px;
                     border-radius: 5px;
                     padding: 0px 10px;
                 }
@@ -385,4 +385,47 @@
     }
 
     // Card
+}
+.SkeletonCard{
+    >a{
+        width: calc(100% - 20px);
+        // padding: 20px;
+        >span{
+            margin: 10px 10px;
+        }
+        span{
+            width: inherit;
+            height: 200px;
+        }
+    }
+}
+@media screen and (min-width: 991px) {
+    .SkeletonCard{
+        >a{
+            width: calc(100% - 40px);
+            // padding: 20px;
+            >span{
+                margin: 20px;
+            }
+            span{
+                width: inherit;
+                height: 250px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .SkeletonCard{
+        >a{
+            width: calc(100% - 40px);
+            // padding: 20px;
+            >span{
+                margin: 30px 20px;
+            }
+            span{
+                width: inherit;
+                height: 250px;
+            }
+        }
+    }
 }

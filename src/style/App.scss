@@ -7,6 +7,9 @@
 @import './Payment/Payment';
 @import './AppFooter/AppFooter';
 @import './ShoeDetails/ShoeDetails';
+@import './Admin/Admin';
+@import './NotFound/NotFound';
+@import './Login/Login';
 a{
     text-decoration: none !important ;
 }
@@ -44,6 +47,7 @@ a{
         padding: 8px;
         border-radius: 5px;
         z-index: 50;
+        
     }
 
 }

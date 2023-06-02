@@ -1,0 +1,48 @@
+.AddProduct{
+    padding: 40px 50px;
+    .product{
+        display: flex;
+        flex-direction: row;
+        img{
+            height: 183px;
+            width: 183px;
+            min-width: 183px;
+            margin-right: 50px;
+        }
+         .MuiFormControl-root{
+            .MuiInputBase-root{
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+            }
+            svg{
+                margin-left: 10px;
+            }
+        }
+    }
+    .buttonAndError{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        // .MuiFormControl-root{
+        //     width: 183px;
+        //     .MuiInputBase-root{
+        //         margin: 0;
+        //         padding: 0;
+        //         cursor: pointer;
+        //     }
+        // }
+            span{
+                font-weight: bold;
+                color: #dc3545
+            }
+        button{
+            background-color: #111;
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 183px;
+            border-radius: 4px;
+        }
+    }
+}

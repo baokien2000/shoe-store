@@ -5,9 +5,11 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import cartSlice from '../../redux/Slice/pageSlice';
 import shoesSlice from '../../redux/Slice/shoesSlice';
+import Skeleton from 'react-loading-skeleton';
+import { shoesStatus } from '../../redux/selector';
 
 const ShoesCard = ({ item }) => {
 
@@ -33,7 +35,6 @@ const ShoesCard = ({ item }) => {
             behavior: 'instant',
         });
     }
-    // <Link to={`/products/${product.id}`}
     return (
         <div className="Card" key={item._id} >
             <Link to={`/product/${item._id}`}>
@@ -60,7 +61,7 @@ const ShoesCard = ({ item }) => {
                     </Link>
                 </div>
             </div>
-        </div> 
+        </div>
     );
 };
 

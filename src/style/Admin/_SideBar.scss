@@ -1,0 +1,66 @@
+> .MuiList-root{
+    min-height: 100vh;
+    height: 100vh;
+    // overflow-y: visible !important;
+    // overflow-x: scroll;
+    border-top: 3px solid #eeedee;
+    border-right: 3px solid #eeedee;
+    padding: 0 20px;
+    transition: width 2s, min-width 2s;
+    .ScrollDiv{
+        height: calc(100vh - 70px);
+        overflow: auto;
+    }
+    .ScrollDiv::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .MuiListSubheader-root{
+        svg{
+            // background-color: red;
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            background-color: white;
+            position: absolute;
+            right: -33px;
+            top:33%;
+            margin: 0;
+            transform: rotate(0deg);
+            transition: transform 2s;
+            // padding: 10px;
+            cursor: pointer;
+        }
+    }
+    .MuiListSubheader-root{
+        // display: flex;
+        // justify-content: center;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        img{
+            padding: 10px 0;
+            height: 70px;
+            transition: height 2s;
+        }
+    }
+    .MuiButtonBase-root{
+        border-radius: 5px;
+    }
+    .MuiListItemIcon-root{
+        min-width: 40px;
+        color: #7b8185;
+    }
+    .MuiTypography-root{
+        // color: #7b8185;
+        font-weight: bold;
+        visibility: visible;
+        opacity: 1;
+    }
+    hr{
+        border-top: 3px solid #8c8b8b;
+        width: 80%;
+        margin: 5px 10%;
+    }
+
+    
+}

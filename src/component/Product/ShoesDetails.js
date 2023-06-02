@@ -7,6 +7,9 @@ import shoesSlice from '../../redux/Slice/shoesSlice';
 import StartRate from './StartRate';
 import { FiMinusSquare, FiPlusSquare } from 'react-icons/fi';
 import { ToastContainer, toast } from 'react-toastify';
+import NotFoundPage from '../NotFound/NotFoundPage';
+import pageSlice from '../../redux/Slice/pageSlice';
+import { useEffect } from 'react';
 
 const ShoesDetails = () => {
 
@@ -43,7 +46,10 @@ const ShoesDetails = () => {
 
     }
     const navigate = useNavigate();
-    return (
+    useEffect(() => {
+        dispatch(pageSlice.actions.setHideNavBar(false))
+    }, [])
+    return product ? (
         <div className='ShoeDetails'>
 
             <Container>
@@ -72,7 +78,7 @@ const ShoesDetails = () => {
 
             </Container>
         </div>
-    );
+    ) : <NotFoundPage />;
 };
 
 export default ShoesDetails;

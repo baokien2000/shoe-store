@@ -1,0 +1,18 @@
+.Admin{
+    min-height: 100vh;
+    height: fit-content;
+    // background-color: #f5f7f9;
+    background-color: #fff;
+    display: flex;
+    @import "./SideBar";
+    .Content{
+        flex: 0 1 100vw;
+        @import "./Header";
+        @import "./Dashboard";
+        @import "./Order";
+        @import "./Product";
+        // transition: flex-basis 2s;
+    }
+
+
+}
