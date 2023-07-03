@@ -1,11 +1,10 @@
 import { VisibilityOff } from '@mui/icons-material';
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AdminTab, AdminTableId } from '../../redux/adminSelector';
+import { AdminNewFeedback, AdminOrderData, AdminTab, AdminTableId, AdminUserData } from '../../redux/adminSelector';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import Avatar from "../../images/Avatar.jpg"
 import UserAvatar from "../../images/userImage.png"
 import ExpandCircleDownOutlinedIcon from '@mui/icons-material/ExpandCircleDownOutlined';
 import styled from "styled-components";
@@ -13,6 +12,10 @@ import adminSlice from '../../redux/Slice/adminSlice';
 import { userDetails } from '../../redux/selector';
 import NotFoundPage from '../NotFound/NotFoundPage';
 import { useNavigate } from 'react-router-dom';
+import { useWindowSize } from '../../hooks/useWindowSize';
+import { Popover } from 'antd';
+import Logout from './component/Logout';
+import { toast } from 'react-toastify';
 
 const WhiteBorderTextField = styled(TextField)`
   & label.Mui-focused {
@@ -24,21 +27,51 @@ const WhiteBorderTextField = styled(TextField)`
     }
   }
 `;
-const Header = () => {
+const Header = ({ open }) => {
+    const navigate = useNavigate()
     const [headerTitle, setHeaderTitle] = useState('')
     const currentTab = useSelector(AdminTab)
     const admin = useSelector(userDetails)
+    const [width, height] = useWindowSize()
+    const isNewFeedback = useSelector(AdminNewFeedback)
+
+    const [showArrow, setShowArrow] = useState(true);
+    const [arrowAtCenter, setArrowAtCenter] = useState(false);
+    const [openLogoutDialog, setOpenLogoutDialog] = useState(false)
+
+    const mergedArrow = useMemo(() => {
+        if (arrowAtCenter) return { pointAtCenter: true };
+        return showArrow;
+    }, [showArrow, arrowAtCenter]);
+
 
     useEffect(() => {
         setHeaderTitle(currentTab)
     }, [currentTab])
-
+    const style = {
+        //Side Bar
+        open: {
+            width: 'calc(100vw - 60px)',
+            minWidth: 'calc(100vw - 60px)',
+        },
+        close: {
+            width: '100vw',
+            minWidth: '100vw',
+        },
+    }
+    const content = (
+        <>
+            <p onClick={() => navigate("account")}>My account</p>
+            <p onClick={() => navigate("change-password")}>Change Password</p>
+            <p onClick={() => setOpenLogoutDialog(true)}>Logout</p>
+        </>
+    );
+    const tabShowSearch = ['order report', 'user report', 'product report', 'feedback']
     return (
-        admin &&
-        <div className='Header'>
-            <b>{headerTitle}</b>
+        <div className='Header' style={width < 516 ? (open ? style.open : style.close) : {}}>
+            <b style={{ marginLeft: !open ? (width < 516 ? "40px" : (width < 700 ? "50px" : "0px")) : "0px" }}>{headerTitle}</b>
             <div>
-                <FormControl
+                {tabShowSearch.includes(currentTab.toLowerCase()) && <FormControl
                     sx={{
                         m: 1, width: '25ch', '& label.Mui-focused': {
                             color: '#111'
@@ -51,8 +84,9 @@ const Header = () => {
                     }}
                     variant="outlined"
                     size="small"
+                    className='HeaderSearch'
                 >
-                    <InputLabel >Search</InputLabel>
+                    <InputLabel  >Search</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-search"
 
@@ -72,21 +106,27 @@ const Header = () => {
                         }
                         label="Search"
                     />
-                </FormControl>
-                <div className='bell'>
+                </FormControl>}
+                <div className='bell' onClick={() => navigate("feedbacks")}>
                     <NotificationsOutlinedIcon />
-                    {/* <span></span> */}
+                    {isNewFeedback && <span />}
                 </div>
                 <hr />
-                {admin.name === "BaoKien"
-                    ? <img src={Avatar} alt='avatar' />
+                {admin ? admin.name === "BaoKien"
+                    ? <img src={"/images/Avatar.jpg"} alt='avatar' />
                     : <img src={UserAvatar} alt='avatar' />
+
+                    : <img src={"/images/Avatar.jpg"} alt='avatar' />
                 }
                 <div className='AvatarInfo'>
-                    <b>{admin.name}</b>
-                    <span>{admin.admin}</span>
+                    <b onClick={() => navigate("account")} style={{ cursor: "pointer" }}>{admin ? admin.name : "Bảo Kiên"}</b>
+                    <span>{admin ? admin.admin : "Admin"}</span>
                 </div>
-                <ExpandCircleDownOutlinedIcon />
+                <Popover placement="bottomRight" content={content} >
+                    <ExpandCircleDownOutlinedIcon className='InfoIcon' />
+                </Popover>
+                <Logout openLogoutDialog={openLogoutDialog} setOpenLogoutDialog={setOpenLogoutDialog} />
+
             </div>
 
         </div>

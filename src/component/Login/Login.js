@@ -4,39 +4,43 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
-const Login = () => {
+import pageSlice from '../../redux/Slice/pageSlice';
+import { useDispatch } from 'react-redux';
+const Login = ({ setOpenModel }) => {
     const [userData, setUserData] = useState([])
     const [isPageLogin, setIsPageLogin] = useState(true)
-
+    const dispatch = useDispatch()
     useEffect(() => {
-        const controller = new AbortController();
-        const URL = 'https://kstore-api.onrender.com/users'
-        let isMounted = true
+        dispatch(pageSlice.actions.setHideNavBar(false))
 
-        const getUser = async () => {
-            try {
-                const response = await axios({
-                    url: URL,
-                    method: 'get',
-                    signal: controller.signal,
-                })
-                const usersName = response.data.map(user => user.name)
-                isMounted && setUserData(usersName)
-            } catch (e) {
-                console.error(e);
-            }
-        }
-        getUser();
+        // const controller = new AbortController();
+        // const URL = 'https://kstore-api.cyclic.app/users'
+        // let isMounted = true
 
-        return () => {
-            isMounted = false;
-            controller.abort();
-        }
+        // const getUser = async () => {
+        //     try {
+        //         const response = await axios({
+        //             url: URL,
+        //             method: 'get',
+        //             signal: controller.signal,
+        //         })
+        //         const usersName = response.data.map(user => user.name)
+        //         isMounted && setUserData(usersName)
+        //     } catch (e) {
+        //         console.error(e);
+        //     }
+        // }
+        // getUser();
+
+        // return () => {
+        //     isMounted = false;
+        //     controller.abort();
+        // }
     }, [])
 
     return (
         isPageLogin
-            ? <LoginPage setIsPageLogin={setIsPageLogin} userData={userData} setUserData={setUserData} />
+            ? <LoginPage setOpenModel={setOpenModel} setIsPageLogin={setIsPageLogin} userData={userData} setUserData={setUserData} />
             : <RegisterPage setIsPageLogin={setIsPageLogin} userData={userData} setUserData={setUserData} />
     );
 };

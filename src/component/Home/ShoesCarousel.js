@@ -53,12 +53,7 @@ const ShoesCarousel = ({ ShoeData, Title }) => {
         });
         dispatch(pageSlice.actions.TabsChange(1));
     };
-    // console.log(window.innerWidth)
-    // useEffect(() => {
-    //     console.log(SliceNum);
-    // })
-    // const SliceNum = ;
-    // const sliceView = (window.innerWidth < 425 ? 1 : 4);
+
     const isLoading = useSelector(shoesStatus);
     return (
         <Container>
@@ -87,12 +82,13 @@ const ShoesCarousel = ({ ShoeData, Title }) => {
                             pauseOnMouseEnter: true,
                         }}
                         breakpoints={{
-                            0: { slidesPerView: 2, spaceBetween: 5 }, // when window width is >= 640px
-                            450: { slidesPerView: 2, spaceBetween: 20 }, // when window width is >= 768px
+                            0: { slidesPerView: 1, spaceBetween: 5 }, // when window width is >= 640px
+                            360: { slidesPerView: 2, spaceBetween: 20 }, // when window width is >= 768px
                             1023: { slidesPerView: 3 }, // when window width is >= 768px
                             1223: { slidesPerView: 4 }, // when window width is >= 768px
                             1623: { slidesPerView: 5 }, // when window width is >= 768px
                         }}
+                        style={{ borderRadius: "5px" }}
                     >
                         {ShoeData.map((item) => (
                             <SwiperSlide key={item._id}>

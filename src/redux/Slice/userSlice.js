@@ -34,7 +34,7 @@ const userSlice = createSlice({
 export default userSlice;
 
 export const getUserData = createAsyncThunk('User/getUser', async () => {
-    const URL = "http://localhost:5000/users"
+    const URL = "https://kstore-api.cyclic.app/users"
     const controller = new AbortController()
     try {
         const res = await axios({

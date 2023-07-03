@@ -21,6 +21,7 @@ const OrderCheck = () => {
                 <div><b>Email:</b> <span>{details.email}</span></div>
                 <div><b>Address:</b> <span>{details.address + ", " + details.city + ", " + details.country}</span> </div>
             </div>
+
             <div className='TotalPrice'>
                 <span>Total Price:</span>
                 <span>${(subtotalCost + 1.69).toFixed(2)}</span>

@@ -11,11 +11,12 @@ import AddressInfo from './AddressInfo';
 import OrderCheck from './OrderCheck';
 import isEmail from 'validator/lib/isEmail';
 import { useDispatch, useSelector } from 'react-redux';
-import { shippingDetails, shoesList } from '../../redux/selector';
+import { shippingDetails, shoesList, subtotal } from '../../redux/selector';
 import shippingSlice from '../../redux/Slice/shippingSlice';
 import shoesSlice from '../../redux/Slice/shoesSlice';
 import { useNavigate } from "react-router-dom";
 import pageSlice from '../../redux/Slice/pageSlice';
+import { AddOrder } from '../../api/admin/order';
 
 const steps = ['Personal Information', 'Address  Information', 'Place your order'];
 
@@ -24,6 +25,9 @@ const Payment = () => {
     const [windowWidth, setWindowWidth] = useState(0);
     const dispatch = useDispatch()
 
+    const cartLish = useSelector(shoesList).filter(item => item.cart !== 0)
+    const subtotalCost = useSelector(subtotal)
+    const FeeShip = 1.69
     const details = useSelector(shippingDetails);
     const handleNext_Step1 = () => {
         let nextStep = true;
@@ -93,11 +97,25 @@ const Payment = () => {
             behavior: 'instant',
         });
     }
+
     const handleNext_Step3 = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
         dispatch(shippingSlice.actions.clearInfo());
         dispatch(shoesSlice.actions.clearCart())
         dispatch(shoesSlice.actions.AddToLocalStorage())
+
+        const payload = {
+            name: details.lastName + " " + details.firstName,
+            phone: details.phone,
+            totalCost: (subtotalCost + FeeShip).toFixed(2),
+            status: 'New',
+            email: details.email,
+            gender: "",
+            orderItem: cartLish.map(item => {
+                return { ItemID: item._id, num: item.cart }
+            })
+        }
+        AddOrder(payload)
     }
     const handleNext = () => {
         switch (activeStep) {

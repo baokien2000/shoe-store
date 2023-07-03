@@ -15,16 +15,15 @@ const Statistics = () => {
                     <b>REVENUE</b>
                 </div>
                 <div className='Number'>
-                    <span>63475$</span>
+                    <span>9475$</span>
                     <div className='Percent Up'>
                         <NorthOutlinedIcon />
-                        {/* <SouthOutlinedIcon/> */}
                         <span>12%</span>
                     </div>
                 </div>
                 <div className='Compare '>
-                    <b className='Up'>12312 $ </b>
-                    <span>&nbsp; than last month</span>
+                    <span>More than</span>
+                    <b className='Up'>&nbsp; 1312 $ </b>
                 </div>
             </div>
             <div className='Order'>
@@ -36,13 +35,12 @@ const Statistics = () => {
                     <span>1475</span>
                     <div className='Percent Up'>
                         <NorthOutlinedIcon />
-                        {/* <SouthOutlinedIcon/> */}
                         <span>10%</span>
                     </div>
                 </div>
                 <div className='Compare'>
-                    <b className='Up'>124 </b>
-                    <span>&nbsp; than last month</span>
+                    <span>More than</span>
+                    <b className='Up'>&nbsp; 124 </b>
                 </div>
             </div>
             <div className='User'>
@@ -55,13 +53,12 @@ const Statistics = () => {
                     <span>225</span>
                     <div className='Percent Up'>
                         <NorthOutlinedIcon />
-                        {/* <SouthOutlinedIcon /> */}
                         <span>5%</span>
                     </div>
                 </div>
                 <div className='Compare '>
-                    <b className='Up'>14 </b>
-                    <span>&nbsp; new user</span>
+                    <span>More than</span>
+                    <b className='Up'>&nbsp; 14 </b>
                 </div>
 
             </div>
@@ -80,8 +77,8 @@ const Statistics = () => {
                     </div>
                 </div>
                 <div className='Compare '>
-                    <b className='Down'>85 </b>
-                    <span>&nbsp; than last month</span>
+                    <span>Less than</span>
+                    <b className='Down'>&nbsp; 85 </b>
                 </div>
             </div>
         </div>

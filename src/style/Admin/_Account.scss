@@ -1,0 +1,358 @@
+.MyAccount{
+    display: flex;
+    width: 100%;
+    padding: 50px;
+    .AddButton{
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        color: white;
+        min-width: 100px;
+        margin-top: 10px;
+    }
+    .ant-input,.ant-picker{
+        border-radius: 0;
+        padding: 8px 10px;
+    }
+    .Account_Info{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        .Label{
+            color: #999;
+            width: 200px;
+            text-align: right;
+            padding-right: 30px;
+        }
+        .ant-form-item-label{
+            width: 200px;
+            padding-right: 30px;
+            text-align: start;
+            label{
+                color: #999;
+                font-size: 16px;
+            }
+            label:after{
+                display: none;
+            }
+        }
+        .ant-form-item-row{
+            width: 100%;
+            flex-wrap: nowrap;
+        }
+        >div{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            p{
+                flex: 1 1 100%;
+                margin: 0;
+            }
+            .ant-radio-group,.ant-picker{
+                display: flex;
+                flex: 1 1 100%;
+            }
+        }
+    }
+    .Account_Pass_Rule{
+        width: 600px;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .RegisterRule{
+        display: flex;
+        flex-direction: column;
+        li{
+            display: list-item;
+            list-style-type: "✖ ";
+            color: red;
+            padding-inline-start: 1ch;
+            padding: 0;
+    
+        }
+        ::marker{
+            margin: 10px !important;
+            padding: 10px !important;
+        }
+        .qualified{
+            display: list-item;
+            list-style-type: "✔ ";
+            color: green;
+            padding-inline-start: 1ch;
+            padding: 0;
+        }
+    }
+    .Account_Avatar{
+        width: 600px;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+        label{
+            cursor: pointer;
+        }
+        span{
+            color: #999;
+        }
+        .UploadBtn{
+            border: 1px solid #e8e8e8;
+            margin: 20px 0;
+            padding: 8px 25px;
+        }
+        .UploadBtn:hover{
+            background-color: #fafafa;
+        }
+    }
+}
+@media screen and (max-width: 1100px) {
+    .MyAccount{
+        // display: flex;
+        flex-direction: column-reverse;
+        // width: 100%;
+        padding: 50px;
+        .AddButton{
+            // background-color: rgba($color: #000000, $alpha: 0.8);
+            // color: white;
+            // min-width: 100px;
+        }
+        .ant-input,.ant-picker{
+            // border-radius: 0;
+            // padding: 8px 10px;
+        }
+        .Account_Info{
+            // display: flex;
+            // flex-direction: column;
+            // flex: 1 1 100%;
+            .Label{
+                // color: #999;
+                width: 200px;
+                // text-align: right;
+                padding-right: 25px;
+            }
+            .ant-form-item-label{
+                width: 200px;
+                // padding-right: 30px;
+                // text-align: start;
+                label{
+                    // color: #999;
+                    // font-size: 16px;
+                }
+                label:after{
+                    // display: none;
+                }
+            }
+            .ant-form-item-row{
+                // width: 100%;
+                flex-wrap: wrap;
+            }
+            >div{
+                // display: flex;
+                // align-items: center;
+                // margin-bottom: 20px;
+                p{
+                    // flex: 1 1 100%;
+                    // margin: 0;
+                }
+                .ant-radio-group,.ant-picker{
+                    // display: flex;
+                    // flex: 1 1 100%;
+                }
+            }
+        }
+        .Account_Pass_Rule{
+            width: 100%;
+            padding: 0px;
+            // display: flex;
+            // flex-direction: column-reverse;
+            
+        }
+        .RegisterRule{
+            // display: flex;
+            // flex-direction: column;
+            li{
+                // display: list-item;
+                // list-style-type: "✖ ";
+                // color: red;
+                // padding-inline-start: 1ch;
+                // padding: 0;
+        
+            }
+            ::marker{
+                // margin: 10px !important;
+                // padding: 10px !important;
+            }
+            .qualified{
+                // display: list-item;
+                // list-style-type: "✔ ";
+                // color: green;
+                // padding-inline-start: 1ch;
+                // padding: 0;
+            }
+        }
+        .Account_Avatar{
+            width: 100%;
+            margin-bottom: 30px;
+            // padding: 0 30px;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            img{
+                // width: 100px;
+                // height: 100px;
+                // object-fit: cover;
+                // border-radius: 100%;
+            }
+            label{
+                // cursor: pointer;
+            }
+            span{
+                // color: #999;
+            }
+            .UploadBtn{
+                // border: 1px solid #e8e8e8;
+                // margin-top: 20px;
+                // padding: 8px 25px;
+            }
+            .UploadBtn:hover{
+                // background-color: #fafafa;
+            }
+        }
+    }
+    .ChangeAccount{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1069px) {
+    .MyAccount{
+        padding: 50px 30px;}
+    }
+@media screen and (max-width: 516px) {
+    .MyAccount{
+        // display: flex;
+        // flex-direction: column-reverse;
+        // width: 100%;
+        padding: 50px 15px;
+        .AddButton{
+            // background-color: rgba($color: #000000, $alpha: 0.8);
+            // color: white;
+            // min-width: 100px;
+        }
+        .ant-input,.ant-picker{
+            // border-radius: 0;
+            // padding: 8px 10px;
+            margin-top: 5px;
+        }
+        .Account_Info{
+            // display: flex;
+            // flex-direction: column;
+            // flex: 1 1 100%;
+            .ant-radio-group{
+                flex-wrap: wrap;
+            }
+            .Label{
+                // color: #999;
+                width: 150px;
+                text-align: left;
+                padding-right: 0px;
+            }
+            .ant-form-item-label{
+                width: 150px;
+                // padding-right: 30px;
+                // text-align: start;
+                label{
+                    // color: #999;
+                    // font-size: 16px;
+                }
+                label:after{
+                    // display: none;
+                }
+            }
+            .ant-form-item-row{
+                // width: 100%;
+                // flex-wrap: nowrap;
+            }
+            >div{
+                display: block;
+                // align-items: center;
+                margin-bottom: 10px;
+   
+                p{
+                    // flex: 1 1 100%;
+                    // margin: 0;
+                }
+                .ant-radio-group,.ant-picker{
+                    // display: flex;
+                    // flex: 1 1 100%;
+                }
+            }
+        }
+        .Account_Pass_Rule{
+            // width: 600px;
+            // padding: 0 30px;
+            // display: flex;
+            // flex-direction: column;
+            
+        }
+        .RegisterRule{
+            // display: flex;
+            // flex-direction: column;
+            li{
+                // display: list-item;
+                // list-style-type: "✖ ";
+                // color: red;
+                // padding-inline-start: 1ch;
+                // padding: 0;
+        
+            }
+            ::marker{
+                // margin: 10px !important;
+                // padding: 10px !important;
+            }
+            .qualified{
+                // display: list-item;
+                // list-style-type: "✔ ";
+                // color: green;
+                // padding-inline-start: 1ch;
+                // padding: 0;
+            }
+        }
+        .Account_Avatar{
+            width: 100%;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            input{
+                width: 100px ;
+            }
+            img{
+                // width: 100px;
+                // height: 100px;
+                // object-fit: cover;
+                // border-radius: 100%;
+            }
+            label{
+                // cursor: pointer;
+            }
+            span{
+                // color: #999;
+            }
+            .UploadBtn{
+                // border: 1px solid #e8e8e8;
+                // margin-top: 20px;
+                // padding: 8px 25px;
+            }
+            .UploadBtn:hover{
+                // background-color: #fafafa;
+            }
+        }
+    }
+}

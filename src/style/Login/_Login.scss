@@ -1,7 +1,8 @@
 .LoginPage{
     width: 100%;
-    height: 100vh;
-    padding-top: 176px;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -46,10 +47,65 @@
     .TesttingAccount{
         margin-top: 10px;
         color: rgba($color: #000000, $alpha: .55);
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        div{
-            margin: 10px 20px;
+        flex-direction: column;
+        align-items: center;
+        p{
+            color: #000000;
+            margin: 10px 0 5px 0 ;
+        }
+        span{
+            display: block;
+        }
+    }
+    .RegisterRule{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li{
+            display: list-item;
+            list-style-type: "✖ ";
+            color: red;
+            padding-inline-start: 1ch;
+            padding: 0;
+    
+        }
+        ::marker{
+            margin: 10px !important;
+            padding: 10px !important;
+        }
+        .qualified{
+            display: list-item;
+            list-style-type: "✔ ";
+            color: green;
+            padding-inline-start: 1ch;
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .LoginPage{
+        width: 100vw;
+
+        .MuiPaper-root{
+            width: 90%;
+            padding: 16px;
+        }
+        .MuiFormControl-root{
+            width: 100%;
+        }
+        .TesttingAccount{
+            width: 100%;
+            padding-left: 5%;
+        }
+        .RegisterRule{
+            width: 100%;
+            padding-left: 5%;
+
         }
     }
 }

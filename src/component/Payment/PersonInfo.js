@@ -53,6 +53,9 @@ const PersonInfo = () => {
                 helperText={details.phoneError !== "" && details.phoneError}
                 onChange={handelPhoneChange}
                 value={details.phone || ''}
+                InputProps={{
+                    inputProps: { min: 0 }
+                }}
 
             />
 

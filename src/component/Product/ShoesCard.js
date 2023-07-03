@@ -28,7 +28,6 @@ const ShoesCard = ({ item }) => {
         });
     }
     const CartToggle = () => {
-        // console.log("Card Toggle")
         window.scrollTo({
             top: 0,
             left: 0,

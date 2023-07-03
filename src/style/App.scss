@@ -19,13 +19,21 @@ a{
     padding: 0;
     min-height: 100vh ;
     font-family: "Noto Sans","AdihausDIN","Helvetica",Arial,sans-serif;
-    //Disable double-click
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    //Disable double-click  
+    // user-select: none;
+    // -moz-user-select: none;
+    // -webkit-user-select: none;
+    // -ms-user-select: none;
     //
     // --toastify-color-success: red;
+
+    //Scroll bar 
+/**  STYLE 11 */
+
+
+  
+
+
     .Toastify{
         svg{
      
@@ -37,17 +45,161 @@ a{
             background-color: $Maincolor;
         }
     }
+    .Toastify__toast--error{
+        svg{
+     
+            path{
+                fill: #dc362e;
+            }
+        }
+        .Toastify__progress-bar{
+            background-color: #dc362e;
+        }
+    }
+    .Toastify__toast--warning{
+        svg{
+     
+            path{
+                fill: #e88f21;
+            }
+        }
+        .Toastify__progress-bar{
+            background-color: #e88f21;
+        }
+    }
+    .FeedbackBtn{
+
+        button{
+            position: fixed;
+            bottom: 90px;
+            right: 0;
+            width: 40px;
+            height: 70px;
+            border: none;
+            padding: 8px;
+            border-radius: 12px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            img{
+                height: 25px;
+                width: 25px;
+            }
+            span{
+                margin-top: 5px;
+                font-size: 9px;
+                color: rgba($color: #000000, $alpha: 0.5);
+                white-space: break-spaces;
+            }
+        }
+    }
     >button{
         position: fixed;
         bottom: 40px;
-        right: 60px;
+        right: 0px;
         width: 40px;
         height: 40px;
         border: none;
         padding: 8px;
-        border-radius: 5px;
+        border-radius: 12px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
         z-index: 50;
         
     }
 
 }
+
+.ant-popover-content{
+    .ant-popover-inner{
+        padding: 0;
+        p{
+            margin: 0;
+            min-width: 200px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        p:hover{
+            background-color: #fafafa;
+            font-weight: bold;
+        }
+    }
+}
+.FeedbackModel{
+    max-width: 400px;
+    .ant-modal-close{
+        display: none;
+    }
+    .ant-modal-content{
+        padding: 20px 0 !important;
+    }
+    .ant-modal-footer{
+        margin: 0 24px;
+    }
+    .status{
+        display: flex;
+        margin: 0 24px;
+        justify-content: space-between;
+        img{
+            width: 50px;
+            height: 50px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        img:hover{
+            opacity: 1;
+
+        }
+        .selected{
+            opacity: 1;
+        }
+    }
+    .FeedbackContent{
+        margin: 20px 0;
+        textarea{
+            border: 0;
+            box-shadow: none;
+            background-color: #f7f8f9;
+            padding: 7px 24px;
+        }
+    }
+}
+ @media screen and (max-width: 516px) {
+    .App{
+        >button{
+            bottom: 40px;
+            right: 0px;
+        
+            
+        }
+    }
+
+    .FeedbackModel{
+        max-width: calc(100vw - 20px); 
+            width: calc(100vw - 20px); 
+    }
+ }
+
+ /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

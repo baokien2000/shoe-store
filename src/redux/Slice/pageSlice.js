@@ -6,7 +6,7 @@ export default createSlice({
         NavBarTabs: 0,
         ProductPages: 1,
         ProductPagesNum: 1,
-        hideNavBar: false,
+        hideNavBar: true,
     },
     reducers: {
         TabsChange: (state, action) => {

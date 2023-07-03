@@ -1,6 +1,6 @@
 .Card {
     width: inherit;
-    height: fit-content;
+    height: inherit;
     background-color: #fff;
     border-radius: 5px;
 
@@ -28,8 +28,8 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            font-size: 1.25em;
-
+            font-size: 18px;
+            
             span {
                 margin-bottom: 5px;
                 width: 100%;
@@ -131,7 +131,13 @@
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .Card {
         border-radius: 5px;
+    // border: 2px solid black;
+    > a {
 
+        img {
+            padding: 20px;
+        }
+    }
         .Card_Info {
             padding: 0 20px 20px 20px;
             > a {
@@ -213,10 +219,17 @@
     // Card
 }
 // Card
-@media screen and (min-width: 416px) and (max-width: 767px) {
+@media screen and (min-width: 501px) and (max-width: 767px) {
     .Card {
         border-radius: 5px;
+        > a {
+      
 
+            img {
+                width: inherit;
+                padding: 10px;
+            }
+        }
         .Card_Info {
             padding: 0 10px 20px 10px;
             > a {
@@ -298,12 +311,114 @@
     // Card
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
     .Card {
         border-radius: 5px;
+        > a {
+      
 
+            img {
+                width: inherit;
+                padding: 10px;
+            }
+        }
         .Card_Info {
             padding: 0 10px 20px 10px;
+            > a {
+                text-decoration: none;
+                width: 100%;
+        
+                img {
+                    width: inherit;
+                    padding: 10px;
+                    padding-bottom: 0;
+                }
+            }
+            a {
+                .Card_Name {
+                    height: fit-content;
+                    display: flex;
+                    align-items: flex-end;
+
+                    span {
+                        margin-bottom: 3px;
+                        // font-size: 30px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .Card_Rate {
+                margin-bottom: 10px;
+
+                svg {
+                    min-width: 15px;
+                    min-height: 15px;
+                }
+
+                span {
+                    font-size: 10px;
+                    margin-left: 5px;
+                    height: 16px;
+                    line-height: 18px;
+                }
+            }
+
+            .Card_Sale {
+                font-size: 12px;
+
+                span:nth-child(2) {
+                    padding: 3px 8px;
+
+                    b {
+                        // vertical-align: text-bottom;
+                    }
+                }
+            }
+
+            .Card_Price {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .Card_Button {
+                button {
+                    font-size: 15px;
+                    border-radius: 5px;
+                    padding: 0px 10px;
+                }
+
+                div {
+                    svg {
+                        height: 25.5px;
+                        width: 25.5px;
+
+                        padding: 5px;
+                    }
+                    span {
+                        top: -5px;
+                        right: -4px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Card
+}
+@media screen and (max-width: 360px) {
+    .Card {
+        border-radius: 5px;
+        > a {
+      
+
+            img {
+                width: inherit;
+                padding: 20px;
+            }
+        }
+        .Card_Info {
+            padding: 0 20px 20px 20px;
             > a {
                 text-decoration: none;
                 width: 100%;

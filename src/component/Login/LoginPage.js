@@ -12,7 +12,7 @@ import { userDetails } from '../../redux/selector';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-const LoginPage = ({ setIsPageLogin }) => {
+const LoginPage = ({ setIsPageLogin, setOpenModel }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
@@ -54,7 +54,7 @@ const LoginPage = ({ setIsPageLogin }) => {
         if (validateStatus) {
 
             const controller = new AbortController();
-            const URL = 'http://localhost:5000/users/login'
+            const URL = 'https://kstore-api.cyclic.app/users/login'
             const Data = {
                 name: name,
                 password: password,
@@ -71,13 +71,14 @@ const LoginPage = ({ setIsPageLogin }) => {
 
                     setName('')
                     setPassword('')
-                    toast.success("Login Success! Welcome " + response.data.name)
+                    // toast.success("Login Success! Welcome " + response.data.name)
                     dispatch(userSlice.actions.setUser(response.data))
-
                     localStorage.setItem("token", response.data.access)
+                    setOpenModel(true)
                     response.data.admin === 'User' ? navigate('/') : navigate('/admin')
 
                 } catch (e) {
+                    console.log(e);
                     setErrorText('Username or password is not correct')
                 }
             }
@@ -87,8 +88,7 @@ const LoginPage = ({ setIsPageLogin }) => {
             }
         }
     }
-    // const getUser = useSelector(userDetails)
-    // console.log(getUser)
+
     return (
         <div className='LoginPage'>
             <Paper elevation={3} sx={{ p: 4, pt: 2, pb: 0 }}>
@@ -138,17 +138,13 @@ const LoginPage = ({ setIsPageLogin }) => {
                 <p className='errorText'>{errorText}</p>
             </Paper >
             <div className='TesttingAccount'>
+                <p>Testing account &#40;admin&#41; </p>
                 <div>
-                    <span>Testing account &#40;user&#41; </span>
-                    <li>Username: <i>User</i></li>
-                    <li>Password: <i>U123456#</i></li>
-                </div>
-                <div>
-                    <span>Testing account &#40;admin&#41; </span>
-                    <li>Username: <i>Admin</i></li>
-                    <li>Password: <i>A123456#</i></li >
-                </div>
 
+
+                    <span>Username: <i>Admin</i></span>
+                    <span>Password: <i>Ad12345#</i></span >
+                </div>
             </div>
         </div >
     );

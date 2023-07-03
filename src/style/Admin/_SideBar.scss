@@ -1,54 +1,62 @@
 > .MuiList-root{
     min-height: 100vh;
-    height: 100vh;
+    height: initial;
     // overflow-y: visible !important;
     // overflow-x: scroll;
     border-top: 3px solid #eeedee;
     border-right: 3px solid #eeedee;
-    padding: 0 20px;
-    transition: width 2s, min-width 2s;
+    padding: 0  20px; 
+    transition: width 2s, min-width 2s; 
+
+    .MuiListSubheader-sticky{
+        position: relative !important;
+    }
     .ScrollDiv{
         height: calc(100vh - 70px);
+        
         overflow: auto;
-    }
-    .ScrollDiv::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .MuiListSubheader-root{
-        svg{
+        >svg{
             // background-color: red;
             border-radius: 50%;
             border: 2px solid #e0e0e0;
             background-color: white;
             position: absolute;
-            right: -33px;
-            top:33%;
+            right: -14px;
+            top: 24px;
             margin: 0;
             transform: rotate(0deg);
             transition: transform 2s;
+            z-index: 200;
             // padding: 10px;
             cursor: pointer;
         }
     }
+    .ScrollDiv::-webkit-scrollbar {
+        display: none;
+    }
+    
+       
     .MuiListSubheader-root{
         // display: flex;
         // justify-content: center;
         height: 70px;
         display: flex;
         align-items: center;
+        overflow: hidden;
         img{
             padding: 10px 0;
-            height: 70px;
+            // height: 70px;    
             transition: height 2s;
         }
     }
+    
     .MuiButtonBase-root{
         border-radius: 5px;
     }
     .MuiListItemIcon-root{
         min-width: 40px;
         color: #7b8185;
+ 
     }
     .MuiTypography-root{
         // color: #7b8185;
@@ -58,9 +66,102 @@
     }
     hr{
         border-top: 3px solid #8c8b8b;
-        width: 80%;
-        margin: 5px 10%;
+        width: 100%;
+        margin: 5px 0;
     }
 
     
+}
+@media screen and (max-width: 1069px) {
+    > .MuiList-root{
+        // min-height: 100vh;
+        // height: initial;
+        // border-top: 3px solid #eeedee;
+        // border-right: 3px solid #eeedee;
+
+        padding: 0  10px; 
+        // transition: width 2s, min-width 2s; 
+        .MuiListSubheader-sticky{
+            // position: relative !important;
+        }
+        .ScrollDiv{
+            // height: calc(100vh - 70px);
+            
+            // overflow: auto;
+            >svg{
+                // border-radius: 50%;
+                // border: 2px solid #e0e0e0;
+                // background-color: white;
+                // position: absolute;
+                // right: -14px;
+                // top: 24px;
+                // margin: 0;
+                // transform: rotate(0deg);
+                // transition: transform 2s;
+                // z-index: 200;
+                // cursor: pointer;
+            }
+        }
+        .ScrollDiv::-webkit-scrollbar {
+            // display: none;
+        }
+        
+           
+        .MuiListSubheader-root{
+            // height: 70px;
+            // display: flex;
+            // align-items: center;
+            // overflow: hidden;
+            img{
+                padding: 10px 8px;
+                // transition: height 2s;
+            }
+        }
+        .MuiButtonBase-root{
+            // border-radius: 5px;
+        }
+        .MuiListItemIcon-root{
+            // min-width: 40px;
+            // color: #7b8185;
+            justify-content: center;
+            display: flex;
+        }
+        .MuiTypography-root{
+            // font-weight: bold;
+            // visibility: visible;
+            // opacity: 1;
+        }
+        hr{
+            // border-top: 3px solid #8c8b8b;
+            // width: 100%;
+            // margin: 5px 0;
+        }
+    
+        
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    > .MuiList-root{
+
+        padding: 0px;
+        .css-cveggr-MuiListItemIcon-root {
+            min-width: 0 !important;
+        }
+        .MuiListSubheader-root{
+            display: flex;
+            justify-content: center;
+        }
+        .ScrollDiv{
+            .MuiListItemText-root{
+                display: none !important    ;
+            }
+            .MuiButtonBase-root{
+                display: flex;
+                justify-content: center;
+            }
+            
+        }
+    }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .App .navbar {
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -47,12 +48,22 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .App .navbar {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   }
+  .App .navbar > .container > button {
+    border: 0 !important;
+    box-shadow: none;
+  }
   .App .navbar .navbar-brand {
     color: rgba(33, 172, 223, 0.8);
+    margin-right: 50px;
+  }
+  .App .navbar .navbar-brand img {
+    height: 30px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .App .navbar a {
     margin: 0;
@@ -162,8 +173,7 @@
 }
 .HomePage .ShoesCarousel .Card {
   width: inherit;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: inherit;
   background-color: #fff;
   border-radius: 5px;
 }
@@ -188,7 +198,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.25em;
+  font-size: 18px;
 }
 .HomePage .ShoesCarousel .Card .Card_Info .Card_Name span {
   margin-bottom: 5px;
@@ -275,6 +285,9 @@
   .HomePage .ShoesCarousel .Card {
     border-radius: 5px;
   }
+  .HomePage .ShoesCarousel .Card > a img {
+    padding: 20px;
+  }
   .HomePage .ShoesCarousel .Card .Card_Info {
     padding: 0 20px 20px 20px;
   }
@@ -335,9 +348,13 @@
     right: -4px;
   }
 }
-@media screen and (min-width: 416px) and (max-width: 767px) {
+@media screen and (min-width: 501px) and (max-width: 767px) {
   .HomePage .ShoesCarousel .Card {
     border-radius: 5px;
+  }
+  .HomePage .ShoesCarousel .Card > a img {
+    width: inherit;
+    padding: 10px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info {
     padding: 0 10px 20px 10px;
@@ -399,12 +416,84 @@
     right: -4px;
   }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
   .HomePage .ShoesCarousel .Card {
     border-radius: 5px;
   }
+  .HomePage .ShoesCarousel .Card > a img {
+    width: inherit;
+    padding: 10px;
+  }
   .HomePage .ShoesCarousel .Card .Card_Info {
     padding: 0 10px 20px 10px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info > a {
+    text-decoration: none;
+    width: 100%;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info > a img {
+    width: inherit;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info a .Card_Name {
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: flex-end;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info a .Card_Name span {
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate {
+    margin-bottom: 10px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate svg {
+    min-width: 15px;
+    min-height: 15px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Rate span {
+    font-size: 10px;
+    margin-left: 5px;
+    height: 16px;
+    line-height: 18px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Sale {
+    font-size: 12px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Sale span:nth-child(2) {
+    padding: 3px 8px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Price {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Button button {
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0px 10px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Button div svg {
+    height: 25.5px;
+    width: 25.5px;
+    padding: 5px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info .Card_Button div span {
+    top: -5px;
+    right: -4px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .HomePage .ShoesCarousel .Card {
+    border-radius: 5px;
+  }
+  .HomePage .ShoesCarousel .Card > a img {
+    width: inherit;
+    padding: 20px;
+  }
+  .HomePage .ShoesCarousel .Card .Card_Info {
+    padding: 0 20px 20px 20px;
   }
   .HomePage .ShoesCarousel .Card .Card_Info > a {
     text-decoration: none;
@@ -612,6 +701,11 @@
   }
   .HomePage .HeaderVideo .container .VideoTitle {
     top: 10%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .HomePage .HeaderVideo {
+    margin-top: 57.813px;
   }
 }
 @media screen and (max-width: 425px) {
@@ -890,8 +984,7 @@
 }
 .Product .ShoesList .container .Card {
   width: inherit;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: inherit;
   background-color: #fff;
   border-radius: 5px;
 }
@@ -916,7 +1009,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.25em;
+  font-size: 18px;
 }
 .Product .ShoesList .container .Card .Card_Info .Card_Name span {
   margin-bottom: 5px;
@@ -1003,6 +1096,9 @@
   .Product .ShoesList .container .Card {
     border-radius: 5px;
   }
+  .Product .ShoesList .container .Card > a img {
+    padding: 20px;
+  }
   .Product .ShoesList .container .Card .Card_Info {
     padding: 0 20px 20px 20px;
   }
@@ -1063,9 +1159,13 @@
     right: -4px;
   }
 }
-@media screen and (min-width: 416px) and (max-width: 767px) {
+@media screen and (min-width: 501px) and (max-width: 767px) {
   .Product .ShoesList .container .Card {
     border-radius: 5px;
+  }
+  .Product .ShoesList .container .Card > a img {
+    width: inherit;
+    padding: 10px;
   }
   .Product .ShoesList .container .Card .Card_Info {
     padding: 0 10px 20px 10px;
@@ -1127,12 +1227,84 @@
     right: -4px;
   }
 }
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 500px) {
   .Product .ShoesList .container .Card {
     border-radius: 5px;
   }
+  .Product .ShoesList .container .Card > a img {
+    width: inherit;
+    padding: 10px;
+  }
   .Product .ShoesList .container .Card .Card_Info {
     padding: 0 10px 20px 10px;
+  }
+  .Product .ShoesList .container .Card .Card_Info > a {
+    text-decoration: none;
+    width: 100%;
+  }
+  .Product .ShoesList .container .Card .Card_Info > a img {
+    width: inherit;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+  .Product .ShoesList .container .Card .Card_Info a .Card_Name {
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: flex-end;
+  }
+  .Product .ShoesList .container .Card .Card_Info a .Card_Name span {
+    margin-bottom: 3px;
+    font-size: 12px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Rate {
+    margin-bottom: 10px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Rate svg {
+    min-width: 15px;
+    min-height: 15px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Rate span {
+    font-size: 10px;
+    margin-left: 5px;
+    height: 16px;
+    line-height: 18px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Sale {
+    font-size: 12px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Sale span:nth-child(2) {
+    padding: 3px 8px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Price {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Button button {
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0px 10px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Button div svg {
+    height: 25.5px;
+    width: 25.5px;
+    padding: 5px;
+  }
+  .Product .ShoesList .container .Card .Card_Info .Card_Button div span {
+    top: -5px;
+    right: -4px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .Product .ShoesList .container .Card {
+    border-radius: 5px;
+  }
+  .Product .ShoesList .container .Card > a img {
+    width: inherit;
+    padding: 20px;
+  }
+  .Product .ShoesList .container .Card .Card_Info {
+    padding: 0 20px 20px 20px;
   }
   .Product .ShoesList .container .Card .Card_Info > a {
     text-decoration: none;
@@ -1274,7 +1446,7 @@
   }
   .Product .ShoesList .container .Card > a img {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
   }
   .Product .ShoesList .container .Card:nth-child(3n) {
     margin-right: 0%;
@@ -1296,7 +1468,7 @@
     margin-right: 0%;
   }
 }
-@media screen and (max-width: 500px) and (min-width: 311px) {
+@media screen and (max-width: 500px) and (min-width: 361px) {
   .Product .ShoesList {
     padding-top: 20px;
   }
@@ -1312,7 +1484,7 @@
     margin-right: 0%;
   }
 }
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 360px) {
   .Product .ShoesList {
     padding-top: 20px;
   }
@@ -2112,39 +2284,43 @@
 }
 .Admin > .MuiList-root {
   min-height: 100vh;
-  height: 100vh;
+  height: initial;
   border-top: 3px solid #eeedee;
   border-right: 3px solid #eeedee;
   padding: 0 20px;
   transition: width 2s, min-width 2s;
 }
+.Admin > .MuiList-root .MuiListSubheader-sticky {
+  position: relative !important;
+}
 .Admin > .MuiList-root .ScrollDiv {
   height: calc(100vh - 70px);
   overflow: auto;
 }
-.Admin > .MuiList-root .ScrollDiv::-webkit-scrollbar {
-  display: none;
-}
-.Admin > .MuiList-root .MuiListSubheader-root svg {
+.Admin > .MuiList-root .ScrollDiv > svg {
   border-radius: 50%;
   border: 2px solid #e0e0e0;
   background-color: white;
   position: absolute;
-  right: -33px;
-  top: 33%;
+  right: -14px;
+  top: 24px;
   margin: 0;
   transform: rotate(0deg);
   transition: transform 2s;
+  z-index: 200;
   cursor: pointer;
+}
+.Admin > .MuiList-root .ScrollDiv::-webkit-scrollbar {
+  display: none;
 }
 .Admin > .MuiList-root .MuiListSubheader-root {
   height: 70px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .Admin > .MuiList-root .MuiListSubheader-root img {
   padding: 10px 0;
-  height: 70px;
   transition: height 2s;
 }
 .Admin > .MuiList-root .MuiButtonBase-root {
@@ -2161,11 +2337,43 @@
 }
 .Admin > .MuiList-root hr {
   border-top: 3px solid #8c8b8b;
-  width: 80%;
-  margin: 5px 10%;
+  width: 100%;
+  margin: 5px 0;
+}
+@media screen and (max-width: 1069px) {
+  .Admin > .MuiList-root {
+    padding: 0 10px;
+  }
+  .Admin > .MuiList-root .MuiListSubheader-root img {
+    padding: 10px 8px;
+  }
+  .Admin > .MuiList-root .MuiListItemIcon-root {
+    justify-content: center;
+    display: flex;
+  }
+}
+@media screen and (max-width: 700px) {
+  .Admin > .MuiList-root {
+    padding: 0px;
+  }
+  .Admin > .MuiList-root .css-cveggr-MuiListItemIcon-root {
+    min-width: 0 !important;
+  }
+  .Admin > .MuiList-root .MuiListSubheader-root {
+    display: flex;
+    justify-content: center;
+  }
+  .Admin > .MuiList-root .ScrollDiv .MuiListItemText-root {
+    display: none !important;
+  }
+  .Admin > .MuiList-root .ScrollDiv .MuiButtonBase-root {
+    display: flex;
+    justify-content: center;
+  }
 }
 .Admin .Content {
-  flex: 0 1 100vw;
+  flex: 1 1 100%;
+  width: calc(100% - 250px);
 }
 .Admin .Content .Header {
   height: 76px;
@@ -2175,6 +2383,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  overflow: hidden;
 }
 .Admin .Content .Header b {
   text-transform: capitalize;
@@ -2219,11 +2428,18 @@
 }
 .Admin .Content .Header > div .bell {
   position: relative;
-  margin: 0 0 0 12px;
+  margin: 0 0 0 20px;
+  padding: 5px;
+  border-radius: 50%;
+}
+.Admin .Content .Header > div .bell svg {
+  margin: 0;
 }
 .Admin .Content .Header > div .bell span {
   position: absolute;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 2px;
   right: 2px;
   background-color: red;
@@ -2231,21 +2447,95 @@
   height: 8px;
   width: 8px;
 }
+.Admin .Content .Header > div .bell:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1069px) {
+  .Admin .Content .Header {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 889px) {
+  .Admin .Content .Header {
+    transition: width 2s, min-width 2s;
+  }
+  .Admin .Content .Header > b {
+    flex: 1 1 0%;
+    transition: margin 2s;
+  }
+  .Admin .Content .Header .HeaderSearch, .Admin .Content .Header .InfoIcon {
+    display: none;
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .Header {
+    padding: 0 15px;
+    display: flex;
+    position: relative;
+    z-index: 100;
+    background-color: white;
+    transition: width 2s, min-width 2s;
+  }
+  .Admin .Content .Header > b {
+    flex: 1 1 0%;
+    transition: margin 2s;
+  }
+  .Admin .Content .Header .HeaderSearch, .Admin .Content .Header .InfoIcon {
+    display: none;
+  }
+  .Admin .Content .Header .bell {
+    position: relative;
+    margin: 0;
+  }
+  .Admin .Content .Header .bell span {
+    position: absolute;
+    display: inline-block;
+    top: 2px;
+    right: 2px;
+    background-color: red;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+  }
+  .Admin .Content .Header .bell .MuiSvgIcon-root {
+    margin: 0;
+  }
+  .Admin .Content .Header > div hr {
+    margin: 10px;
+  }
+  .Admin .Content .Header > div img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Admin .Content .Header > b {
+    font-size: 16px;
+  }
+  .Admin .Content .Header > div .bell {
+    margin: 0;
+  }
+  .Admin .Content .Header > div .bell .MuiSvgIcon-root {
+    margin: 0;
+  }
+}
 .Admin .Content .Dashboard {
   display: flex;
   flex-direction: column;
   padding: 30px 50px;
+  flex: 1 1 100;
 }
 .Admin .Content .Dashboard .statistics {
   display: flex;
-  width: 100%;
   justify-content: space-between;
 }
 .Admin .Content .Dashboard .statistics .Revenue, .Admin .Content .Dashboard .statistics .Order, .Admin .Content .Dashboard .statistics .User, .Admin .Content .Dashboard .statistics .Visitor {
   background-color: #f5f5f5;
   width: 20%;
   border-radius: 4px;
-  padding: 10px;
+  padding: 15px;
 }
 .Admin .Content .Dashboard .statistics .Revenue .Title, .Admin .Content .Dashboard .statistics .Order .Title, .Admin .Content .Dashboard .statistics .User .Title, .Admin .Content .Dashboard .statistics .Visitor .Title {
   margin-bottom: 10px;
@@ -2324,7 +2614,8 @@
 .Admin .Content .Dashboard .Chart {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  width: calc(100vw - 360px);
+  margin-top: 40px;
   position: relative;
 }
 .Admin .Content .Dashboard .Chart .MuiFormControl-root {
@@ -2332,11 +2623,84 @@
   right: 0;
   width: 120px;
 }
+.Admin .Content .Dashboard .Chart .Title {
+  margin-bottom: 20px;
+}
 .Admin .Content .Dashboard .Chart h2 {
   text-align: center;
 }
 .Admin .Content .Dashboard .Chart .highcharts-credits {
   display: none;
+}
+@media screen and (max-width: 1069px) {
+  .Admin .Content .Dashboard {
+    padding: 20px 30px;
+  }
+  .Admin .Content .Dashboard .statistics {
+    padding-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .Admin .Content .Dashboard .statistics .Revenue, .Admin .Content .Dashboard .statistics .Order, .Admin .Content .Dashboard .statistics .User, .Admin .Content .Dashboard .statistics .Visitor {
+    width: 22%;
+    min-width: 150px;
+    margin-bottom: 10px;
+  }
+  .Admin .Content .Dashboard .Chart {
+    margin-top: 30px;
+    width: calc(100vw - 310px);
+  }
+  .Admin .Content .Dashboard .Chart h2 {
+    text-align: left;
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .Admin .Content .Dashboard .statistics .Revenue, .Admin .Content .Dashboard .statistics .Order, .Admin .Content .Dashboard .statistics .User, .Admin .Content .Dashboard .statistics .Visitor {
+    width: 40%;
+    min-width: 150px;
+  }
+  .Admin .Content .Dashboard .Chart {
+    width: calc(100vw - 160px);
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .Dashboard {
+    padding: 20px 15px;
+  }
+  .Admin .Content .Dashboard .statistics {
+    padding: 0;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .Admin .Content .Dashboard .statistics .Revenue, .Admin .Content .Dashboard .statistics .Order, .Admin .Content .Dashboard .statistics .User, .Admin .Content .Dashboard .statistics .Visitor {
+    width: 45%;
+    margin-bottom: 10px;
+    min-width: 0;
+    padding: 10px;
+  }
+  .Admin .Content .Dashboard .statistics .Revenue .Number > span, .Admin .Content .Dashboard .statistics .Order .Number > span, .Admin .Content .Dashboard .statistics .User .Number > span, .Admin .Content .Dashboard .statistics .Visitor .Number > span {
+    font-size: 16px;
+  }
+  .Admin .Content .Dashboard .Chart {
+    margin-top: 0px;
+    width: calc(100vw - 90px);
+  }
+  .Admin .Content .Dashboard .Chart .Title {
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .Admin .Content .Dashboard .Chart h2 {
+    text-align: left;
+    font-size: 17px;
+  }
+}
+.Admin .Content .OrderReport .MuiPaper-root {
+  margin: 50px !important;
+  margin-bottom: 30px !important;
+  max-width: calc(100% - 100px);
 }
 .Admin .Content .OrderReport .MuiTablePagination-selectLabel,
 .Admin .Content .OrderReport .MuiTablePagination-displayedRows {
@@ -2345,12 +2709,29 @@
 .Admin .Content .OrderReport svg {
   cursor: pointer;
 }
-.Admin .Content .PrintButton {
-  margin: 0 0 30px 50px;
+.Admin .Content .OrderReport .AddButton {
   background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  margin-bottom: 40px;
+  margin-right: 50px;
+  padding: 5px 20px;
+}
+.Admin .Content .PrintButton {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Admin .Content .FooterBtn {
+  padding: 0 50px;
+  margin-bottom: 30px;
 }
 .Admin .Content .OrderAdd {
   margin: 30px 50px;
+}
+.Admin .Content .OrderAdd .ant-select {
+  width: 100% !important;
+}
+.Admin .Content .OrderAdd .ant-select .ant-select-selector {
+  border-radius: 4px;
+  border-color: rgba(0, 0, 0, 0.23) !important;
 }
 .Admin .Content .OrderAdd .AddItemContainer {
   display: flex;
@@ -2381,6 +2762,168 @@
   color: white;
   padding: 8px 20px;
   font-weight: bold;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+.Admin .Content .OrderDetail .StatusSelect {
+  height: 100%;
+  display: block;
+}
+.Admin .Content .OrderDetail .StatusSelect .ant-select-selector {
+  border: 0 !important;
+  height: 100%;
+  padding: 0;
+}
+.Admin .Content .OrderDetail .StatusSelect .ant-select-selector span {
+  font-size: 16px;
+  color: #212529;
+  font-family: "Noto Sans", "AdDIN", "Helvetica", Arial, sans-serif;
+}
+.Admin .Content .OrderDetail .StatusSelect .ant-select-selector .ant-select-selection-item {
+  line-height: 50px;
+}
+.Admin .Content .OrderDetail .ant-select {
+  width: 100% !important;
+}
+.Admin .Content .OrderDetail .ant-select .ant-select-selector {
+  border-radius: 4px;
+  border-color: rgba(0, 0, 0, 0.23) !important;
+}
+.Admin .Content .OrderDetail button {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Admin .Content .OrderDetail .MuiGrid-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.Admin .Content .OrderDetail .MuiGrid-container .MuiGrid-root {
+  margin-bottom: 15px;
+  padding-top: 0 !important;
+}
+.Admin .Content .OrderDetail .AddItemContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.Admin .Content .OrderDetail .CustomerDetails .MuiFormControl-root {
+  height: 100%;
+}
+.Admin .Content .OrderDetail .CustomerDetails .MuiInputBase-root {
+  height: 100%;
+}
+.Admin .Content .OrderDetail .CustomerDetails .MuiInputBase-root input {
+  padding-left: 0 !important;
+}
+.Admin .Content .OrderDetail .CustomerDetails .MuiInputBase-root fieldset {
+  display: none !important;
+}
+@media screen and (max-width: 1069px) {
+  .Admin .Content .OrderReport .MuiPaper-root {
+    margin: 30px !important;
+    max-width: calc(100% - 60px);
+  }
+  .Admin .Content .OrderReport .AddButton {
+    margin-right: 30px;
+  }
+  .Admin .Content .FooterBtn {
+    padding: 0 30px;
+  }
+  .Admin .Content .OrderAdd {
+    margin: 30px;
+  }
+  .Admin .Content .OrderDetail {
+    padding: 30px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails .StatusSelect span {
+    font-size: 14px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails .StatusSelect .ant-select-selection-item {
+    line-height: 40px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span {
+    height: 40px;
+    width: 35%;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(odd) {
+    width: 15%;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(2) {
+    text-indent: 0;
+    padding: 0 15px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 869px) {
+  .Admin .Content .OrderDetail {
+    padding: 15px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span {
+    height: 40px;
+    width: 72%;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(odd) {
+    width: 27%;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(2) {
+    text-indent: 0;
+    padding: 0 15px;
+    overflow: hidden;
+  }
+  .Admin .Content .FooterBtn {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .OrderReport .AddButton {
+    margin-right: 15px;
+  }
+  .Admin .Content .OrderReport .MuiPaper-root {
+    margin: 15px !important;
+    max-width: calc(100% - 30px);
+  }
+  .Admin .Content .OrderReport .MuiTableRow-root th {
+    padding: 10px 15px !important;
+    text-align: center;
+  }
+  .Admin .Content .OrderReport .MuiTableRow-root td {
+    padding: 8px !important;
+    text-align: center;
+  }
+  .Admin .Content .OrderReport .MuiTableRow-root td .OrderStatus {
+    padding: 5px !important;
+  }
+  .Admin .Content .PrintButton {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .Admin .Content .OrderAdd {
+    margin: 15px;
+  }
+  .Admin .Content .OrderAdd .MuiFormControl-root {
+    width: 100%;
+  }
+  .Admin .Content .OrderDetail {
+    padding: 15px;
+  }
+  .Admin .Content .OrderDetail .MuiFormControl-root {
+    width: 100%;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span {
+    height: 40px;
+    width: 72%;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(odd) {
+    width: 27%;
+  }
+  .Admin .Content .OrderDetail .CustomerDetails > span:nth-child(2) {
+    text-indent: 0;
+    padding: 0 15px;
+    overflow: hidden;
+  }
 }
 .Admin .Content .AddProduct {
   padding: 40px 50px;
@@ -2420,8 +2963,468 @@
   width: 183px;
   border-radius: 4px;
 }
-.Admin .LogoutDialog {
-  background-color: red;
+@media screen and (max-width: 1069px) {
+  .Admin .Content .AddProduct {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .AddProduct {
+    padding: 15px;
+    margin-top: 15px;
+  }
+  .Admin .Content .AddProduct .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Admin .Content .AddProduct .product img {
+    height: 200px;
+    width: 200px;
+    min-width: 200px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .Admin .Content .AddProduct .product .MuiGrid-root:nth-child(8) {
+    order: -1;
+  }
+  .Admin .Content .AddProduct .product .MuiGrid-root {
+    padding-top: 20px;
+  }
+  .Admin .Content .AddProduct .buttonAndError {
+    flex-direction: row-reverse;
+    margin-bottom: 50px;
+  }
+  .Admin .Content .AddProduct .buttonAndError button {
+    padding: 10px 0;
+    width: 130px;
+  }
+}
+.Admin .Content .Feedback_Page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+.Admin .Content .Feedback_Page .Feedback_Header {
+  padding: 30px 50px;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 32, 0.1);
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 30px;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate span {
+  color: #f3bd42;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate b {
+  font-size: 30px;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate .Star {
+  white-space: nowrap;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab button {
+  background-color: white;
+  border-color: #e8e8e8;
+  margin: 10px 5px;
+  min-width: 100px;
+  height: 40px;
+  padding: 3px 0px;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab button:hover, .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab .selectedBtn {
+  border-color: #f3bd42;
+  color: #f3bd42;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab label {
+  margin-top: 10px;
+  margin-left: 5px;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab label input, .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab label .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  border-color: #e8e8e8;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab .ant-checkbox-checked {
+  border: 0px !important;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab .ant-checkbox-checked input, .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #f3bd42;
+  border-color: #f3bd42;
+}
+.Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab .ant-checkbox-checked::after {
+  border: 0px !important;
+}
+.Admin .Content .Feedback_Page .FeedbackContent {
+  padding: 30px 0;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackPageLoading {
+  opacity: 0.5;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem {
+  padding: 10px 50px;
+  display: flex;
+  cursor: pointer;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem img {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title p {
+  color: #2184c5;
+  margin-bottom: 0;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title span {
+  color: #bdbdbd;
+  margin: 0 10px;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title b {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: flex-end;
+  color: #f3bd42;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title .Star svg {
+  margin-bottom: 4px;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Time_mobile {
+  display: none;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Content {
+  margin-top: 5px;
+  display: flex;
+  width: 100%;
+}
+.Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.Admin .Content .Feedback_Page .Feedback_Pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+@media screen and (max-width: 1069px) {
+  .Admin .Content .Feedback_Page .Feedback_Header {
+    padding: 30px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem {
+    padding: 10px 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .Admin .Content .Feedback_Page .Feedback_Header {
+    padding: 30px;
+    flex-direction: column;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab {
+    margin-top: 20px;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab button {
+    min-width: 80px;
+    height: 35px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem {
+    padding: 10px 30px;
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .Feedback_Page .Feedback_Header {
+    padding: 20px 15px 30px 15px;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate {
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-right: 0px;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate span {
+    color: #f3bd42;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate .Star {
+    margin-left: 10px;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate .Star svg {
+    margin-bottom: 5px;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab {
+    flex-wrap: wrap;
+  }
+  .Admin .Content .Feedback_Page .Feedback_Header .Rate_Tab button {
+    margin-top: 10px;
+    min-width: 90px;
+    height: 35px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent {
+    padding: 30px 0;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem {
+    padding: 10px 15px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    margin-right: 15px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title span {
+    font-size: 12px;
+    display: none;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title b {
+    font-size: 12px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title .Star {
+    margin-left: 10px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Title .Star svg {
+    margin-bottom: 5px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem > div .Time_mobile {
+    display: inline-block;
+    color: #bdbdbd;
+    font-size: 12px;
+  }
+  .Admin .Content .Feedback_Page .FeedbackContent .FeedbackItem:hover {
+    background-color: white;
+  }
+}
+.Admin .Content .MyAccount {
+  display: flex;
+  width: 100%;
+  padding: 50px;
+}
+.Admin .Content .MyAccount .AddButton {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  min-width: 100px;
+  margin-top: 10px;
+}
+.Admin .Content .MyAccount .ant-input, .Admin .Content .MyAccount .ant-picker {
+  border-radius: 0;
+  padding: 8px 10px;
+}
+.Admin .Content .MyAccount .Account_Info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+.Admin .Content .MyAccount .Account_Info .Label {
+  color: #999;
+  width: 200px;
+  text-align: right;
+  padding-right: 30px;
+}
+.Admin .Content .MyAccount .Account_Info .ant-form-item-label {
+  width: 200px;
+  padding-right: 30px;
+  text-align: start;
+}
+.Admin .Content .MyAccount .Account_Info .ant-form-item-label label {
+  color: #999;
+  font-size: 16px;
+}
+.Admin .Content .MyAccount .Account_Info .ant-form-item-label label:after {
+  display: none;
+}
+.Admin .Content .MyAccount .Account_Info .ant-form-item-row {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.Admin .Content .MyAccount .Account_Info > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.Admin .Content .MyAccount .Account_Info > div p {
+  flex: 1 1 100%;
+  margin: 0;
+}
+.Admin .Content .MyAccount .Account_Info > div .ant-radio-group, .Admin .Content .MyAccount .Account_Info > div .ant-picker {
+  display: flex;
+  flex: 1 1 100%;
+}
+.Admin .Content .MyAccount .Account_Pass_Rule {
+  width: 600px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+.Admin .Content .MyAccount .RegisterRule {
+  display: flex;
+  flex-direction: column;
+}
+.Admin .Content .MyAccount .RegisterRule li {
+  display: list-item;
+  list-style-type: "✖ ";
+  color: red;
+  -webkit-padding-start: 1ch;
+          padding-inline-start: 1ch;
+  padding: 0;
+}
+.Admin .Content .MyAccount .RegisterRule ::marker {
+  margin: 10px !important;
+  padding: 10px !important;
+}
+.Admin .Content .MyAccount .RegisterRule .qualified {
+  display: list-item;
+  list-style-type: "✔ ";
+  color: green;
+  -webkit-padding-start: 1ch;
+          padding-inline-start: 1ch;
+  padding: 0;
+}
+.Admin .Content .MyAccount .Account_Avatar {
+  width: 600px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Admin .Content .MyAccount .Account_Avatar img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+}
+.Admin .Content .MyAccount .Account_Avatar label {
+  cursor: pointer;
+}
+.Admin .Content .MyAccount .Account_Avatar span {
+  color: #999;
+}
+.Admin .Content .MyAccount .Account_Avatar .UploadBtn {
+  border: 1px solid #e8e8e8;
+  margin: 20px 0;
+  padding: 8px 25px;
+}
+.Admin .Content .MyAccount .Account_Avatar .UploadBtn:hover {
+  background-color: #fafafa;
+}
+@media screen and (max-width: 1100px) {
+  .Admin .Content .MyAccount {
+    flex-direction: column-reverse;
+    padding: 50px;
+  }
+  .Admin .Content .MyAccount .Account_Info .Label {
+    width: 200px;
+    padding-right: 25px;
+  }
+  .Admin .Content .MyAccount .Account_Info .ant-form-item-label {
+    width: 200px;
+  }
+  .Admin .Content .MyAccount .Account_Info .ant-form-item-row {
+    flex-wrap: wrap;
+  }
+  .Admin .Content .MyAccount .Account_Pass_Rule {
+    width: 100%;
+    padding: 0px;
+  }
+  .Admin .Content .MyAccount .Account_Avatar {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .Admin .Content .ChangeAccount {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1069px) {
+  .Admin .Content .MyAccount {
+    padding: 50px 30px;
+  }
+}
+@media screen and (max-width: 516px) {
+  .Admin .Content .MyAccount {
+    padding: 50px 15px;
+  }
+  .Admin .Content .MyAccount .ant-input, .Admin .Content .MyAccount .ant-picker {
+    margin-top: 5px;
+  }
+  .Admin .Content .MyAccount .Account_Info .ant-radio-group {
+    flex-wrap: wrap;
+  }
+  .Admin .Content .MyAccount .Account_Info .Label {
+    width: 150px;
+    text-align: left;
+    padding-right: 0px;
+  }
+  .Admin .Content .MyAccount .Account_Info .ant-form-item-label {
+    width: 150px;
+  }
+  .Admin .Content .MyAccount .Account_Info > div {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .Admin .Content .MyAccount .Account_Avatar {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  .Admin .Content .MyAccount .Account_Avatar input {
+    width: 100px;
+  }
+}
+.Admin input[type=number]::-webkit-inner-spin-button,
+.Admin input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ConstructionModel img {
+  height: 150px;
+  width: 150px;
+}
+.ConstructionModel .ant-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ConstructionModel .ant-modal-body p {
+  margin-bottom: 5px;
+}
+.ConstructionModel .ant-btn-default {
+  display: none;
 }
 
 .NotFoundPage {
@@ -2445,8 +3448,10 @@
 
 .LoginPage {
   width: 100%;
-  height: 100vh;
-  padding-top: 176px;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2492,13 +3497,66 @@
 .LoginPage .TesttingAccount {
   margin-top: 10px;
   color: rgba(0, 0, 0, 0.55);
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
-.LoginPage .TesttingAccount div {
-  margin: 10px 20px;
+.LoginPage .TesttingAccount p {
+  color: #000000;
+  margin: 10px 0 5px 0;
+}
+.LoginPage .TesttingAccount span {
+  display: block;
+}
+.LoginPage .RegisterRule {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.LoginPage .RegisterRule li {
+  display: list-item;
+  list-style-type: "✖ ";
+  color: red;
+  -webkit-padding-start: 1ch;
+          padding-inline-start: 1ch;
+  padding: 0;
+}
+.LoginPage .RegisterRule ::marker {
+  margin: 10px !important;
+  padding: 10px !important;
+}
+.LoginPage .RegisterRule .qualified {
+  display: list-item;
+  list-style-type: "✔ ";
+  color: green;
+  -webkit-padding-start: 1ch;
+          padding-inline-start: 1ch;
+  padding: 0;
 }
 
+@media screen and (max-width: 400px) {
+  .LoginPage {
+    width: 100vw;
+  }
+  .LoginPage .MuiPaper-root {
+    width: 90%;
+    padding: 16px;
+  }
+  .LoginPage .MuiFormControl-root {
+    width: 100%;
+  }
+  .LoginPage .TesttingAccount {
+    width: 100%;
+    padding-left: 5%;
+  }
+  .LoginPage .RegisterRule {
+    width: 100%;
+    padding-left: 5%;
+  }
+}
 a {
   text-decoration: none !important;
 }
@@ -2508,10 +3566,7 @@ a {
   padding: 0;
   min-height: 100vh;
   font-family: "Noto Sans", "AdihausDIN", "Helvetica", Arial, sans-serif;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+  /**  STYLE 11 */
 }
 .App .Toastify svg path {
   fill: rgba(33, 172, 223, 0.8);
@@ -2519,14 +3574,138 @@ a {
 .App .Toastify .Toastify__progress-bar {
   background-color: rgba(33, 172, 223, 0.8);
 }
+.App .Toastify__toast--error svg path {
+  fill: #dc362e;
+}
+.App .Toastify__toast--error .Toastify__progress-bar {
+  background-color: #dc362e;
+}
+.App .Toastify__toast--warning svg path {
+  fill: #e88f21;
+}
+.App .Toastify__toast--warning .Toastify__progress-bar {
+  background-color: #e88f21;
+}
+.App .FeedbackBtn button {
+  position: fixed;
+  bottom: 90px;
+  right: 0;
+  width: 40px;
+  height: 70px;
+  border: none;
+  padding: 8px;
+  border-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App .FeedbackBtn button img {
+  height: 25px;
+  width: 25px;
+}
+.App .FeedbackBtn button span {
+  margin-top: 5px;
+  font-size: 9px;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: break-spaces;
+}
 .App > button {
   position: fixed;
   bottom: 40px;
-  right: 60px;
+  right: 0px;
   width: 40px;
   height: 40px;
   border: none;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   z-index: 50;
+}
+
+.ant-popover-content .ant-popover-inner {
+  padding: 0;
+}
+.ant-popover-content .ant-popover-inner p {
+  margin: 0;
+  min-width: 200px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.ant-popover-content .ant-popover-inner p:hover {
+  background-color: #fafafa;
+  font-weight: bold;
+}
+
+.FeedbackModel {
+  max-width: 400px;
+}
+.FeedbackModel .ant-modal-close {
+  display: none;
+}
+.FeedbackModel .ant-modal-content {
+  padding: 20px 0 !important;
+}
+.FeedbackModel .ant-modal-footer {
+  margin: 0 24px;
+}
+.FeedbackModel .status {
+  display: flex;
+  margin: 0 24px;
+  justify-content: space-between;
+}
+.FeedbackModel .status img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.FeedbackModel .status img:hover {
+  opacity: 1;
+}
+.FeedbackModel .status .selected {
+  opacity: 1;
+}
+.FeedbackModel .FeedbackContent {
+  margin: 20px 0;
+}
+.FeedbackModel .FeedbackContent textarea {
+  border: 0;
+  box-shadow: none;
+  background-color: #f7f8f9;
+  padding: 7px 24px;
+}
+
+@media screen and (max-width: 516px) {
+  .App > button {
+    bottom: 40px;
+    right: 0px;
+  }
+  .FeedbackModel {
+    max-width: calc(100vw - 20px);
+    width: calc(100vw - 20px);
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }/*# sourceMappingURL=App.css.map */

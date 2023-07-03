@@ -1,7 +1,5 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
@@ -9,105 +7,23 @@ import TableFooter from '@mui/material/TableFooter';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
-import TableHead from '@mui/material/TableHead';
-import { styled } from '@mui/material/styles';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import TableHead from '@mui/material/TableHead';
 import { useDispatch, useSelector } from 'react-redux';
 import adminSlice from '../../../../redux/Slice/adminSlice';
 import { AdminOrderData } from '../../../../redux/adminSelector';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
-    },
-}));
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-        border: 0,
-    },
-}));
-
-function TablePaginationActions(props) {
-    const theme = useTheme();
-    const { count, page, rowsPerPage, onPageChange } = props;
-
-    const handleFirstPageButtonClick = (event) => {
-        onPageChange(event, 0);
-    };
-    const handleBackButtonClick = (event) => {
-        onPageChange(event, page - 1);
-    };
-    const handleNextButtonClick = (event) => {
-        onPageChange(event, page + 1);
-    };
-    const handleLastPageButtonClick = (event) => {
-        onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-    };
-    return (
-        <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-            <IconButton
-                onClick={handleFirstPageButtonClick}
-                disabled={page === 0}
-                aria-label="first page"
-            >
-                {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-            </IconButton>
-            <IconButton
-                onClick={handleBackButtonClick}
-                disabled={page === 0}
-                aria-label="previous page"
-            >
-                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            </IconButton>
-            <IconButton
-                onClick={handleNextButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="next page"
-            >
-                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-            </IconButton>
-            <IconButton
-                onClick={handleLastPageButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="last page"
-            >
-                {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-            </IconButton>
-        </Box>
-    );
-}
-
-TablePaginationActions.propTypes = {
-    count: PropTypes.number.isRequired,
-    onPageChange: PropTypes.func.isRequired,
-    page: PropTypes.number.isRequired,
-    rowsPerPage: PropTypes.number.isRequired,
-};
+import { Button, FormLabel } from 'react-bootstrap';
+import { StyledTableCell, StyledTableRow, TablePaginationActions } from '../../../TablePaginationActions';
+import TableCell from '@mui/material/TableCell';
 
 
 export default function OrderReport() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
     const rows = useSelector(AdminOrderData);
-
-
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
@@ -129,6 +45,23 @@ export default function OrderReport() {
     useEffect(() => {
         dispatch(adminSlice.actions.setTab("order report"))
     }, [])
+
+    const StatusStyle = (status) => {
+        switch (status) {
+            case "Paid":
+                return { backgroundColor: "#31b5e5" }
+            case "Delivering":
+                return { backgroundColor: "#2e6ea5" }
+            case "Done":
+                return { backgroundColor: "#01c74f" }
+            case "Pending":
+                return { backgroundColor: "#fe8900" }
+            case "Refunded":
+                return { backgroundColor: "#f54337" }
+            default:
+                return { backgroundColor: "#9e9e9e" }
+        }
+    }
     return (
         <div className="OrderReport">
 
@@ -137,9 +70,10 @@ export default function OrderReport() {
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>ID</StyledTableCell>
+                            <StyledTableCell align="left">Status</StyledTableCell>
                             <StyledTableCell align="left">Name</StyledTableCell>
                             <StyledTableCell align="left">Phone</StyledTableCell>
-                            <StyledTableCell align="left">Total Amount</StyledTableCell>
+                            <StyledTableCell align="left">Amount</StyledTableCell>
                             <StyledTableCell align="left">Date</StyledTableCell>
                             <StyledTableCell align="left">Action</StyledTableCell>
                         </TableRow>
@@ -151,7 +85,12 @@ export default function OrderReport() {
                         ).map((row) => (
                             <StyledTableRow key={row._id}>
                                 <TableCell style={{ width: 50 }} >
-                                    {row._id}
+                                    {row._id.slice(row._id.length - 5)}
+                                </TableCell>
+                                <TableCell style={{ width: 100 }} >
+                                    <div className='OrderStatus' style={{ ...StatusStyle(row.status), color: "white", padding: "5px 20px", borderRadius: "3px", textAlign: "center" }}>
+                                        {row.status}
+                                    </div>
                                 </TableCell>
                                 <TableCell align="left" component="th" scope="row">
                                     {row.name}
@@ -183,8 +122,8 @@ export default function OrderReport() {
                     <TableFooter>
                         <TableRow>
                             <TablePagination
-                                rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                                colSpan={6}
+                                rowsPerPageOptions={[5, 10, 15]}
+                                colSpan={12}
                                 count={rows.length}
                                 rowsPerPage={rowsPerPage}
                                 page={page}
@@ -192,7 +131,7 @@ export default function OrderReport() {
                                     inputProps: {
                                         'aria-label': 'rows per page',
                                     },
-                                    native: true,
+                                    // native: true,
                                 }}
                                 onPageChange={handleChangePage}
                                 onRowsPerPageChange={handleChangeRowsPerPage}
@@ -203,6 +142,13 @@ export default function OrderReport() {
                     </TableFooter>
                 </Table>
             </TableContainer>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <Link to="/admin/order-add">
+                    <Button className='AddButton' variant="contained">
+                        Add order
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,276 @@
+.Feedback_Page{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    .Feedback_Header{
+        padding: 30px 50px;
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba($color: #ffff20, $alpha: 0.1);
+        .Rate{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: fit-content;
+            padding-right: 30px;
+            span{
+                color:#f3bd42
+            }
+            b{
+                font-size: 30px;
+            }
+            .Star{
+                white-space: nowrap ;
+            }
+        }
+        .Rate_Tab{
+            display: flex;
+            flex: 1 1 100%;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            button{
+                background-color: white;
+                border-color: #e8e8e8;
+                margin: 10px 5px;
+                min-width: 100px;
+                height: 40px;
+                padding: 3px 0px;
+            }
+            button:hover,.selectedBtn{
+                border-color:#f3bd42 ;
+                color: #f3bd42;
+            }
+   
+            label{
+                margin-top: 10px;
+                margin-left: 5px;
+                align-items: center;
+                width: fit-content;
+                span{
+                    // color:#f3bd42
+                }
+                input,.ant-checkbox-inner{
+                    width: 20px;
+                    height: 20px;
+                    min-height: 20px;
+                    min-width: 20px ;
+                    border-color: #e8e8e8
+                }
+            }
+            .ant-checkbox-checked{
+                border: 0px !important;
+    
+                input,.ant-checkbox-inner{
+                    background-color: #f3bd42;
+                    border-color: #f3bd42
+
+                }
+            }
+            .ant-checkbox-checked::after{
+                border: 0px !important;
+    
+            
+            }
+        }
+    
+
+    }
+   
+
+    .FeedbackContent{
+        padding: 30px 0;
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        white-space: pre-line;
+        .FeedbackPageLoading{
+            opacity: 0.5;
+        }//FeedbackPageLoading
+        .FeedbackItem{
+            padding: 10px 50px;
+            display: flex;
+            cursor: pointer;
+            img{
+                width: 50px ;
+                height: 50px ;
+                min-width: 50px;
+                min-height: 50px;
+                object-fit: cover;
+                margin-right: 20px;
+                margin-top: 5px;
+
+            }
+            >div{
+                flex: 1 1 100%;
+                display: flex;
+                flex-direction: column;
+                .Title{
+                    white-space: nowrap ;
+                    display: flex;
+                    align-items: center;
+                    p{
+                        color:#2184c5;
+                        margin-bottom: 0;
+                    }
+                    span{
+                        color:#bdbdbd;
+                        margin:0 10px;
+                    }
+                    b{
+                        display: flex;
+                        flex: 1 1 100%;
+                        justify-content: flex-end;
+                        color: #f3bd42;
+                    }
+                    .Star{
+                        svg{
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+                .Time_mobile{
+                    display: none;
+                }
+                .Content{
+                    margin-top: 5px;
+                    display: flex;
+                    width: 100%;
+                }
+            }
+        }// FeedbackItem
+        .FeedbackItem:hover{
+            background-color: rgba($color: #000000, $alpha: 0.05);
+        }
+       
+    } // FeedbackContent
+    .Feedback_Pagination{
+        display: flex ;
+        justify-content: center ;
+        margin-top: 30px ;
+    }
+}
+@media screen and (max-width: 1069px) {
+    .Feedback_Page{
+        .Feedback_Header{
+            padding: 30px;
+        }
+        .FeedbackContent{
+            .FeedbackItem{
+                padding: 10px 30px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .Feedback_Page{
+        .Feedback_Header{
+            padding: 30px;
+            flex-direction:column;
+            .Rate_Tab{
+                margin-top: 20px;
+                button{
+                    min-width: 80px;
+                    height: 35px;
+                }
+
+     
+    
+            }
+        }
+        .FeedbackContent{
+            .FeedbackItem{
+                padding: 10px 30px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 516px) {
+    .Feedback_Page{
+        .Feedback_Header{
+            padding: 20px 15px 30px 15px; 
+            flex-direction: column;
+            align-items:baseline;
+            .Rate{
+                flex-direction: row;
+                white-space: nowrap;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+                padding-right: 0px;
+                span{
+                    color:#f3bd42
+                }
+ 
+                .Star{
+                    margin-left : 10px;
+                    svg{
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .Rate_Tab{
+                flex-wrap: wrap;
+                button{
+                    margin-top: 10px;
+                    min-width: 90px;
+                    height: 35px;
+                }
+
+     
+    
+            }
+        }
+       
+    
+        .FeedbackContent{
+            padding: 30px 0;
+
+            .FeedbackItem{
+                padding: 10px 15px;
+
+                img{
+                    width: 40px ;
+                    height: 40px ;
+                    min-width: 40px ;
+                    min-height: 40px ;
+                    margin-right: 15px;
+                }
+                >div{
+
+                    .Title{
+
+                        span{
+                
+                            font-size: 12px;
+                            display: none;
+                        }
+                        b{
+                            font-size: 12px;
+      
+                        }
+                        .Star{
+                            margin-left : 10px;
+                            svg{
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                    .Time_mobile{
+                        display: inline-block;
+                        color:#bdbdbd;
+                        font-size: 12px;
+                    }
+ 
+                }
+            }// FeedbackItem
+            .FeedbackItem:hover{
+                background-color: white;
+            }
+           
+        } // FeedbackContent
+
+    }
+    
+}

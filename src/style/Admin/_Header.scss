@@ -6,6 +6,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+    overflow: hidden;
+
 
     b {
         text-transform: capitalize;
@@ -61,7 +63,153 @@
         }
         .bell{
             position: relative;
-            margin: 0 0 0 12px;
+            margin: 0 0 0 20px;
+            padding: 5px;
+            border-radius: 50%;
+            svg{
+                margin: 0;
+            }
+            span{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 2px;
+                right: 2px;
+                background-color: red;
+                border-radius: 50%;
+                height: 8px;
+                width: 8px;
+            }
+        }
+        .bell:hover{
+            background-color: rgba($color: #000000, $alpha: 0.1);
+        }
+    }
+
+    // background-color: red;
+}
+@media screen and (max-width: 1069px) {
+    .Header {
+        // height: 76px;
+        // border-top: 3px solid #eeedee;
+        // border-bottom: 3px solid #eeedee;
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        padding: 0 30px;
+        // overflow: hidden;
+    
+    
+        b {
+            // text-transform: capitalize;
+            // font-size: 20px;
+        }
+    
+        >div {
+            // display: flex;
+            // align-items: center;
+    
+            hr {
+    
+                // border: none;
+                // border-left: 2px solid hsla(200, 10%, 50%, 100);
+                // height: 30px;
+                // width: 3px;
+                // margin: 20px;
+            }
+    
+            img {
+                // height: 40px;
+                // width: 40px;
+                // border-radius: 50%;
+            }
+    
+            .AvatarInfo {
+                // display: flex;
+                // flex-direction: column;
+                // margin-left: 10px;
+                // height: 40px;
+                // padding-bottom: 5px;
+                b {
+                    // font-size: 15px;
+                    // line-height: 20px;
+                }
+    
+                span {
+                    // font-size: 12px;
+                    // color: #adadad;
+                }
+            }
+            svg{
+                // cursor: pointer;
+            }
+      
+            svg:last-child{
+                // margin-left: 20px;
+            }
+            .bell{
+                // position: relative;
+                // margin: 0 0 0 20px;
+                // padding: 5px;
+                // border-radius: 50%;
+                svg{
+                    // margin: 0;
+                }
+                span{
+                    // position: absolute;
+                    // display: flex;
+                    // justify-content: center;
+                    // align-items: center;
+                    // top: 2px;
+                    // right: 2px;
+                    // background-color: red;
+                    // border-radius: 50%;
+                    // height: 8px;
+                    // width: 8px;
+                }
+            }
+            .bell:hover{
+                // background-color: rgba($color: #000000, $alpha: 0.1);
+            }
+        }
+    
+    }
+}
+@media screen and (max-width: 889px) {
+    .Header {
+        transition: width 2s, min-width 2s; 
+
+        >b{
+            flex: 1 1 0%;
+            transition: margin 2s;
+        }
+        .HeaderSearch,.InfoIcon{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 516px) {
+    .Header {
+        padding: 0 15px ;
+        display: flex;
+        position: relative;
+        z-index: 100;
+        background-color: white;
+
+        transition: width 2s, min-width 2s; 
+
+        >b{
+            flex: 1 1 0%;
+            transition: margin 2s;
+        }
+        .HeaderSearch,.InfoIcon{
+            display: none;
+        }
+        .bell{
+            position: relative;
+            margin: 0;
             span{
                 position: absolute;
                 display: inline-block;
@@ -72,8 +220,72 @@
                 height: 8px;
                 width: 8px;
             }
+            .MuiSvgIcon-root{
+                margin: 0
+            }
+        }
+        >div{
+
+            hr {
+                margin: 10px;
+            }
+            img{
+                object-fit: cover;
+                width: 30px ;
+                height: 30px ;
+                
+            }
         }
     }
+}
 
-    // background-color: red;
+
+@media screen and (max-width: 400px) {
+    .Header {
+        // padding: 0 15px ;
+        // display: flex;
+        // position: relative;
+        // z-index: 100;
+        // background-color: white;
+
+        // transition: width 2s, min-width 2s; 
+
+        >b{
+            // flex: 1 1 0%;
+            // transition: margin 2s;
+            font-size: 16px;
+        }
+        .HeaderSearch,.InfoIcon{
+            // display: none;
+        }
+
+        >div{
+            .bell{
+                // position: relative;
+                margin: 0;
+                span{
+                    // position: absolute;
+                    // display: inline-block;
+                    // top: 2px;
+                    // right: 2px;
+                    // background-color: red;
+                    // border-radius: 50%;
+                    // height: 8px;
+                    // width: 8px;
+                }
+                .MuiSvgIcon-root{
+                    margin: 0
+                }
+            }
+            hr {
+                // margin: 10px;
+            }
+            img{
+                // object-fit: cover;
+                // width: 30px ;
+                // height: 30px ;
+                
+            }
+        }
+    }
 }

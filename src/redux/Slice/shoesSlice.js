@@ -80,7 +80,7 @@ const shoesSlice = createSlice({
 export default shoesSlice;
 
 export const getShoesData = createAsyncThunk('Shoes/getShoes', async () => {
-    const URL = "https://kstore-api.onrender.com/shoes"
+    const URL = "https://kstore-api.cyclic.app/shoes"
     const controller = new AbortController()
     try {
         const res = await axios({
@@ -90,11 +90,7 @@ export const getShoesData = createAsyncThunk('Shoes/getShoes', async () => {
         });
         return res.data;
     } catch (e) {
-        // console.log(e.res.status)
-        return LocalData
+        console.log(e.res.status)
     }
 
-
-    // console.log(data)
-    // return res
 })

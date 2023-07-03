@@ -9,22 +9,32 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 const ChartData = [{
     name: 'Revenue',
-    data: [3404.22, 4271.5, 2106.4, 1129.2, 3144.0, 2176.0, 1935.6, 2748.5, 3116.65,
-        2394.14,],
+    data: [3404.22, 4271.5, 2106.4, 1129.2, 3144.0, 2176.0, 1935.6]
 }, {
     name: 'Order',
-    data: [53, 92, 40, 24, 45, 33, 36, 21, 48, 83,],
+    data: [53, 92, 40, 24, 45, 33, 36],
 }, {
     name: 'User',
-    data: [3, 7, 2, 0, 2, 4, 1, 4, 2, 8,],
+    data: [3, 7, 2, 0, 2, 4, 1,],
 }, {
     name: 'Visitor',
-    data: [6, 12, 6, 3, 5, 7, 4, 10, 5, 20,],
+    data: [6, 12, 6, 3, 5, 7, 4],
 }]
 const Chart = () => {
     const [option, setOption] = useState(10);
     const [currentData, setCurrentData] = useState(ChartData[0])
+    const sevenDay = () => {
+        const date = new Date()
+        const miliSecond = date.getTime()
+        const dateList = []
+        const oneDayTime = 60 * 60 * 24 * 1000
+        for (let i = 1; i <= 7; i++) {
+            const dayAgo = new Date(miliSecond - (oneDayTime * i))
+            dateList.unshift(dayAgo.getDate() + "/" + (dayAgo.getMonth() + 1),)
 
+        }
+        return dateList
+    }
     const options = {
         chart: {
             type: 'column'
@@ -36,18 +46,7 @@ const Chart = () => {
         //     text: 'Source: WorldClimate.com'
         // },
         xAxis: {
-            categories: [
-                '13/2',
-                '14/2',
-                '15/2',
-                '16/2',
-                '17/2',
-                '18/2',
-                '19/2',
-                '20/2',
-                '21/2',
-                '22/2',
-            ],
+            categories: sevenDay(),
             crosshair: true
         },
         yAxis: {

@@ -21,6 +21,7 @@ import Login from "./component/Login/Login";
 import { getUserData } from "./redux/Slice/userSlice";
 import { userDetails } from "./redux/selector";
 import { redirect } from "react-router-dom";
+import FeedbackModel from "./component/FeedbackModel";
 function App() {
 	const [isVisible, setIsVisible] = useState(false);
 	const dispatch = useDispatch()
@@ -50,24 +51,33 @@ function App() {
 		dispatch(getOrdersData())
 		dispatch(getUserData())
 	}, [])
+	const [openModel, setOpenModel] = useState(false)
 
 	const admin = useSelector(userDetails)
+	const Feedback = () => {
+
+	}
 	return (
 		<div className="App">
 			<Router>
 				<AppNavBar />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/admin/*" element={(admin?.admin === "Super Admin" || admin?.admin === "Admin") ? <AdminPage /> : <Login />} /> 
+					{/* <Route path="/admin/*" element={(admin?.admin === "Super Admin" || admin?.admin === "Admin") ? <AdminPage /> : <Login />} />  */}
+					<Route path="/admin/*" element={<AdminPage openModel={openModel} setOpenModel={setOpenModel} />} />
+
 					<Route path="/product" element={<Product />} />
 					<Route path="/product/:productId" element={<ShoesDetails />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/payment" element={<Payment />} />
-					<Route path="/login" element={<Login />} />
+					<Route path="/login" element={<Login setOpenModel={setOpenModel} />} />
 					<Route path='*' exact={true} element={<NotFoundPage />} />
 				</Routes>
 				<AppFooter />
+				<div className="FeedbackBtn">
+					<FeedbackModel />
+				</div>
 				{isVisible && (
 					<button onClick={scrollToTop}>
 						<RxDoubleArrowUp />

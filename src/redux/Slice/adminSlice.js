@@ -9,10 +9,14 @@ const adminSlice = createSlice({
         currentId: '',
         orderData: [],
         status: 'idle',
+        newFeedback: false,
     },
     reducers: {
         setTab: (state, action) => {
             state.tab = action.payload;
+        },
+        setMewFeedback: (state, action) => {
+            state.newFeedback = action.payload;
         },
         setCurrentId: (state, action) => {
             state.currentId = action.payload;
@@ -25,8 +29,9 @@ const adminSlice = createSlice({
         builder.addCase(getOrdersData.pending, (state, action) => {
             state.status = 'loading';
         }).addCase(getOrdersData.fulfilled, (state, action) => {
-            state.orderData = action.payload;
+            state.orderData = action.payload
             state.status = 'idle'
+
         })
     },
 
@@ -36,7 +41,7 @@ export default adminSlice;
 
 
 export const getOrdersData = createAsyncThunk('Order/getOrders', async () => {
-    const URL = "https://kstore-api.onrender.com/orders"
+    const URL = "https://kstore-api.cyclic.app/orders"
     const controller = new AbortController()
     try {
         const res = await axios({

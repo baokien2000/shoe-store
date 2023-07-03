@@ -20,11 +20,11 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import DisabledByDefaultOutlinedIcon from '@mui/icons-material/DisabledByDefaultOutlined';
 import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import adminSlice from '../../../redux/Slice/adminSlice';
-import { shoesHome } from '../../../redux/selector';
+import { shoesHome, userDetails } from '../../../redux/selector';
 import axios from 'axios';
 import shoesSlice from '../../../redux/Slice/shoesSlice';
 import { toast } from 'react-toastify';
@@ -37,92 +37,18 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
-//Table Pagination
-function TablePaginationActions(props) {
-    const theme = useTheme();
-    const { count, page, rowsPerPage, onPageChange } = props;
-
-    const handleFirstPageButtonClick = (event) => {
-        onPageChange(event, 0);
-    };
-    const handleBackButtonClick = (event) => {
-        onPageChange(event, page - 1);
-    };
-    const handleNextButtonClick = (event) => {
-        onPageChange(event, page + 1);
-    };
-    const handleLastPageButtonClick = (event) => {
-        onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-    };
-    return (
-        <Box sx={{ flexShrink: 0, ml: 2.5 }}>
-            <IconButton
-                onClick={handleFirstPageButtonClick}
-                disabled={page === 0}
-                aria-label="first page"
-            >
-                {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-            </IconButton>
-            <IconButton
-                onClick={handleBackButtonClick}
-                disabled={page === 0}
-                aria-label="previous page"
-            >
-                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            </IconButton>
-            <IconButton
-                onClick={handleNextButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="next page"
-            >
-                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-            </IconButton>
-            <IconButton
-                onClick={handleLastPageButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="last page"
-            >
-                {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-            </IconButton>
-        </Box>
-    );
-}
-TablePaginationActions.propTypes = {
-    count: PropTypes.number.isRequired,
-    onPageChange: PropTypes.func.isRequired,
-    page: PropTypes.number.isRequired,
-    rowsPerPage: PropTypes.number.isRequired,
-};
-
-// Styled Component
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
-    },
-}));
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-        border: 0,
-    },
-}));
+import { DeleteUser } from '../../../api/admin/user';
+import { StyledTableCell, StyledTableRow, TablePaginationActions } from '../../TablePaginationActions';
 
 const UserReport = () => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
     const rows = useSelector(AdminUserData);
-    console.log(rows)
+    const user = useSelector(userDetails);
+
     const emptyRows =
         page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
-
+    const nagigate = useNavigate()
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
@@ -146,49 +72,16 @@ const UserReport = () => {
     useEffect(() => {
         dispatch(adminSlice.actions.setTab("user report"))
     }, [])
-    // const handleClick = () => {
-    //     const controller = new AbortController();
-    //     const URL = 'http://localhost:5000/users/refresh'
-    //     const refresh = async () => {
-    //         try {
-    //             const response = await axios({
-    //                 url: URL,
-    //                 method: 'post',
-    //                 data: [],
-    //                 withCredentials: true,
-    //                 signal: controller.signal,
-    //                 headers: {
-    //                     "Content-Type": "application/json",
-    //                 },
-    //             })
 
-
-    //         } catch (e) {
-    //             if (e.response.status === 404) {
-    //                 console.log('Username or password is not correct')
-    //             }
-    //         }
-    //     }
-    //     refresh()
-    //     return () => {
-    //         controller.abort()
-    //     }
-    // }
     const TableTitle = ['ID', 'Name', 'Gender', 'Email', 'Phone', 'Role', 'Action']
 
     const removeUserToggle = async () => {
 
         const controller = new AbortController()
         let isMounted = true
-        const URL = 'http://localhost:5000/users/Delete'
 
         try {
-            const removeUser = await axios({
-                method: 'delete',
-                url: URL,
-                data: removeId,
-                signal: controller.signal,
-            })
+            const removeUser = await DeleteUser(removeId)
             toast.success("Remove success")
             isMounted && dispatch(userSlice.actions.DeleteUser(removeUser.data._id))
             return () => {
@@ -196,12 +89,21 @@ const UserReport = () => {
                 controller.abort()
             }
         } catch (e) {
-            console.log(e)
-            toast.success("Remove false")
+            if (e.response.status === 401) {
+                nagigate("/login")
+                toast.error(e.response.data)
+            } else {
+                if (e.response.status === 403) {
+                    toast.warning(e.response.data)
+                } else {
+                    toast.error(e.response.data)
+                }
+            }
         } finally {
             handleClose();
         }
     }
+
     return (
         <div className="OrderReport">
 
@@ -218,7 +120,7 @@ const UserReport = () => {
                         {(rowsPerPage > 0
                             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                             : rows
-                        ).map((row) => (
+                        ).map((row, index) => (
                             <StyledTableRow key={row._id}>
                                 <TableCell style={{ width: 80 }} >
                                     {row._id.slice(row._id.length - 5)}
@@ -233,16 +135,14 @@ const UserReport = () => {
                                     {row.email}
                                 </TableCell>
                                 <TableCell style={{ width: 180 }} align="left">
-                                    {row.phone}
+                                    {row.phone.slice(0, 3) + " " + row.phone.slice(3, 6) + " " + row.phone.slice(6, 10)}
                                 </TableCell>
                                 <TableCell style={{ width: 80 }} align="left">
                                     {row.admin}
                                 </TableCell>
 
                                 <TableCell style={{ width: 100 }} align="left">
-                                    <DisabledByDefaultOutlinedIcon sx={{ color: '#dc3545' }} onClick={() => handleClickOpen(row)} />
-
-
+                                    {(row.admin !== "Super Admin" && user._id !== row._id) && <DisabledByDefaultOutlinedIcon sx={{ color: '#dc3545' }} onClick={() => handleClickOpen(row)} />}
                                 </TableCell>
                             </StyledTableRow>
                         ))}
@@ -257,7 +157,7 @@ const UserReport = () => {
                         <TableRow>
                             <TablePagination
                                 rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                                colSpan={6}
+                                colSpan={12}
                                 count={rows.length}
                                 rowsPerPage={rowsPerPage}
                                 page={page}
