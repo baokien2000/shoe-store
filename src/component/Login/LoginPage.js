@@ -54,7 +54,7 @@ const LoginPage = ({ setIsPageLogin, setOpenModel }) => {
         if (validateStatus) {
 
             const controller = new AbortController();
-            const URL = 'https://kstore-api.cyclic.app/users/login'
+            const URL = 'https://kstore-api.vercel.app/users/login'
             const Data = {
                 name: name,
                 password: password,

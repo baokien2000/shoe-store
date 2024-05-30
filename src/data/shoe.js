@@ -503,4 +503,4 @@ const SHOE_DATA = [
 
 ]
 
-export default SHOE_DATA;
+export { }

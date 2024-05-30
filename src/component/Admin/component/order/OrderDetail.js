@@ -67,7 +67,7 @@ const OrderDetail = () => {
         if (isUpdate === true) {
 
 
-            const URL = 'https://kstore-api.cyclic.app/orders/Update'
+            const URL = 'https://kstore-api.vercel.app/orders/Update'
 
             const token = localStorage.getItem("token")
             const header = `token: Bearer ${token}`;

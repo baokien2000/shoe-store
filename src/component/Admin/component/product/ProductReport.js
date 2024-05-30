@@ -60,7 +60,7 @@ const ProductReport = () => {
     const removeShoesToggle = async (row) => {
         const controller = new AbortController()
         let isMounted = true
-        const URL = 'https://kstore-api.cyclic.app/shoes/Delete'
+        const URL = 'https://kstore-api.vercel.app/shoes/Delete'
 
         const token = localStorage.getItem("token")
         const header = `token: Bearer ${token}`;

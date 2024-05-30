@@ -49,7 +49,7 @@ const AdminPage = ({ openModel, setOpenModel }) => {
     const verifyAccess = () => {
 
         const controller = new AbortController();
-        const URL = 'https://kstore-api.cyclic.app/users/verify'
+        const URL = 'https://kstore-api.vercel.app/users/verify'
 
         const token = localStorage.getItem("token")
         const header = `token: Bearer ${token}`;

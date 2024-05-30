@@ -105,7 +105,7 @@ const OrderAdd = () => {
             gender: gender,
             orderItem: orderItem
         }
-        const url = 'https://kstore-api.cyclic.app/orders'
+        const url = 'https://kstore-api.vercel.app/orders'
         const token = localStorage.getItem("token")
         const header = `token: Bearer ${token}`;
 

@@ -181,7 +181,7 @@ const RegisterPage = ({ setIsPageLogin, userData, setUserData }) => {
 
     const handleRegisterClick = () => {
         const controller = new AbortController();
-        const URL = 'https://kstore-api.cyclic.app/users'
+        const URL = 'https://kstore-api.vercel.app/users'
 
         const validate = validateInfo()
         if (validate === true) {

@@ -80,7 +80,7 @@ const shoesSlice = createSlice({
 export default shoesSlice;
 
 export const getShoesData = createAsyncThunk('Shoes/getShoes', async () => {
-    const URL = "https://kstore-api.cyclic.app/shoes"
+    const URL = "https://kstore-api.vercel.app/shoes"
     const controller = new AbortController()
     try {
         const res = await axios({

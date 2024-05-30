@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React from "react";
 import Container from "react-bootstrap/Container";
 import ShoesCard from "../Product/ShoesCard";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import pageSlice from "../../redux/Slice/pageSlice";
-import { style } from "@mui/system/Stack/createStack";
-import { IoMdArrowDropright } from "react-icons/io";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
@@ -25,24 +21,7 @@ import SkeletonSwiper from "./SkeletonSwiper";
 
 const ShoesCarousel = ({ ShoeData, Title }) => {
     // const [sliceView, setSliceView] = useState(1);
-    const responsive = {
-        superLargeDesktop: {
-            breakpoint: { max: 4000, min: 3000 },
-            items: 6,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 4,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-        },
-    };
+
     const dispatch = useDispatch();
 
     const ToggleButton = () => {

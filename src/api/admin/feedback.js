@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const CreateFeedback = async (payload) => {
-    const url = 'https://kstore-api.cyclic.app/feedbacks/'
+    const url = 'https://kstore-api.vercel.app/feedbacks/'
 
 
     try {
@@ -17,7 +17,7 @@ export const CreateFeedback = async (payload) => {
 }
 
 export const getAllFeedback = async (payload) => {
-    const url = 'https://kstore-api.cyclic.app/feedbacks/all'
+    const url = 'https://kstore-api.vercel.app/feedbacks/all'
 
 
     try {
@@ -32,7 +32,7 @@ export const getAllFeedback = async (payload) => {
 }
 
 export const GetFeedbacks = async (payload) => {
-    const url = 'https://kstore-api.cyclic.app/feedbacks/'
+    const url = 'https://kstore-api.vercel.app/feedbacks/'
 
     const filter = {
         isRead: payload.isRead,
@@ -53,7 +53,7 @@ export const GetFeedbacks = async (payload) => {
 }
 
 export const UpdateIsRead = async (payload) => {
-    const url = 'https://kstore-api.cyclic.app/feedbacks/isRead'
+    const url = 'https://kstore-api.vercel.app/feedbacks/isRead'
     const token = localStorage.getItem("token")
     const header = `token: Bearer ${token}`;
     const response = await axios({

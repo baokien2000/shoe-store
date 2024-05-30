@@ -113,7 +113,7 @@ const ProductInfo = () => {
 
         const controller = new AbortController()
         let isMounted = true;
-        const UpdateUrl = 'https://kstore-api.cyclic.app/shoes' + (productId ? "/Update" : "")
+        const UpdateUrl = 'https://kstore-api.vercel.app/shoes' + (productId ? "/Update" : "")
         const payload = productId ? {
             ...product,
             _id: product._id,

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const AddOrder = async (payload) => {
-    const url = 'https://kstore-api.cyclic.app/orders/add'
+    const url = 'https://kstore-api.vercel.app/orders/add'
     // const token = localStorage.getItem("token")
     // const header = `token: Bearer ${token}`;
     // headers: header,

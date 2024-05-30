@@ -41,7 +41,7 @@ export default adminSlice;
 
 
 export const getOrdersData = createAsyncThunk('Order/getOrders', async () => {
-    const URL = "https://kstore-api.cyclic.app/orders"
+    const URL = "https://kstore-api.vercel.app/orders"
     const controller = new AbortController()
     try {
         const res = await axios({

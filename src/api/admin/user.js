@@ -3,7 +3,7 @@ import axios from "axios"
 export const DeleteUser = (removeId) => {
 
     const controller = new AbortController()
-    const URL = 'https://kstore-api.cyclic.app/users/Delete'
+    const URL = 'https://kstore-api.vercel.app/users/Delete'
 
     const token = localStorage.getItem("token")
     const header = `token: Bearer ${token}`;

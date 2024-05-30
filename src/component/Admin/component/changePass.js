@@ -42,7 +42,7 @@ const ChangePass = () => {
             setLoading(true)
             const checkOldPass = await axios({
                 method: "post",
-                url: 'https://kstore-api.cyclic.app/users/checkPass',
+                url: 'https://kstore-api.vercel.app/users/checkPass',
                 data: {
                     name: "Admin",
                     password: values.Old

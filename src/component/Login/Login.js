@@ -14,7 +14,7 @@ const Login = ({ setOpenModel }) => {
         dispatch(pageSlice.actions.setHideNavBar(false))
 
         // const controller = new AbortController();
-        // const URL = 'https://kstore-api.cyclic.app/users'
+        // const URL = 'https://kstore-api.vercel.app/users'
         // let isMounted = true
 
         // const getUser = async () => {
